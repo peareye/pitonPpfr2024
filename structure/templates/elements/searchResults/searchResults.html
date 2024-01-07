@@ -1,0 +1,41 @@
+{# Search Results Element #}
+
+{# Executes the site search and assigns results to a Twig variable.
+   The argument is the number of items to return per page. Leave variable blank to use config default.
+#}
+{% set results = getSearchResultsWithPagination(6) %}
+
+<div class="element">
+    <h2>{{ element.title }}</h2>
+    {{ element.content }}
+
+    <ul class="cards">
+    {% for p in results %}
+        <a href="{{ getPathForPage(p.page_slug, p.collection_slug) }}">
+        <li class="card">
+
+          {% if p.media.filename %}
+          <div class="card__image">
+            <img src="{{ getMediaPath(p.media.filename, 'thumb') }}">
+          </div>
+          {% endif %}
+
+          <div class="card__title">
+            <h3>{{ p.title }}</h3>
+          </div>
+          <p class="card__text">
+            {{ p.first_element_content }}
+          </p>
+
+        </li>
+      </a>
+      {% else %}
+      {# For when no search results are found #}
+      <h3>No search results found.</h3>
+
+    {% endfor %}
+    </ul>
+
+    {# Print pagination navigation #}
+    {{ pagination() }}
+  </div>
