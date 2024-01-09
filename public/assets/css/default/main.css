@@ -391,7 +391,7 @@ main {
 }
 
 .contact-form {
-  margin-block-start: 1rem;
+  margin-block-start: 1em;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
@@ -427,7 +427,7 @@ textarea {
   border: 1px solid var(--clr-grey-medium);
   border-radius: var(--br);
   grid-column: 2/3;
-  font-size: 1rem;
+  font-size: inherit;
   transition: all 125ms ease-in-out;
 }
 
