@@ -394,7 +394,7 @@ main {
   margin-block-start: 1em;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1em;
 }
 @media screen and (min-width: 768px) {
   .contact-form {
@@ -440,10 +440,10 @@ textarea:focus {
 }
 
 .gallery-wrapper {
-  padding-block: 2rem;
+  padding-block: 2em;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
-  gap: 1.5rem;
+  gap: 1.5em;
 }
 .gallery-wrapper .gallery-img {
   margin-block-start: 0;
@@ -483,7 +483,7 @@ textarea:focus {
 }
 
 .video-container {
-  margin-block-start: 1rem;
+  margin-block-start: 1em;
   padding-block: 30px 56.25%;
   position: relative;
   height: 0;
