@@ -1,10 +1,9 @@
   /* Navigation Styles w/sub navigation dropdown and responsive toggles */  
 
   .navbar {
-   
     padding-inline: 1em;
     background : darken($clr-primary, 10%);
-    color      : contrast-switch($clr-primary);
+    color: $clr-light-text;
     height     : $nav-height;
     line-height: $nav-height;
  
@@ -23,7 +22,7 @@
  
       a {
         text-decoration: none;
-        color    : contrast-switch($clr-primary);
+        color: $clr-light-text;
         font-size: 2rem;
         padding: 0;
         margin: 0;
@@ -34,7 +33,7 @@
  
     .nav {
       background : lighten($clr-primary, 10%);
-      color      : contrast-switch($clr-primary);
+      color: $clr-light-text;
       white-space: nowrap;
       text-align : center;
  
@@ -83,14 +82,14 @@
  
       a {
         text-decoration: none;
-        color: contrast-switch($clr-primary);
+        color: $clr-light-text;
         display: block;
       }
     }
  
     // Static placeholder for navigation with sub menu. Uses the checkbox/label trick to toggle
     .toggle-label {
-      color : contrast-switch($clr-primary);
+     color: $clr-light-text;
       cursor: pointer;
       font-size: inherit;
     
