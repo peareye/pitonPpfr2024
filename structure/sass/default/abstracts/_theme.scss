@@ -1,0 +1,101 @@
+// Theme
+
+// Color Pallette
+
+$clr-black  : rgb(51, 51, 51);
+$clr-white  : rgb(255, 255, 255);
+$clr-pink   : hsl(324, 51%, 50%);
+$clr-blue   : #336699;
+$clr-orange : rgb(255, 120, 31);
+$clr-red    : hsl(0, 66%, 51%);
+$clr-green  : #079959;
+
+// Neutral Pallette
+
+$neutral-1 : hsl(0, 0%, 98%);
+$neutral-2 : hsl(0, 0%, 94%);
+$neutral-3 : hsl(100, 0%, 60%);
+$neutral-4 : rgb(102, 102, 102);
+$neutral-5 : rgb(26, 26, 26);
+
+$clr-primary   : $clr-blue;
+$clr-secondary : adjust-hue($clr-primary, -30);
+
+$clr-accent : $clr-orange;
+
+
+// Theme -- DO NOT CHANGE VARIABLE NAMES. Update the color pallette values.
+
+$neutrals: (1: $neutral-1,
+ 2: $neutral-2,
+ 3: $neutral-3,
+ 4: $neutral-4,
+ 5: $neutral-5,
+);
+
+$clrs: (primary: $clr-primary,
+ primary-dark: darken($clr-primary, 20%),
+ primary-light: lighten($clr-primary, 10%),
+ primary-lighter: lighten($clr-primary, 50%),
+ secondary: $clr-secondary,
+ secondary-dark: darken($clr-secondary, 20%),
+ secondary-light: lighten($clr-secondary, 10%),
+ secondary-lighter: lighten($clr-secondary, 60%),
+ accent: $clr-accent,
+ accent-dark: darken($clr-accent, 20%),
+ accent-light: lighten($clr-accent, 10%),
+ accent-lighter: lighten($clr-accent, 15%),
+);
+
+// Default Element Styles 
+
+// border-radius
+$br    : 7px;
+// letter spacing
+$ls    : 2px;
+// default spacer
+$spacer: 1em;
+// box shadow(s)
+$bs    : 0px 0px 15px rgba(neutral(5), 0.15);
+// drop shadow
+$ds    : drop-shadow(0 0 15px rgba(neutral(5), .15));
+
+// Font Variables
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=PT+Serif:wght@700&family=Roboto:wght@300;400;700&display=swap');
+$fw-l             : 300;
+$fw-n             : 400;
+$fw-m             : 600;
+$fw-b             : 700;
+
+$ff-serif: 'PT Serif', serif;
+$ff-sans-body: 'Montserrat',
+sans-serif;
+$ff-sans-headings: 'Roboto',
+sans-serif;
+
+// Layout Variables
+$wide-container-width  : 70rem;
+$max-container-width   : 1200px;
+$narrow-container-width: 45rem;
+$full-container-width  : calc(100% - $spacer);
+
+
+$breakpoints: (xs : 36rem, // 576px
+ small      : 48rem, // 768px
+ medium     : 60rem, // 960px
+ big        : 70rem); // 1120px
+
+a {
+ text-decoration: none;
+ color          : neutral(2);
+ font-weight    : $fw-n;
+
+ &:hover {
+  color: color(accent);
+ }
+}
+
+// Navigation Variables
+$nav-height: 3.75em;
+$scale     : 0; // Scales the navigation. valid #'s 0 -> 1. Zero value is collapsed.

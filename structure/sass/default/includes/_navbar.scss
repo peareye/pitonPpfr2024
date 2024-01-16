@@ -3,7 +3,7 @@
   .navbar {
     padding-inline: 1em;
     background : darken($clr-primary, 10%);
-    color: $clr-light-text;
+    color: neutral(1);
     height     : $nav-height;
     line-height: $nav-height;
  
@@ -22,7 +22,7 @@
  
       a {
         text-decoration: none;
-        color: $clr-light-text;
+        color: neutral(1);
         font-size: 2rem;
         padding: 0;
         margin: 0;
@@ -33,7 +33,7 @@
  
     .nav {
       background : lighten($clr-primary, 10%);
-      color: $clr-light-text;
+      color: neutral(1);
       white-space: nowrap;
       text-align : center;
  
@@ -47,7 +47,7 @@
       transition      : transform .2s ease, opacity 250ms ease-out;
       transform-origin: top;
  
-      @media screen and (min-width: $breakpoint) {
+      @include mq(small) {
         background: unset;
         display   : flex;
         flex-flow : row nowrap; 
@@ -67,7 +67,7 @@
  
  
  
-        @media screen and (min-width: $breakpoint) {
+        @include mq(small) {
      
           padding-inline: .5rem;
           height     : $nav-height;
@@ -82,14 +82,14 @@
  
       a {
         text-decoration: none;
-        color: $clr-light-text;
+        color: neutral(1);
         display: block;
       }
     }
  
     // Static placeholder for navigation with sub menu. Uses the checkbox/label trick to toggle
     .toggle-label {
-     color: $clr-light-text;
+     color: neutral(1);
       cursor: pointer;
       font-size: inherit;
     
@@ -108,7 +108,7 @@
       transform : scaleY($scale);
       height    : 0; // Set height to 0 for mobile dropdown animation
  
-      @media screen and (min-width: $breakpoint) {
+      @include mq(small) {
         white-space: nowrap;
         width      : auto;
  
@@ -130,7 +130,7 @@
         text-align: center;
         display   : flex;
  
-        @media screen and (min-width: $breakpoint) {
+        @include mq(small) {
           text-align: left;
         }
  
@@ -168,7 +168,7 @@
     z-index: 100;
     width: $nav-height; 
  
-  @media screen and (min-width: $breakpoint) { 
+  @include mq(small) { 
       display: none;
     }
     span,

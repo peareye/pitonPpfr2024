@@ -10,8 +10,8 @@
     margin-block-start: 0;
 
     img {
-      border-radius: var(--br);
-      box-shadow   : var(--bs);
+      border-radius: $br;
+      box-shadow   : $bs;
       height       : 250px;
       object-fit   : cover;
     }

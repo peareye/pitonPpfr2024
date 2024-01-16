@@ -4,8 +4,8 @@
      max-height: 450px;
 
      img {
-       border-radius: var(--br);
-       box-shadow   : var(--bs-1);
+       border-radius: $br;
+       box-shadow   : $bs;
        max-height   : 450px;
        object-fit   : cover;
      }
@@ -20,8 +20,8 @@
  
    margin-block-start: 1rem;
    img{
-    border-radius: var(--br);
-    box-shadow   : var(--bs-1);
+    border-radius: $br;
+    box-shadow   : $bs;
      max-height: 450px;
      object-fit: cover;
    }

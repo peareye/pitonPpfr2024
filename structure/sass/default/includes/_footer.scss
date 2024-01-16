@@ -1,72 +1,69 @@
 .footer {
-  margin-block-start: auto;
-  padding-block-start: 1rem;
-  background: var(--clr-primary);
-     color: $clr-light-text;
-  font-size : .9rem;
+ margin-block-start : auto;
+ padding-block-start: 1em;
+ background         : color(primary);
+ @include dc(color(primary));
+ font-size: .9rem;
 
-  a {
-       color: $clr-light-text;
-    transition: all 125ms ease;
+ a {
+  color     : neutral(1);
+  transition: all 125ms ease;
 
-    &:hover {
-      color: var(--clr-accent);
-    }
+  &:hover {
+   color: color(accent);
+  }
+ }
+
+ ul {
+  list-style: none;
+ }
+
+ .footer1 {
+  padding-block        : 2em;
+  display              : grid;
+  grid-template-columns: 1fr;
+  gap                  : 2em;
+
+
+
+  @include mq(small) {
+   grid-template-columns: auto 1fr auto auto;
   }
 
-  ul {
-    list-style: none;
+  h5 {
+   margin-block-end: 1em;
+   font-size       : 1.2em;
   }
 
-  .footer1 {
-    padding-block: 2rem;
-    display              : grid;
-    grid-template-columns: 1fr;
-    gap                  : 2rem;
-
-    @media screen and (min-width: $breakpoint) {
-      grid-template-columns: auto 1fr auto auto;
-    }
-
-    h5 {
-     
-      margin-block-end: 1rem;
-      font-size  : 1.2rem;
-      text-shadow: var(--ts);
-    }
-
-    .footer-social {
-      .social-icon {
-       padding-block: .25rem;
-        padding-inline: .5rem;
-      }
-    }
-
-    .footer-address {
-      *+* {
-    
-        margin-block-start: 1rem;
-      }
-    }
-
+  .footer-social {
+   .social-icon {
+    padding-block : .25em;
+    padding-inline: .5em;
+   }
   }
 
-  .footer2 {
-  
-    padding-block: 1rem;
-    margin-block-start: 1rem;
-    background     : var(--clr-primary-dark);
-    display        : flex;
-    flex-flow      : column nowrap;
-    justify-content: center;
-    align-items    : center;
-
-    p {
-      margin: 0;
-      font-size: .8rem;
-      font-weight: var(--fw-l);
-      
-      color: $clr-light-text;
-    }
+  .footer-address {
+   *+* {
+    margin-block-start: 1em;
+   }
   }
+
+ }
+
+ .footer2 {
+  padding-block     : 1em;
+  margin-block-start: 1em;
+  background        : color(primary-dark);
+  display           : flex;
+  flex-flow         : column nowrap;
+  justify-content   : center;
+  align-items       : center;
+
+  p {
+   color      : neutral(1);
+   margin     : 0;
+   font-size  : .8em;
+   font-weight: $fw-l;
+  }
+ }
 }

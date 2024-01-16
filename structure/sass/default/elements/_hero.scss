@@ -1,7 +1,7 @@
 // Hero style
 .hero {
   --hero-height: 65vh;
-  height       : min(var(--hero-height), 1080px);
+  height       : min($nav-height, 1080px);
   position     : relative;
   z-index      : 100;
 
@@ -22,24 +22,24 @@
     top       : 50%;
     left      : 50%;
     transform : translate(-50%, -50%);
-    color     : var(--clr-white);
+    color     : neutral(1);
   
-    border-radius: var(--br);
+    border-radius: $br;
     width     : 60ch;
     max-width : 50%;
     z-index   : 102;
     &-title {
-      color: var(--clr-white);
+      color: neutral(1);
     }
   }
 
   &__image {
     width : 100vw;
-    height: min(var(--hero-height), 1080px);
+    height: min($nav-height, 1080px);
 
     img {
       width : 100vw;
-      height : min(var(--hero-height), 1080px);
+      height : min($nav-height, 1080px);
       object-fit: cover;
       z-index : 100;
     }

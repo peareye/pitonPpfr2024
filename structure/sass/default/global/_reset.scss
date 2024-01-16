@@ -92,13 +92,13 @@ textarea:not([rows]) {
 
  p {
   margin-block-end: 1em;
-  // max-width: 75ch;
+  max-width: 75ch;
   text-wrap: pretty;
  }
 
  @media (prefers-reduced-motion: no-preference) {
   :has(:target){
    scroll-behavior: smooth;
-   scroll-padding-top: var(--scroll-padding-top);
+   scroll-padding-top: $nav-height;
   }
  }
