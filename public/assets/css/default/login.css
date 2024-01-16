@@ -1,11 +1,11 @@
 /* Error: Undefined variable.
- *    ,
- * 18 |   font-family     : $ff-sans-body;
- *    |                     ^^^^^^^^^^^^^
- *    '
- *   sass/default/global/_defaults.scss 18:21  @import
- *   sass/default/global/_global.scss 2:9      @import
- *   sass/default/login.scss 2:9               root stylesheet */
+ *   ,
+ * 7 |   font-family     : $ff-sans-body;
+ *   |                     ^^^^^^^^^^^^^
+ *   '
+ *   sass/default/global/_defaults.scss 7:21  @import
+ *   sass/default/global/_global.scss 2:9     @import
+ *   sass/default/login.scss 2:9              root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -15,5 +15,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 18 \2502    font-family     : $ff-sans-body;\a    \2502                      ^^^^^^^^^^^^^\a    \2575 \a   sass/default/global/_defaults.scss 18:21  @import\a   sass/default/global/_global.scss 2:9      @import\a   sass/default/login.scss 2:9               root stylesheet";
+  content: "Error: Undefined variable.\a   \2577 \a 7 \2502    font-family     : $ff-sans-body;\a   \2502                      ^^^^^^^^^^^^^\a   \2575 \a   sass/default/global/_defaults.scss 7:21  @import\a   sass/default/global/_global.scss 2:9     @import\a   sass/default/login.scss 2:9              root stylesheet";
 }

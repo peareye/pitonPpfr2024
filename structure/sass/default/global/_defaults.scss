@@ -1,17 +1,6 @@
 /* Default Styles - Global */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  // -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-html {
-  scroll-behavior: smooth;
-}
+
 
 
 body {
@@ -29,12 +18,12 @@ img {
   width  : 100%;
   display: block;
   height : auto;
-}
+} 
 
 figure {
   border-radius: $br;
  
-  padding-block: 2rem 1rem;
+  padding-block: 2em 1em;
 
   img {
     max-height   : 450px;
@@ -44,22 +33,16 @@ figure {
   }
 
   figcaption {
-    color      : neutral(5);
+    color      : neutral(4);
     font-size  : .8rem;
     font-style : italic;
     font-weight: 300;
-    margin-top : .25rem !important;
+    margin-top : .25em !important;
     text-align : center;
   }
 }
 
-p {
-
-  // margin-block-start: 1rem;
-}
-
 .element__title+p {
-
   margin-block-start: 1rem;
 }
 
@@ -72,6 +55,8 @@ a {
     color: color(accent);
   }
 }
+
+
 
 h1,
 h2,

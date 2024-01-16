@@ -2,13 +2,11 @@
 
 // Color Pallette
 
-$clr-black  : rgb(51, 51, 51);
-$clr-white  : rgb(255, 255, 255);
 $clr-pink   : hsl(324, 51%, 50%);
-$clr-blue   : #336699;
+$clr-blue   : hsl(210, 50%, 40%);
 $clr-orange : rgb(255, 120, 31);
 $clr-red    : hsl(0, 66%, 51%);
-$clr-green  : #079959;
+$clr-green  : hsl(154, 91%, 31%);
 
 // Neutral Pallette
 
@@ -18,22 +16,17 @@ $neutral-3 : hsl(100, 0%, 60%);
 $neutral-4 : rgb(102, 102, 102);
 $neutral-5 : rgb(26, 26, 26);
 
-$clr-primary   : $clr-blue;
+$clr-primary   : $clr-green;
 $clr-secondary : adjust-hue($clr-primary, -30);
 
-$clr-accent : $clr-orange;
-
+$clr-accent : $clr-blue;
 
 // Theme -- DO NOT CHANGE VARIABLE NAMES. Update the color pallette values.
 
-$neutrals: (1: $neutral-1,
- 2: $neutral-2,
- 3: $neutral-3,
- 4: $neutral-4,
- 5: $neutral-5,
-);
 
-$clrs: (primary: $clr-primary,
+
+$clrs: (
+ primary: $clr-primary,
  primary-dark: darken($clr-primary, 20%),
  primary-light: lighten($clr-primary, 10%),
  primary-lighter: lighten($clr-primary, 50%),
@@ -45,6 +38,14 @@ $clrs: (primary: $clr-primary,
  accent-dark: darken($clr-accent, 20%),
  accent-light: lighten($clr-accent, 10%),
  accent-lighter: lighten($clr-accent, 15%),
+);
+
+$neutrals: (
+ 1: $neutral-1,
+ 2: $neutral-2,
+ 3: $neutral-3,
+ 4: $neutral-4,
+ 5: $neutral-5,
 );
 
 // Default Element Styles 
@@ -62,17 +63,14 @@ $ds    : drop-shadow(0 0 15px rgba(neutral(5), .15));
 
 // Font Variables
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=PT+Serif:wght@700&family=Roboto:wght@300;400;700&display=swap');
 $fw-l             : 300;
 $fw-n             : 400;
 $fw-m             : 600;
 $fw-b             : 700;
 
 $ff-serif: 'PT Serif', serif;
-$ff-sans-body: 'Montserrat',
-sans-serif;
-$ff-sans-headings: 'Roboto',
-sans-serif;
+$ff-sans-body: 'Montserrat', sans-serif;
+$ff-sans-headings: 'Roboto', sans-serif;
 
 // Layout Variables
 $wide-container-width  : 70rem;
@@ -85,16 +83,6 @@ $breakpoints: (xs : 36rem, // 576px
  small      : 48rem, // 768px
  medium     : 60rem, // 960px
  big        : 70rem); // 1120px
-
-a {
- text-decoration: none;
- color          : neutral(2);
- font-weight    : $fw-n;
-
- &:hover {
-  color: color(accent);
- }
-}
 
 // Navigation Variables
 $nav-height: 3.75em;
