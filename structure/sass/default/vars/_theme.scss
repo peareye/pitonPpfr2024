@@ -31,6 +31,7 @@
   $ls            : 2px;
   $ts            : 0 2px 5px rgba($clr-black, .18);
   $section-margin: 0rem;
+  $spacer: 1em;
 
   // Navigation Variables
   $nav-height: 60px;
@@ -40,6 +41,7 @@
 
   // Layout Variables
   $max-container-width: 1200px;
+  $wide-container-width: 1200px;
 
   // Media Query Breakpoints
   $breakpoint: 768px;

@@ -1,0 +1,254 @@
+{
+ "templateName": "Individual Recipe Page",
+ "templateDescription": "Recipe page.",
+ "showSubTitle": true,
+ "showFeaturedImage": true,
+ "templateType": "collection",
+ "blocks": [
+  {
+   "name": "Notes & Thoughts",
+   "key": "notesBlock",
+   "description": "Notes Content Block",
+   "elementTypeOptions": [
+    "text/text", "image/image"
+   ]
+  },
+  {
+   "name": "Ingredients",
+   "key": "ingredientsBlock",
+   "description": "Ingredients Content Block",
+   "elementTypeOptions": [
+    "text/text", "image/image"
+   ]
+  },
+  {
+   "name": "Method",
+   "key": "methodBlock",
+   "description": "Method Content Block",
+   "elementTypeOptions": [
+    "text/text", "image/image"
+   ]
+  }
+ ],
+ "settings": [
+  {
+   "category": "page",
+   "label": "Oven Temperature",
+   "key": "ovenTemp",
+   "value": "",
+   "inputType": "text",
+   "help": "Indicate if the oven needs to be preheated."
+  },
+  {
+   "category": "page",
+   "label": "Prep Time",
+   "key": "prepTime",
+   "value": "",
+   "inputType": "text",
+   "help": "Include minutes or hours in your information"
+  },
+  {
+   "category": "page",
+   "label": "Cook Time",
+   "key": "cookTime",
+   "value": "",
+   "inputType": "text",
+   "help": "Include minutes or hours in your information"
+  },
+  {
+   "category": "page",
+   "label": "Servings",
+   "key": "servings",
+   "value": "",
+   "inputType": "text",
+   "help": "Include as much detail as possible for the number of servings"
+  },
+  {
+   "category": "page",
+   "label": "Sub Category 1",
+   "key": "subCategory1",
+   "value": "",
+   "inputType": "select",
+   "help": "If this recipe falls within one of the subcategories, select it here",
+   "options": [
+    {
+     "name": "Baking",
+     "value": "baking"
+    },
+    {
+     "name": "Breakfast",
+     "value": "breakfast"
+    },
+    {
+     "name": "Dessert",
+     "value": "dessert"
+    },
+    {
+     "name": "Drink",
+     "value": "drink"
+    },
+    {
+     "name": "Entree",
+     "value": "entree"
+    },
+    {
+     "name": "Holiday",
+     "value": "holiday"
+    },
+    {
+     "name": "Keto",
+     "value": "keto"
+    },
+    {
+     "name": "Meat",
+     "value": "meat"
+    },
+    {
+     "name": "Miscellaneous",
+     "value": "miscellaneous"
+    },
+    {
+     "name": "Salad",
+     "value": "salad"
+    },
+    {
+     "name": "Soup",
+     "value": "soup"
+    },
+    {
+     "name": "Starter",
+     "value": "starter"
+    },
+    {
+     "name": "Vegetarian",
+     "value": "vegetarian"
+    }
+   ]
+  },
+  {
+   "category": "page",
+   "label": "Sub Category 2",
+   "key": "subCategory2",
+   "value": "",
+   "inputType": "select",
+   "help": "If this recipe falls within one of the subcategories, select it here",
+   "options": [
+    {
+     "name": "Baking",
+     "value": "baking"
+    },
+    {
+     "name": "Breakfast",
+     "value": "breakfast"
+    },
+    {
+     "name": "Dessert",
+     "value": "dessert"
+    },
+    {
+     "name": "Drink",
+     "value": "drink"
+    },
+    {
+     "name": "Entree",
+     "value": "entree"
+    },
+    {
+     "name": "Holiday",
+     "value": "holiday"
+    },
+    {
+     "name": "Keto",
+     "value": "keto"
+    },
+    {
+     "name": "Meat",
+     "value": "meat"
+    },
+    {
+     "name": "Miscellaneous",
+     "value": "miscellaneous"
+    },
+    {
+     "name": "Salad",
+     "value": "salad"
+    },
+    {
+     "name": "Soup",
+     "value": "soup"
+    },
+    {
+     "name": "Starter",
+     "value": "starter"
+    },
+    {
+     "name": "Vegetarian",
+     "value": "vegetarian"
+    }
+   ]
+  },
+  {
+   "category": "page",
+   "label": "Sub Category 3",
+   "key": "subCategory3",
+   "value": "",
+   "inputType": "select",
+   "help": "If this recipe falls within one of the subcategories, select it here",
+   "options": [
+    {
+     "name": "Baking",
+     "value": "baking"
+    },
+    {
+     "name": "Breakfast",
+     "value": "breakfast"
+    },
+    {
+     "name": "Dessert",
+     "value": "dessert"
+    },
+    {
+     "name": "Drink",
+     "value": "drink"
+    },
+    {
+     "name": "Entree",
+     "value": "entree"
+    },
+    {
+     "name": "Holiday",
+     "value": "holiday"
+    },
+    {
+     "name": "Keto",
+     "value": "keto"
+    },
+    {
+     "name": "Meat",
+     "value": "meat"
+    },
+    {
+     "name": "Miscellaneous",
+     "value": "miscellaneous"
+    },
+    {
+     "name": "Salad",
+     "value": "salad"
+    },
+    {
+     "name": "Soup",
+     "value": "soup"
+    },
+    {
+     "name": "Starter",
+     "value": "starter"
+    },
+    {
+     "name": "Vegetarian",
+     "value": "vegetarian"
+    }
+   ]
+  }
+
+ ]
+}
