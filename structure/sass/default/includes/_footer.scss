@@ -2,15 +2,13 @@
 .footer {
  margin-block-start : auto;
  padding-block-start: 1em;
- background         : color(primary);
  @include dc(color(primary));
  font-size: .9rem;
 
  a {
-  color     : neutral(1);
   transition: all 125ms ease;
 
-  &:hover {
+  &:hover, &:focus {
    color: color(accent);
   }
  }
@@ -24,8 +22,6 @@
   display              : grid;
   grid-template-columns: 1fr;
   gap                  : 2em;
-
-
 
   @include mq(small) {
    grid-template-columns: auto 1fr auto auto;
@@ -54,14 +50,13 @@
  .footer2 {
   padding-block     : 1em;
   margin-block-start: 1em;
-  background        : color(primary-dark);
+  @include dc(color(primary-dark));
   display           : flex;
   flex-flow         : column nowrap;
   justify-content   : center;
   align-items       : center;
 
   p {
-   color      : neutral(1);
    margin     : 0;
    font-size  : .8em;
    font-weight: $fw-l;

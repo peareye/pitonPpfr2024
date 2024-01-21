@@ -6,6 +6,14 @@
  "templateType": "collection",
  "blocks": [
   {
+   "name": "The Story",
+   "key": "storyBlock",
+   "description": "The Story Content Block",
+   "elementTypeOptions": [
+    "text/text", "image/image"
+   ]
+  },
+  {
    "name": "Notes & Thoughts",
    "key": "notesBlock",
    "description": "Notes Content Block",
@@ -18,7 +26,7 @@
    "key": "ingredientsBlock",
    "description": "Ingredients Content Block",
    "elementTypeOptions": [
-    "text/text", "image/image"
+    "recipeIngredients/recipeIngredients"
    ]
   },
   {
@@ -26,7 +34,7 @@
    "key": "methodBlock",
    "description": "Method Content Block",
    "elementTypeOptions": [
-    "text/text", "image/image"
+    "recipeMethod/recipeMethod"
    ]
   }
  ],

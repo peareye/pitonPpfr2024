@@ -10,5 +10,5 @@
 // Dynamic Colors
 @mixin dc($color) {
  background-color: $color;
- color     : dynamic-color($color);
+ color           : dynamic-color($color);
 }

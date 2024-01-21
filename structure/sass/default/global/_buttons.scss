@@ -1,27 +1,32 @@
 /* Buttons.scss */
 .btn {
  font-size : inherit;
+ text-align: center;
  display   : inline-block;
- background: color(primary);
+
+  @include dc(color(primary));
 
  padding-block  : .5em;
  padding-inline : 1em;
- border         : solid 1px rgba(neutral(5), .25);
+ border         : solid 1px rgba(neutral(4), .25);
  border-radius  : $br;
- color          : neutral(1);
+ letter-spacing: $ls;
+ text-transform: uppercase;
+
  z-index        : 999;
  box-shadow     : none;
  transition     : all ease-in-out 125ms;
  text-decoration: none;
 
  &:hover {
-  color     : color(accent);
-  background: color(primary-dark);
+ @include dc(color(primary-dark));
   cursor    : pointer;
   box-shadow: $bs;
  }
 }
-
+.btn-findMore {
+ padding-inline: .25em;
+}
 .btn-cta {
  font-size      : 1.25rem;
  color          : neutral(5);

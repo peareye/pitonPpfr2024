@@ -1,7 +1,7 @@
 // Gray scale 
 @function neutral($shade: 4) {
- @if type-of($shade) !=number or $shade < 1 or $shade > 5 {
-   @error 'gray() only accepts numbers between 1 and 5';
+ @if type-of($shade) !=number or $shade < 1 or $shade>5 {
+  @error 'gray() only accepts numbers between 1 and 5';
  }
 
  $value: map-get($neutrals, $shade);
@@ -14,11 +14,13 @@
  @return $value;
 }
 
-// Dynamic Color. Sets the text color to constrast with 
-@function dynamic-color($color){
- @if lightness($color) > 50% {
-   @return rgba(neutral(5), .99);
- } @else {
-   @return rgba(neutral(1), .99);
+// Dynamic Color. Sets the text color to constrast with background
+@function dynamic-color($color) {
+ @if lightness($color)>50% {
+  @return rgba(neutral(5), .99);
+ }
+
+ @else {
+  @return rgba(neutral(1), .99);
  }
 }

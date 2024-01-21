@@ -1,1 +1,23 @@
+{% extends 'pages/_base_layout.html' %}
 
+
+{% block body %}
+<div class="twoColLayout">
+
+<main>
+ {% block mainContent %}
+
+ {% endblock mainContent %}
+</main>
+
+<aside>
+{% block sideBar %}
+
+{% endblock sideBar %}
+
+</aside>
+
+</div>
+
+
+{% endblock body %}

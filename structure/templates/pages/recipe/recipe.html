@@ -2,147 +2,177 @@
 
 {% block body %}
 
-<h4>category</h4>
-{{page.settings.subCategory1}}
+{% embed 'embeds/_recipeLayout.html' %}
 
-<h4>Page title</h4>
-{{page.title }}
+{% block recipeHeader %}
 
-<h4>Sub Title</h4>
-{{ page.sub_title }}
+{% block mainContent %}
+<div class="container">
+ <div class="recipeHeaderLayout">
+  <div class="single-recipe">
+   <div class="category-name">{{page.settings.subCategory1}}</div>
 
-<h4>Creation Date</h4>
-{{ page.created_date | date("F d, Y")}}
+   <h1 class="recipe-title">{{page.title }}</h1>
 
-<h4>author</h4>
-{{ page.author }}
-
-
-<h4>media</h4>
-<img src="{{ getMediaPath(page.media.filename, 'thumb') }}" style="width: 300px">
-
-
-<h4>Prep Time</h4>
-{{page.settings.prepTime}}
-
-
- <h4>Oven Temp</h4>
- {{ page.settings.ovenTemp}}
-
-
- <h4>Cook Time</h4>
- {{ page.settings.cookTime}}
- <h4>Servings</h4>
-{{ page.settings.servings}}
- <h4>Views</h4>
-{{ page.view_count}}
-
-
-<h4>Notes</h4>
-  {{ getBlockElementsHtml(page.blocks.notesBlock) }}
-
-
-  <h4 class="title3">Ingredients</h4>
-
-   {{ getBlockElementsHtml(page.blocks.ingredientsBlock) }}
-
-
-  <h4 class="title3">Method</h4>
-
-   {{ getBlockElementsHtml(page.blocks.methodBlock) }}
-
-
-
-
-
-<!-- <aside class="sidebar">
- <h3 class="sidebar__title">Latest Recipes</h3>
-
- <div class="sidebar__cardWrapper">
-  <div class="sidebar__card">
-   <img class="sidebar__card-img" src="https://unsplash.it/90/90" alt="">
-   <div class="sidebar__card-content">
-    <div class="category">Pasta</div>
-    <div class="sidebar__card-title">New Recipe</div>
-
-    <div class="sidebar__card-author">
-     <i class="fa-solid fa-user"></i> by <span>Wolf Moritz</span>
+   <!-- FEATURE META BLOCK -->
+   <div class="feature-recipe">
+    <ul class="entry-meta">
+     <li class="single-meta">
+      <i class="entry-meta__icon fas fa-calendar-alt"></i> <span>{{ page.created_date | date("F d, Y")}}</span>
+     </li>
+     <li class="single-meta"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ page.author }}</span></li>
+     <li class="single-meta"><i class="entry-meta__icon fas fa-eye"></i><span> {{ page.view_count}}</span> Views</li>
+     <li class="single-meta"><i class="entry-meta__icon fas fa-heart"></i><span> XX</span> Likes</li>
+    </ul>
+   </div>
+   <!-- FEATURE RECIPE IMAGE -->
+   <div class="recipe-figure">
+    <img src="{{ getMediaPath(page.media.filename, 'large') }}" alt="{{ page.media.caption }}">
+   </div>
+   <div class="feature-details">
+    {% if page.settings.prepTime %}
+    <div class="feature-details__icon prep-time">
+     <i class="fas fa-clock"></i>
+     <div>
+      <div class="feature-details__title">Prep Time</div>
+      <div><span itemprop="prepTime" content="PT30M">{{page.settings.prepTime}}</span></div>
+     </div>
     </div>
+    {% endif %}
+    {% if page.settings.ovenTemp %}
+    <div class="feature-details__icon oven-temp">
+     <i class="fas fa-temperature-three-quarters"></i>
+     <div>
+      <div class="feature-details__title">Oven Temp</div>
+      <div class="feature-details__detail"><span itemprop="prepTime" content="PT30M">{{ page.settings.ovenTemp}}</span></div>
+     </div>
+    </div>
+    {% endif %}
+    {% if page.settings.cookTime %}
+    <div class="feature-details__icon cook-time">
+     <i class="fas fa-utensils"></i>
+     <div>
+      <div class="feature-details__title">Cook Time</div>
+      <div class="feature-details__detail"><span itemprop="cookTime" content="PT20M">{{ page.settings.cookTime}}</span></div>
+     </div>
+    </div>
+    {% endif %}
+    {% if page.settings.servings %}
+    <div class="feature-details__icon servings">
+     <i class="fas fa-users"></i>
+     <div>
+      <div class="feature-details__title">Servings</div>
+      <div class="feature-details__detail" itemprop="recipeYield">{{ page.settings.servings}}</div>
+     </div>
+    </div>
+    {% endif %}
 
    </div>
+   {% if page.blocks.storyBlock %}
+   <div class="recipe-story">
+    <h2 class="recipeDirections__title">Story</h2>
+    {{ getBlockElementsHtml(page.blocks.storyBlock) }}
+   </div>
+   {% endif %}
   </div>
-  <div class="sidebar__card">
-   <img class="sidebar__card-img" src="https://unsplash.it/90/91" alt="">
-   <div class="sidebar__card-content">
-    <div class="category">Pasta</div>
-    <div class="sidebar__card-title">New Recipe</div>
+  {% endblock mainContent %}
 
-    <div class="sidebar__card-author">
-     <i class="fa-solid fa-user"></i> by <span>Wolf Moritz</span>
+  {% block sideBar %}
+  <!-- BEGIN SIDEBAR -->
+  <div class="sidebar">
+   <div class="sidebar__heading">
+    <h2 class="sidebar__title">Latest Recipes</h2>
+   </div>
+
+   <div class="sidebarLatest">
+    <div class="sidebarLatest__card">
+     <div class="sidebarLatest__img">
+      <a href="#"><img src="{{ getMediaPath(page.media.filename, 'thumb') }}" alt="{{ page.media.caption }}"></a>
+     </div>
+     <div class="sidebarLatest__content">
+      <div class="sidebarLatest__category">{{page.settings.subCategory1}}</div>
+      <h4 class="sidebarLatest__title"><a href="#">{{page.title }}</a></h4>
+      <div class="sidebarLatest__author"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ page.author }}</span></div>
+     </div>
     </div>
+    <div class="sidebarLatest__card">
+     <div class="sidebarLatest__img">
+      <a href="#"><img src="{{ getMediaPath(page.media.filename, 'thumb') }}" alt="{{ page.media.caption }}"></a>
+     </div>
+     <div class="sidebarLatest__content">
+      <div class="sidebarLatest__category">{{page.settings.subCategory2}}</div>
+      <h4 class="sidebarLatest__title"><a href="#">{{page.title }}</a></h4>
+      <div class="sidebarLatest__author"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ page.author }}</span></div>
+     </div>
+    </div>
+    <div class="sidebarLatest__card">
+     <div class="sidebarLatest__img">
+      <a href="#"><img src="{{ getMediaPath(page.media.filename, 'thumb') }}" alt="{{ page.media.caption }}"></a>
+     </div>
+     <div class="sidebarLatest__content">
+      <div class="sidebarLatest__category">{{page.settings.subCategory3}}</div>
+      <h4 class="sidebarLatest__title"><a href="#">{{page.title }}</a></h4>
+      <div class="sidebarLatest__author"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ page.author }}</span></div>
+     </div>
+    </div>
+   </div>
+   <div class="sidebar-item recipeCategory" itemprop="recipeCategory">
 
+    <div class="sidebar__heading" style="margin-block-start: 2em;">
+     <h2 class="sidebar__title">Find More</h2>
+    </div>
+   
+    
+  <div class="sidebarFindMore" >
+     <a class="btn categories-item" href="https://perisplaceforrecipes.com/recipe/category/Starter"
+      title="View recipes for Starter">Starter</a>
+    
+     
+     <a class="btn categories-item" href="https://perisplaceforrecipes.com/recipe/category/Vegetarian"
+      title="View recipes for Vegetarian">Vegetarian</a>
+    
+     
+     <a class="btn categories-item" href="https://perisplaceforrecipes.com/recipe/category/Holiday"
+      title="View recipes for Holiday">Holiday</a>
+ 
+  </div>
+   
    </div>
   </div>
-  <div class="sidebar__card">
-   <img class="sidebar__card-img" src="https://unsplash.it/90/92" alt="">
-   <div class="sidebar__card-content">
-    <div class="category">Pasta</div>
-    <div class="sidebar__card-title">New Recipe with a longer title</div>
-
-    <div class="sidebar__card-author">
-     <i class="fa-solid fa-user"></i> by <span>Wolf Moritz</span>
-    </div>
-
-   </div>
-  </div>
-  <div class="sidebar__card">
-   <img class="sidebar__card-img" src="https://unsplash.it/90/93" alt="">
-   <div class="sidebar__card-content">
-    <div class="category">Pasta</div>
-    <div class="sidebar__card-title">New Recipe</div>
-
-    <div class="sidebar__card-author">
-     <i class="fa-solid fa-user"></i> by <span>Wolf Moritz</span>
-    </div>
-
-   </div>
-  </div>
-  <div class="sidebar__card">
-   <img class="sidebar__card-img" src="https://unsplash.it/90/93" alt="">
-   <div class="sidebar__card-content">
-    <div class="category">Pasta</div>
-    <div class="sidebar__card-title">New Recipe</div>
-
-    <div class="sidebar__card-author">
-     <i class="fa-solid fa-user"></i> by <span>Wolf Moritz</span>
-    </div>
-
-   </div>
-  </div>
+  {% endblock sideBar %}
  </div>
+</div>
+{% endblock %}
 
- <div class="sidebar-item recipeCategory" itemprop="recipeCategory">
+{% block recipeDirections %}
+<!-- BEGIN RECIPE DIRECTIONS -->
+<main>
+ <div class="container">
+  <div class="recipeDirections__layout">
+   {% if page.blocks.ingredientsBlock %}
+   <div class="ingredients">
+    <h2 class="recipeDirections__title">Ingredients</h2>
+    {{ getBlockElementsHtml(page.blocks.ingredientsBlock) }}
+   </div>
+   {% endif %}
 
-  <div class="category">Find More Like This</div>
+   {% if page.blocks.methodBlock %}
+   <div class="method">
+    <h2 class="recipeDirections__title">Method</h2>
+    {{ getBlockElementsHtml(page.blocks.methodBlock) }}
+   </div>
+  </div>
+  {% endif %}
 
-
-  <a class="categories-item" href="https://perisplaceforrecipes.com/recipe/category/Starter" title="View recipes for Starter">Starter</a>
-
-
-  <a class="categories-item" href="https://perisplaceforrecipes.com/recipe/category/Vegetarian" title="View recipes for Vegetarian">Vegetarian</a>
-
-
-  <a class="categories-item" href="https://perisplaceforrecipes.com/recipe/category/Holiday" title="View recipes for Holiday">Holiday</a>
-
-
-  <a class="categories-item" href="https://perisplaceforrecipes.com/recipe/category/Baking" title="View recipes for Baking">Baking</a>
-
-
-
-
+  {% if page.blocks.noteBlock %}
+  <div class="recipe-notes">
+   <h2 class="recipeDirections__title">Notes</h2>
+   {{ getBlockElementsHtml(page.blocks.notesBlock) }}
+  </div>
+  {% endif %}
  </div>
+</main>
+{% endblock recipeDirections %}
 
-</aside> -->
-
-
+{% endembed %}
 {% endblock body %}
