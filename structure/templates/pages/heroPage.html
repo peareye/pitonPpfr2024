@@ -5,5 +5,11 @@
 {% endblock hero %}
 
 {% block body %}
-{{ getBlockElementsHtml(page.blocks.contentBlock) }}
+<div class="container">
+
+ <div class="oneColLayout">
+  {{ getBlockElementsHtml(page.blocks.contentBlock) }}
+ </div>
+
+</div>
 {% endblock body %}

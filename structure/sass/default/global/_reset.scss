@@ -1,3 +1,5 @@
+/* reset.scss */
+
 /* Box sizing rules */
 *,
 *::before,
@@ -16,6 +18,7 @@ font: inherit;
 html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
   text-size-adjust: none;
   /* Kevin Powell Add */
   color-scheme: dark light;
@@ -87,18 +90,18 @@ textarea:not([rows]) {
 
  h1,h2,h3,h4,h5,h6 {
   text-wrap: balance;
-  text-transform: uppercase !important;
+  // text-transform: uppercase !important;
  }
 
  p {
   margin-block-end: 1em;
-  max-width: 75ch;
+  // max-width: 75ch;
   text-wrap: pretty;
  }
 
  @media (prefers-reduced-motion: no-preference) {
   :has(:target){
    scroll-behavior: smooth;
-   scroll-padding-top: $nav-height;
+   // scroll-padding-top: $scroll-padding-top;
   }
  }

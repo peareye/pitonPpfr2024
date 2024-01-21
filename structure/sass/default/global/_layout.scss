@@ -1,0 +1,47 @@
+/* Layout.scss */
+
+.container {
+ margin-inline: auto;
+ width        : min(100%, $max-container-width);
+
+ display              : grid;
+ grid-template-columns: minmax(2rem, 1fr) minmax(auto, $max-container-width) minmax(2rem, 1fr);
+
+ >* {
+  grid-column: 2 / 3;
+ }
+}
+.oneColLayout {
+ margin-block-start: calc($nav-height + 2rem);
+}
+.twoColLayout {
+ padding-block-start: calc($nav-height + 3rem);
+ display              : grid;
+ grid-template-columns: 2fr 350px;
+ gap                  : 1.5em;
+
+ @include mq(large) {
+  grid-template-columns: 1fr;
+ }
+}
+
+.recipeHeaderLayout {
+ margin-block-start: calc($nav-height + 2em);
+ display              : grid;
+ grid-template-columns: 1fr 350px;
+ gap                  : 2rem;
+
+ @media screen and (max-width: $breakpoint) {
+  grid-template-columns: 1fr;
+ }
+}
+
+
+.recipeDirections__layout {
+ display: grid;
+ // gap: 1em;
+ grid-template-columns: .75fr 1fr;
+ @media screen and (max-width: $breakpoint){
+  grid-template-columns: 1fr;
+ }
+}
