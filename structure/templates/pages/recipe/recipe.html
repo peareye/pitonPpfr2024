@@ -85,7 +85,8 @@
    </div>
 
    <div class="sidebarLatest">
-    <div class="sidebarLatest__card">
+    {{ include("includes/_collection.html") }}
+    <!-- <div class="sidebarLatest__card">
      <div class="sidebarLatest__img">
       <a href="#"><img src="{{ getMediaPath(page.media.filename, 'thumb') }}" alt="{{ page.media.caption }}"></a>
      </div>
@@ -114,7 +115,7 @@
       <h4 class="sidebarLatest__title"><a href="#">{{page.title }}</a></h4>
       <div class="sidebarLatest__author"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ page.author }}</span></div>
      </div>
-    </div>
+    </div> -->
    </div>
    <div class="sidebar-item recipeCategory" itemprop="recipeCategory">
 

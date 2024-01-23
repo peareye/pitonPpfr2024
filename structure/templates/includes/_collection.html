@@ -1,0 +1,15 @@
+<!-- // recent random popular -->
+{% set foo = getPublishedRankedCollectionPages('random') %}
+{% for recipe in foo %}
+<div class="sidebarLatest__card">
+ <div class="sidebarLatest__img">
+  <a href="{{ getPathForPage(recipe.page_slug, recipe.collection_slug)}}"><img src="{{ getMediaPath(recipe.media.filename, 'thumb') }}" alt="{{ recipe.media.caption }}"></a>
+ </div>
+ <div class="sidebarLatest__content">
+  <div class="sidebarLatest__category">{{recipe.settings.subCategory1}}</div>
+  <h4 class="sidebarLatest__title"><a href="#">{{recipe.title }}</a></h4>
+  <div class="sidebarLatest__author"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ recipe.author }}</span></div>
+ </div>
+</div>
+
+{% endfor  %}
