@@ -6,6 +6,7 @@
 /* global */
 
 @import 'global/reset';
+@import 'global/utilities';
 @import 'global/defaults';
 @import 'global/layout';
 @import 'global/buttons';
@@ -20,10 +21,11 @@
 @import 'elements/embedded';
 
 /* includes */
+@import 'includes/header';
 @import 'includes/hamburger';
 @import 'includes/navbar';
-@import 'includes/footer';
 @import 'includes/pagination';
+@import 'includes/footer';
 
 /* pages */
 @import 'pages/home';

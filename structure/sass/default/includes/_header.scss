@@ -1,0 +1,116 @@
+.header-wrapper {
+ width     : 100%;
+ display   : grid;
+}
+
+.header {
+ --header-font-size : 1rem;
+ margin-inline      : auto;
+ padding-inline     : $spacer;
+ width              : min(100%, 1200px);
+
+ display        : flex;
+ flex-direction : column;
+ gap            : $spacer;
+ align-items    : center;
+ justify-content: center;
+
+ >* {
+  flex: 1;
+ }
+
+ // media query for header 
+ @include mq(small) {
+  flex-direction : row;
+  justify-content: space-between;
+ }
+
+ // Header Logo
+ .logo {
+  align-self: center;
+  max-width : fit-content;
+ }
+
+ &__logo {
+  width        : min(100%, 20em);
+  height       : auto;
+  margin-inline: auto;
+ }
+
+ // All href within header
+ &__link {
+  text-decoration: none;
+  font-size      : var(--header-font-size);
+  transition     : all 125ms ease-in;
+  color          : neutral(5);
+  font-weight    : $fw-m;
+
+  &:hover,
+  &:focus {
+   --header-font-size: 1.1rem;
+   color             : color(accent-light);
+   font-weight       : $fw-b;
+  }
+ }
+
+ // Location Block
+ &__location,
+ .social {
+  display: none;
+
+  @include mq(small) {
+   display: block;
+  }
+ }
+
+ // All Meta Blocks 
+ &__phone,
+ &__location,
+ .social {
+  font-size            : var(--header-font-size);
+  display              : grid;
+  grid-template-columns: min-content max-content;
+  column-gap           : calc($spacer * .5);
+  align-items          : center;
+  justify-content      : center;
+
+  @include mq(small) {
+   --header-font-size: .9rem;
+  }
+ }
+
+ &__button {
+  padding-block-end: $spacer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include mq(small){
+   padding-block-end: 0;
+  }
+ }
+
+ .socialLinks {
+  display        : flex;
+  gap            : calc($spacer * .75);
+  justify-content: center;
+  align-items    : center;
+  font-size      : 1.75em;
+
+  >* {
+   --header-font-size: 2rem;
+
+   &:hover,
+   &:focus {
+    color             : color(accent);
+    --header-font-size: 2.1rem;
+   }
+  }
+ }
+
+ .social {
+  >* {
+   color: $clr-primary;
+  }
+
+ }
+}
