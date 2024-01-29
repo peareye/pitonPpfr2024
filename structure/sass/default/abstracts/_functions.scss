@@ -17,10 +17,10 @@
 // Dynamic Color. Sets the text color to constrast with background
 @function dynamic-color($color) {
  @if lightness($color)>50% {
-  @return rgba(neutral(5), .99);
+  @return rgba(neutral(5), 1);
  }
 
  @else {
-  @return rgba(neutral(1), .99);
+  @return rgba(neutral(1), 1);
  }
 }

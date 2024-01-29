@@ -88,3 +88,8 @@ inline-text {
  white-space: nowrap !important;
  border     : 0 !important;
 }
+
+// Utilities
+.flow>*+* {
+ margin-block-start: 1em;
+}

@@ -1,9 +1,9 @@
 // Hero style
 .hero {
   --hero-height: 65vh;
-  height       : min($nav-height, 1080px);
+  height       : min(var(--hero-height), 1080px);
   position     : relative;
-  z-index      : 100;
+  z-index      : -1;
 
   &__overlay {
     position: absolute;
@@ -35,11 +35,11 @@
 
   &__image {
     width : 100vw;
-    height: min($nav-height, 1080px);
+    height: min(var(--hero-height), 1080px);
 
     img {
       width : 100vw;
-      height : min($nav-height, 1080px);
+      height : min(var(--hero-height), 1080px);
       object-fit: cover;
       z-index : 100;
     }

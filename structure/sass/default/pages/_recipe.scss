@@ -1,27 +1,21 @@
 .single-recipe {
 
- // >* {
- //  outline: dashed 3px red;
- // }
  .category-name {
   color         : color(accent);
-  font-size     : .9rem;
-  font-weight   : 600;
-  margin-bottom : .5rem;
+  font-size     : .8rem;
   text-transform: uppercase;
   letter-spacing: $ls;
  }
 
  .recipe-title {
-  margin-block-end: .5em;
-  color           : neutral(5);
-  line-height     : 1.2;
-  font-size       : 2.3rem;
-  font-weight     : 700;
+  color      : neutral(5);
+  line-height: 1.2;
+  font-size  : 2.3rem;
+  font-weight: 700;
  }
 
  .entry-meta {
-  color        : neutral(3);
+  color        : neutral(2);
   font-size    : .9rem;
   margin-bottom: .5rem;
 
@@ -36,9 +30,11 @@
   display      : inline-block;
   margin-right : .9rem;
   margin-bottom: .5rem;
+  font-weight  : $fw-l;
 
   span {
-   color: neutral(5);
+   color      : neutral(4);
+   font-weight: $fw-n;
   }
  }
 
@@ -48,11 +44,13 @@
  }
 
  .feature-details {
-  color           : neutral(3);
+  color           : neutral(4);
+  font-weight     : $fw-n;
   margin-block-end: 1em;
-  display         : flex;
-  flex-wrap       : wrap;
-  gap             : 2px;
+
+  display  : flex;
+  flex-wrap: wrap;
+  gap      : 2px;
 
   &__detail {
    line-height: 1.1;
@@ -65,35 +63,19 @@
   }
 
   &__icon {
-   display            : flex;
-   flex               : 1;
-   gap                : .75em;
-   padding-block      : 1em;
-   padding-inline     : .5em;
-   background-color   : neutral(2);
-   // margin-block-end: 2em;
-   align-items        : center;
-   justify-content    : center;
+   padding-block   : .75em;
+   padding-inline  : .25em;
+   background-color: neutral(2);
+
+   display        : flex;
+   flex           : 1;
+   gap            : 1em;
+   align-items    : center;
+   justify-content: center;
 
    & .fas {
-    font-size: 1.7rem;
-    color    : $gray;
-   }
-
-   &-item {
-    display              : grid;
-    grid-template-columns: auto 1fr;
-    column-gap           : .5em;
-    align-items          : center;
-    justify-content      : center;
-    color                : $gray;
-    line-height          : 1.3;
-
-    >*:first-child {
-     color    : $gray;
-     grid-row : 1/3;
-     font-size: 1.8rem;
-    }
+    font-size: 1.5rem;
+    color    : neutral(3);
    }
   }
  }
@@ -102,53 +84,41 @@
 // Sidebar Layout
 
 .sidebar {
-
  display: none;
-
  @include mq(medium) {
   display: block;
  }
 
  &__heading {
-  color         : neutral(4);
-  margin-bottom : 2em;
-  // padding-bottom: 1.5em;
-  padding-block-start: 2rem;
-  position      : relative;
-  letter-spacing: .25ex;
-  border-bottom : 1px solid $mediumlightgray;
+  margin-bottom: 1em;
+  border-bottom      : 1px solid neutral(2);
  }
 
  &__title {
-  color         : neutral(5);
+  color         : neutral(4);
   margin-bottom : 1rem;
   font-family   : $ff-sans-body;
   font-size     : 1.25rem;
-  font-weight   : 400;
+  font-weight   : $fw-n;
   text-transform: uppercase;
   letter-spacing: $ls;
  }
 }
 
 .sidebarLatest {
- display           : grid;
- grid-auto-rows    : 90px;
- gap               : 1em;
- // align-items: start;
- // justify-content: start;
+ display       : grid;
+ grid-auto-rows: 90px;
+ gap           : 1em;
 
  &__card {
-  color        : neutral(4);
   outline      : solid 1px neutral(2);
   box-shadow   : $bs;
-  border-radius: $br;
   overflow     : hidden;
 
   display          : flex;
   gap              : 1em;
   -webkit-box-align: start;
   align-items      : flex-start;
-
  }
 
  &__img {
@@ -169,24 +139,20 @@
  &__category {
   color         : color(accent);
   text-transform: uppercase;
-  font-weight   : 500;
-  letter-spacing: .2ex;
+  letter-spacing: $ls;
   font-size     : .8rem;
  }
 
  &__title {
-  color         : neutral(5);
-  font-size     : 1rem;
-  line-height   : 1.3;
+  font-size     : 1.1rem;
+  line-height   : 1.2;
   text-wrap     : pretty;
-  font-weight   : 400;
-  letter-spacing: normal;
   text-transform: capitalize;
   font-family   : $ff-sans-body;
   letter-spacing: $ls;
 
   & a {
-   font-weight    : 700;
+   font-weight    : $fw-n;
    text-decoration: none;
    color          : neutral(5);
    transition     : all 0.3s ease-in-out;
@@ -203,20 +169,18 @@
 
  &__author {
   font-size: .8rem;
-
-  >* {
-
-   color      : neutral(5);
+  color: neutral(3);
+  span {
+   color: neutral(4);
    font-weight: $fw-m;
-   font-size  : .9rem;
   }
  }
 }
 
 .sidebarFindMore {
- display: grid;
- grid-template-columns: auto auto;
- gap: 1rem;
+ display              : grid;
+ grid-template-columns: auto;
+ gap                  : 1rem;
 }
 
 // Recipe Direction Styles
@@ -297,7 +261,7 @@
 .ingredients,
 .method {
  background-color: neutral(1);
- padding-inline  : 1rem;
+ // padding-inline  : 1em;
 
  h3 {
   color        : neutral(5);

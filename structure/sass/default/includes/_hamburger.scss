@@ -1,78 +1,89 @@
- // Hamburger
 
- // Hide checkboxes for toggles and remove from the document flow
- .nav-toggle {
-  position: absolute;
-  top     : -999px !important;
-  left    : -9999px !important;
+// Hamburger & Toggle styles
+
+// Hide Checkbox associated with toggle menus
+.toggle {
+ position: absolute;
+ left    : -9999px;
+ top     : -9999px;
+}
+
+
+// Toggle Hamburger Hidden on Desktop
+.toggle-label-hamburger {
+ margin: 0;
+ cursor: pointer;
+ height: 3rem;
+
+ display        : flex;
+ align-items    : center;
+ justify-content: center;
+ position       : relative;
+ z-index        : 100;
+ width          : 3rem;
+
+ // @media screen and (min-width: 768px) 
+ @include mq(small){
+  display: none;
  }
 
- // Nav Toggle Label & Hamburger icon w/animation
-
- .nav-toggle-label {
-  margin: 0;
-  cursor: pointer;
-  height: $nav-height;
-
-  display        : flex;
-  align-items    : center;
-  justify-content: center;
-  position       : relative;
-  z-index        : 100;
-  width          : $nav-height;
-
-  @include mq(small) {
-   display: none;
-  }
-
-  span,
-  span::before,
-  span::after {
-   width        : calc($nav-height / 2);
-   height       : 4px;
-   border-radius: $br;
-   position     : relative;
-  }
-
-  span::before,
-  span::after {
-   content   : '';
-   position  : absolute;
-   transform : rotate(0deg);
-   transition: transform 125ms ease;
-  }
-
-  span::before {
-   top: 10px;
-  }
-
-  span::after {
-   top: -10px;
-  }
+ span,
+ span::before,
+ span::after {
+  width        : calc(#{3rem} / 2);
+  height       : 4px;
+  border-radius: 7px;
+  // background   : neutral(5);
+  @include dc(neutral(5));
+  position     : relative;
  }
 
- .nav.scroll * label>span,
- .nav.scroll * label>span::before,
- .nav.scroll * label>span::after {
-  background: neutral(1) !important;
+ span::before,
+ span::after {
+  content   : '';
+  position  : absolute;
+  transform : rotate(0deg);
+  transition: transform 125ms ease;
  }
 
- // Nav Toggle Animation
-
- .nav-toggle:checked~.nav-toggle-label span {
-  background: transparent;
+ span::before {
+  top: 10px;
  }
 
- .nav.scroll * .nav-toggle:checked~.nav-toggle-label span {
-  background: transparent !important;
+ span::after {
+  top: -10px;
  }
 
- .nav-toggle:checked~.nav-toggle-label span::before {
-  transform: rotate(135deg);
-  top      : -0px;
- }
+}
 
- .nav-toggle:checked~.nav-toggle-label span::after {
-  transform: rotate(-135deg);
-  top      : 0px;
- }
+/* Toggle States */
+.toggle:checked~.subnav {
+ transform: scaleY(1);
+ opacity  : 1;
+}
+
+.toggle:checked~.nav {
+ transform : scaleY(1);
+ opacity   : 1;
+ min-height: calc(100vh - 60px);
+}
+
+// Nav Toggle Animation
+
+.toggle:checked~.toggle-label-hamburger span {
+ background: transparent;
+}
+
+// .nav.scroll * .toggle:checked~.toggle-label-hamburger span {
+//   background: transparent !important;
+// }
+
+.toggle:checked~.toggle-label-hamburger span::before {
+ transform: rotate(135deg);
+ top      : -0px;
+}
+
+.toggle:checked~.toggle-label-hamburger span::after {
+ transform: rotate(-135deg);
+ top      : 0px;
+}

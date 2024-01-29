@@ -2,9 +2,9 @@
 
 $neutral-1 : hsl(0, 0%, 98%);
 $neutral-2 : hsl(0, 0%, 94%);
-$neutral-3 : hsl(100, 0%, 60%);
-$neutral-4 : rgb(102, 102, 102);
-$neutral-5 : rgb(26, 26, 26);
+$neutral-3 : rgb(153, 153, 153);
+$neutral-4 : hsl(0, 0%, 40%);
+$neutral-5 : hsl(0, 0%, 10%);
 
 
 
@@ -13,23 +13,10 @@ $neutral-5 : rgb(26, 26, 26);
 $clr-pink   : hsl(324, 51%, 50%);
 $clr-blue   : hsl(210, 50%, 40%);
 $clr-orange : rgb(255, 120, 31);
-$clr-red    : #ff4a52;
+$clr-red    : hsl(354, 71%, 50%);
 $clr-green  : hsl(154, 91%, 31%);
 
-$red             : #ff4a52;
-$white           : #ffffff;
-$lightgray       : #f2f2f2;
-$mediumlightgray : #d7d7d7;
-$gray            : #a8a8a8;
-$darkgray        : #646464;
-$black           : #111111;
-$gold            : #FFb300;
-
-$breakpoint : 991px;
-
-$clr-test: hsl(358, 100%, 45%);
-
-$clr-primary  : $clr-blue;
+$clr-primary  : $neutral-2;
 $clr-secondary: adjust-hue($clr-primary, -30);
 $clr-accent   : $clr-red;
 
@@ -85,7 +72,10 @@ $fw-b : 700;
 
 
 // Media Query Breakpoints
-$breakpoints: (xs : 36rem, // 576px
- small      : 48rem, // 768px
- medium     : 60rem, // 960px
- big        : 70rem); // 1120px
+$breakpoints: (
+ xs : 36rem, // 576px
+ small      : 50rem, // 800px
+ medium     : 62rem, // 991px
+ big        : 75rem); // 1200px
+
+ $breakpoint: 991px;

@@ -1,7 +1,6 @@
 {% extends 'pages/_base_layout.html' %}
 
 {% block body %}
-
 {% embed 'embeds/_recipeLayout.html' %}
 
 {% block recipeHeader %}
@@ -10,7 +9,7 @@
 <div class="container">
  <div class="recipeHeaderLayout">
   <div class="single-recipe">
-   <div class="category-name">{{page.settings.subCategory1}}</div>
+   <div class="category-name">{{page.collection_title}}</div>
 
    <h1 class="recipe-title">{{page.title }}</h1>
 
@@ -85,37 +84,7 @@
    </div>
 
    <div class="sidebarLatest">
-    {{ include("includes/_collection.html") }}
-    <!-- <div class="sidebarLatest__card">
-     <div class="sidebarLatest__img">
-      <a href="#"><img src="{{ getMediaPath(page.media.filename, 'thumb') }}" alt="{{ page.media.caption }}"></a>
-     </div>
-     <div class="sidebarLatest__content">
-      <div class="sidebarLatest__category">{{page.settings.subCategory1}}</div>
-      <h4 class="sidebarLatest__title"><a href="#">{{page.title }}</a></h4>
-      <div class="sidebarLatest__author"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ page.author }}</span></div>
-     </div>
-    </div>
-    <div class="sidebarLatest__card">
-     <div class="sidebarLatest__img">
-      <a href="#"><img src="{{ getMediaPath(page.media.filename, 'thumb') }}" alt="{{ page.media.caption }}"></a>
-     </div>
-     <div class="sidebarLatest__content">
-      <div class="sidebarLatest__category">{{page.settings.subCategory2}}</div>
-      <h4 class="sidebarLatest__title"><a href="#">{{page.title }}</a></h4>
-      <div class="sidebarLatest__author"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ page.author }}</span></div>
-     </div>
-    </div>
-    <div class="sidebarLatest__card">
-     <div class="sidebarLatest__img">
-      <a href="#"><img src="{{ getMediaPath(page.media.filename, 'thumb') }}" alt="{{ page.media.caption }}"></a>
-     </div>
-     <div class="sidebarLatest__content">
-      <div class="sidebarLatest__category">{{page.settings.subCategory3}}</div>
-      <h4 class="sidebarLatest__title"><a href="#">{{page.title }}</a></h4>
-      <div class="sidebarLatest__author"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ page.author }}</span></div>
-     </div>
-    </div> -->
+    {{ include("includes/_recipeSidebarLatest.html") }}
    </div>
    <div class="sidebar-item recipeCategory" itemprop="recipeCategory">
 
@@ -125,15 +94,15 @@
    
     
   <div class="sidebarFindMore" >
-     <a class="btn categories-item" href="https://perisplaceforrecipes.com/recipe/category/Starter"
+     <a class="btn btn-findMore" href="https://perisplaceforrecipes.com/recipe/category/Starter"
       title="View recipes for Starter">Starter</a>
     
      
-     <a class="btn categories-item" href="https://perisplaceforrecipes.com/recipe/category/Vegetarian"
+     <a class="btn btn-findMore" href="https://perisplaceforrecipes.com/recipe/category/Vegetarian"
       title="View recipes for Vegetarian">Vegetarian</a>
     
      
-     <a class="btn categories-item" href="https://perisplaceforrecipes.com/recipe/category/Holiday"
+     <a class="btn btn-findMore" href="https://perisplaceforrecipes.com/recipe/category/Holiday"
       title="View recipes for Holiday">Holiday</a>
  
   </div>

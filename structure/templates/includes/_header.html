@@ -1,18 +1,20 @@
-<div class="header-wrapper">
+
  <header class="header">
-   <div class="logo">
-    <h1 class="visually-hidden">{{page.title}}</h1>
-     <a class="header__link styled-link" href="{{ pathFor('home') }}">
-       <img
-         src="{{ baseUrl() }}/assets/img/ppfrLogo.svg"
-         width="100%"
-         height="100%"
-         alt="Peri's Place For Recipes" />
-     </a>
-   </div>
+  {# <div class="header-wrapper"> #}
+  <h1 class="visually-hidden">{{page.title}}</h1>
+ <div class="logo">     <a href="{{ pathFor('home') }}">
+  <img
+    src="{{ baseUrl() }}/assets/img/ppfrLogo.svg"
+   
+    alt="{{ site.settings.siteName|default('PitonCMS') }}" />
+ </a>
+ 
+ </div>
+ {{ include("includes/_navbar.html") }}
+ 
+ 
+{# </div> #}
  </header>
 
- {{ include("includes/_navbar.html") }}
+{{ include ("includes/_search.html") }}
 
- {{ include ("includes/_search.html") }}
-</div>

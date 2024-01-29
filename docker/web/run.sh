@@ -12,12 +12,6 @@ sed -ri "s/^upload_max_filesize\s*=.*$/upload_max_filesize = 10M/" /etc/php/7.4/
 grep -qxF "error_reporting = $PHP_ERROR_REPORTING" /etc/php/7.4/apache2/php.ini || echo "error_reporting = $PHP_ERROR_REPORTING" >> /etc/php/7.4/apache2/php.ini
 grep -qxF "error_reporting = $PHP_ERROR_REPORTING" /etc/php/7.4/cli/php.ini || echo "error_reporting = $PHP_ERROR_REPORTING" >> /etc/php/7.4/cli/php.ini
 
-# Setup XDebug
-grep -qxF "[XDebug]" /etc/php/7.4/apache2/php.ini || echo "[XDebug]" >> /etc/php/7.4/apache2/php.ini
-grep -qxF "xdebug.remote_enable = 1" /etc/php/7.4/apache2/php.ini || echo "xdebug.remote_enable = 1" >> /etc/php/7.4/apache2/php.ini
-grep -qxF "xdebug.remote_autostart = 1" /etc/php/7.4/apache2/php.ini || echo "xdebug.remote_autostart = 1" >> /etc/php/7.4/apache2/php.ini
-grep -qxF "xdebug.remote_host = $HOST_DOMAIN" /etc/php/7.4/apache2/php.ini || echo "xdebug.remote_host = $HOST_DOMAIN" >> /etc/php/7.4/apache2/php.ini
-
 # Configure sendmail, set container ID in hosts file, needed by sendmail
 echo "127.0.0.1 localhost localhost.localdomain $(hostname)" >> /etc/hosts
 yes Y | /usr/sbin/sendmailconfig

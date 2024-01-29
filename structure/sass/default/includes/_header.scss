@@ -1,116 +1,32 @@
-.header-wrapper {
- width     : 100%;
- display   : grid;
-}
+// Header
 
 .header {
- --header-font-size : 1rem;
- margin-inline      : auto;
- padding-inline     : $spacer;
- width              : min(100%, 1200px);
+ @include dc(color(primary));
+ border-bottom: solid 5px color(accent);
 
+ // display              : grid;
+ // grid-template-columns: minmax(2rem, 1fr) minmax(auto, $max-container-width) minmax(2rem, 1fr);
+ padding-inline : 1rem;
  display        : flex;
- flex-direction : column;
- gap            : $spacer;
- align-items    : center;
- justify-content: center;
+ align-items    : flex-end;
+ justify-content: space-between;
 
+ position: relative;
  >* {
-  flex: 1;
+  grid-column: 2/3;
  }
 
- // media query for header 
- @include mq(small) {
-  flex-direction : row;
-  justify-content: space-between;
- }
+ &-wrapper {
 
- // Header Logo
- .logo {
-  align-self: center;
-  max-width : fit-content;
- }
 
- &__logo {
-  width        : min(100%, 20em);
-  height       : auto;
-  margin-inline: auto;
- }
-
- // All href within header
- &__link {
-  text-decoration: none;
-  font-size      : var(--header-font-size);
-  transition     : all 125ms ease-in;
-  color          : neutral(5);
-  font-weight    : $fw-m;
-
-  &:hover,
-  &:focus {
-   --header-font-size: 1.1rem;
-   color             : color(accent-light);
-   font-weight       : $fw-b;
-  }
- }
-
- // Location Block
- &__location,
- .social {
-  display: none;
-
-  @include mq(small) {
-   display: block;
-  }
- }
-
- // All Meta Blocks 
- &__phone,
- &__location,
- .social {
-  font-size            : var(--header-font-size);
-  display              : grid;
-  grid-template-columns: min-content max-content;
-  column-gap           : calc($spacer * .5);
-  align-items          : center;
-  justify-content      : center;
-
-  @include mq(small) {
-   --header-font-size: .9rem;
-  }
- }
-
- &__button {
-  padding-block-end: $spacer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @include mq(small){
-   padding-block-end: 0;
-  }
- }
-
- .socialLinks {
-  display        : flex;
-  gap            : calc($spacer * .75);
-  justify-content: center;
-  align-items    : center;
-  font-size      : 1.75em;
-
-  >* {
-   --header-font-size: 2rem;
-
-   &:hover,
-   &:focus {
-    color             : color(accent);
-    --header-font-size: 2.1rem;
-   }
-  }
- }
-
- .social {
-  >* {
-   color: $clr-primary;
-  }
 
  }
+
+
+}
+
+.logo {
+ padding-block: 1em;
+ height       : 100%;
+ width        : min(100%, 250px);
 }
