@@ -583,6 +583,17 @@ textarea:focus {
   height: 100%;
 }
 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  list-style: none;
+}
+.cards__title {
+  padding: 1rem;
+  height: 100px;
+}
+
 /* includes */
 .search__form {
   display: flex;
@@ -950,49 +961,6 @@ textarea:focus {
 }
 
 /* pages */
-.homePageCards {
-  margin-block-start: 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1em;
-}
-.homePageCards__card {
-  box-shadow: 0 0 15px -5px rgba(26, 26, 26, 0.15);
-  display: grid;
-  gap: 1em;
-}
-.homePageCards__img img {
-  height: 200px;
-  object-fit: cover;
-}
-.homePageCards__content {
-  padding: 1em;
-  display: grid;
-  gap: 0.25em;
-}
-.homePageCards__category {
-  color: hsl(354deg, 71%, 50%);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15ex;
-}
-.homePageCards__title {
-  color: hsl(0deg, 0%, 10%);
-  font-family: "Hind", sans-serif;
-  font-size: 1.3rem;
-}
-.homePageCards__author {
-  color: rgb(153, 153, 153);
-}
-.homePageCards__author span {
-  color: hsl(0deg, 0%, 10%);
-  font-weight: 600;
-}
-.homePageCards__icon {
-  color: hsl(354deg, 71%, 50%);
-  font-size: 0.8rem;
-}
-
 .single-recipe .category-name {
   color: hsl(354deg, 71%, 50%);
   font-size: 0.8rem;
