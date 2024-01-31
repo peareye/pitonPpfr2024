@@ -1,9 +1,10 @@
 {# recipe Collection Landing Page  Element #}
 
 {# Get the collection summary set. The second argument is the number of items to return per page #}
-{% set collection = getCollectionPagesWithPagination(element.collection_id, 20) %}
 
-<div class="element">
+{% set collection = getCollectionPagesWithPagination(element.collection_id, 5) %}
+
+<section id="recipeCategoryPageElement" class="element">
   <h2>{{ element.title }}</h2>
   {{ element.content }}
 
@@ -14,6 +15,7 @@
 
         {% if detail.media.filename %}
         <div class="card__image">
+         no image
           <img src="{{ getMediaPath(detail.media.filename, 'thumb') }}">
         </div>
         {% endif %}
@@ -33,5 +35,5 @@
 
   {# Print pagination navigation #}
   {{ pagination() }}
-</div>
+ </section>
 

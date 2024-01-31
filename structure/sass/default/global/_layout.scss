@@ -1,11 +1,8 @@
 /* Layout.scss */
 
-.container {
- margin-inline: auto;
- width        : min(100%, $max-container-width);
-
+.wrapper {
  display              : grid;
- grid-template-columns: minmax(1rem, 1fr) minmax(auto, $max-container-width) minmax(1rem, 1fr);
+ grid-template-columns: minmax(1rem, 1fr) minmax(auto, $max-wrapper-width) minmax(1rem, 1fr);
 
 
  >* {
@@ -13,11 +10,11 @@
  }
 
  &-narrow {
-  --max-container-width: 45rem;
+  --max-wrapper-width: 45rem;
   margin-inline        : auto;
-  width                : min(100%, var(--max-container-width));
+  width                : min(100%, var(--max-wrapper-width));
   display              : grid;
-  grid-template-columns: minmax(1rem, 1fr) minmax(auto, var(--max-container-width)) minmax(1rem, 1fr);
+  grid-template-columns: minmax(1rem, 1fr) minmax(auto, var(--max-wrapper-width)) minmax(1rem, 1fr);
 
   >* {
    grid-column: 2 / 3;

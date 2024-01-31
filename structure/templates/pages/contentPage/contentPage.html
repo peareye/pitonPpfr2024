@@ -1,9 +1,11 @@
 {% extends '/pages/_base_layout.html' %}
 
 {% block body %}
-<div class="container">  
 
-<div> {{ getBlockElementsHtml(page.blocks.contentBlock) }}</div>
+<div class="wrapper">  
+
+ {{ getBlockElementsHtml(page.blocks.contentBlock) }}
 
 </div>
+
 {% endblock body %}

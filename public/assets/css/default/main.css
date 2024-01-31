@@ -276,7 +276,7 @@ h6 {
   font-size: 1rem;
 }
 
-.hero + .container main {
+.hero + .wrapper main {
   margin: 0;
   padding: 0;
 }
@@ -297,23 +297,21 @@ h6 {
 }
 
 /* Layout.scss */
-.container {
-  margin-inline: auto;
-  width: min(100%, 1200px);
+.wrapper {
   display: grid;
   grid-template-columns: minmax(1rem, 1fr) minmax(auto, 1200px) minmax(1rem, 1fr);
 }
-.container > * {
+.wrapper > * {
   grid-column: 2/3;
 }
-.container-narrow {
-  --max-container-width: 45rem;
+.wrapper-narrow {
+  --max-wrapper-width: 45rem;
   margin-inline: auto;
-  width: min(100%, var(--max-container-width));
+  width: min(100%, var(--max-wrapper-width));
   display: grid;
-  grid-template-columns: minmax(1rem, 1fr) minmax(auto, var(--max-container-width)) minmax(1rem, 1fr);
+  grid-template-columns: minmax(1rem, 1fr) minmax(auto, var(--max-wrapper-width)) minmax(1rem, 1fr);
 }
-.container-narrow > * {
+.wrapper-narrow > * {
   grid-column: 2/3;
 }
 
@@ -463,17 +461,6 @@ h6 {
   z-index: 100;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-  list-style: none;
-}
-.cards__title {
-  padding: 1rem;
-  height: 100px;
-}
-
 .contact-form {
   margin-block-start: 1em;
   display: grid;
@@ -581,17 +568,6 @@ textarea:focus {
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-  list-style: none;
-}
-.cards__title {
-  padding: 1rem;
-  height: 100px;
 }
 
 /* includes */

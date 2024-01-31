@@ -40,8 +40,8 @@
   $nav-hover : $clr-accent;
 
   // Layout Variables
-  $max-container-width: 1200px;
-  $wide-container-width: 1200px;
+  $max-wrapper-width: 1200px;
+  $wide-wrapper-width: 1200px;
 
   // Media Query Breakpoints
   $breakpoint: 768px;
@@ -141,7 +141,7 @@
     --nav-hover     : #{$nav-hover};
     --nav-accent    : #{$nav-accent};
     /* Layout Variables */
-    --max-width     : #{$max-container-width};
+    --max-width     : #{$max-wrapper-width};
 
     /* Media Queries */
     --breakpoint: #{$breakpoint};
