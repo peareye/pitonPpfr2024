@@ -1,20 +1,22 @@
 
- <header class="header">
-  {# <div class="header-wrapper"> #}
-  <h1 class="visually-hidden">{{page.title}}</h1>
- <div class="logo">     <a href="{{ pathFor('home') }}">
-  <img
-    src="{{ baseUrl() }}/assets/img/ppfrLogo.svg"
-   
-    alt="{{ site.settings.siteName|default('PitonCMS') }}" />
- </a>
+<div class="wrapper header-wrapper">
+  <header class="header">
  
- </div>
- {{ include("includes/_navbar.html") }}
+   <h1 class="visually-hidden">{{page.title}}</h1>
+  <div class="logo">     <a href="{{ pathFor('home') }}">
+   <img
+     src="{{ baseUrl() }}/assets/img/ppfrLogo.svg"
+    
+     alt="{{ site.settings.siteName|default('PitonCMS') }}" />
+  </a>
+  
+  </div>
+  {{ include("includes/_navbar.html") }}
+  
+  
  
- 
-{# </div> #}
- </header>
+  </header>
+</div>
 
 {{ include ("includes/_search.html") }}
 

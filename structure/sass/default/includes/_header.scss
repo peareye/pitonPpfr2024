@@ -1,28 +1,20 @@
 // Header
 
 .header {
- @include dc(color(primary));
- border-bottom: solid 5px color(accent);
+ 
 
- // display              : grid;
- // grid-template-columns: minmax(2rem, 1fr) minmax(auto, $max-container-width) minmax(2rem, 1fr);
+
+
  padding-inline : 1rem;
  display        : flex;
  align-items    : flex-end;
  justify-content: space-between;
 
  position: relative;
- >* {
-  grid-column: 2/3;
- }
-
  &-wrapper {
-
-
-
+  @include dc(color(primary));
+  border-bottom: solid 5px color(accent);
  }
-
-
 }
 
 .logo {
