@@ -1,0 +1,22 @@
+{
+ "templateName": "Home Page",
+ "templateDescription": "Home Page with hero image and content blocks only to be used 1 time per website.",
+ "showSubTitle": true,
+ "showFeaturedImage": true,
+ "templateType": "page",
+ "blocks": [{
+     "name": "Hero Image",
+     "key": "heroBlock",
+     "description": "Large full width image",
+     "elementTypeOptions": [
+       "hero/hero"
+     ],
+     "elementCountLimit": 1
+   },
+   {
+     "name": "Content",
+     "key": "contentBlock",
+     "description": "Page Content Blocks"
+   }
+ ]
+}         

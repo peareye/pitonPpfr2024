@@ -9,16 +9,15 @@ $neutral-5 : hsl(0, 0%, 10%);
 
 
 // Color Pallette
-
 $clr-pink   : hsl(324, 51%, 50%);
 $clr-blue   : hsl(210, 50%, 40%);
-$clr-orange : rgb(255, 120, 31);
-$clr-red    : hsl(354, 71%, 50%);
+$clr-orange : hsl(24, 100%, 50%);
+$clr-red    : hsl(354, 71%, 49%);
 $clr-green  : hsl(154, 91%, 31%);
 
 $clr-primary  : $neutral-2;
 $clr-secondary: adjust-hue($clr-primary, -30);
-$clr-accent   : $clr-red;
+$clr-accent   : $clr-pink;
 
 $clrs: (primary: $clr-primary,
  primary-dark: darken($clr-primary, 20%),
@@ -41,29 +40,34 @@ $neutrals: (1: $neutral-1,
  5: $neutral-5,
 );
 
+$fill: #da2536;
+
 // Default Variables
 
-$nav-height            : 3.75em;
-$scale                 : 0; // Scales the navigation. valid #'s 0 -> 1. Zero value is collapsed.
-$br                    : 7px;
-$bs                    : 0 0 15px -5px rgba(neutral(5), .15);
-$ds                    : drop-shadow(0 0 1em rgba(neutral(5), .15));
-$ls                    : 2px;
-$ls                    : .15ex;
-$max-wrapper-width   : 1200px;
-$spacer                : 1em;
+$nav-height        : 3.75em;
+$scale             : 0; // Scales the navigation. valid #'s 0 -> 1. Zero value is collapsed.
+$br                : 7px;
+$bs                : 0 0 15px -5px rgba(neutral(5), .15);
+$ds                : drop-shadow(0 0 1em rgba(neutral(5), .15));
+$ls                : .15ex;
+$max-wrapper-width : 75rem;
+$spacer            : 1em;
 
-// Font Variables
-@import url('https  ://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Lora:wght@600;700&display=swap');
+// Font Family
 
-$ff-sans-body     : 'Hind',
+$ff-sans : system-ui,
+-apple-system,
+BlinkMacSystemFont,
+'Segoe UI',
+Roboto,
+Oxygen,
+Ubuntu,
+Cantarell,
+'Open Sans',
+'Helvetica Neue',
 sans-serif;
-$ff-sans-headings : 'Hind',
-serif;
-$ff-serif-headings: 'Lora', serif;
-$ff-serif: 'Lora',
-serif;
 
+// Font Weights
 $fw-l : 300;
 $fw-n : 400;
 $fw-m : 600;
@@ -77,4 +81,4 @@ $breakpoints: (
  medium     : 62rem, // 991px
  big        : 75rem); // 1200px
 
- $breakpoint: 991px;
+$breakpoint: 991px;

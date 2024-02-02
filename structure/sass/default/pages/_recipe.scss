@@ -97,7 +97,7 @@
  &__title {
   color         : neutral(4);
   margin-bottom : 1rem;
-  font-family   : $ff-sans-body;
+  font-family   : $ff-sans;
   font-size     : 1.25rem;
   font-weight   : $fw-n;
   text-transform: uppercase;
@@ -148,7 +148,7 @@
   line-height   : 1.2;
   text-wrap     : pretty;
   text-transform: capitalize;
-  font-family   : $ff-sans-body;
+  font-family   : $ff-sans;
   letter-spacing: $ls;
 
   & a {

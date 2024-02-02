@@ -1,6 +1,7 @@
 {% extends 'pages/_base_layout.html' %}
 
-{% block body %}
+{% block body %} 
+
 {% embed 'embeds/_recipeLayout.html' %}
 
 {% block recipeHeader %}
@@ -11,7 +12,7 @@
   <div class="single-recipe">
    <div class="category-name">{{page.collection_title}}</div>
 
-   <h1 class="recipe-title">{{page.title }}</h1>
+   <h1 class="recipe-title">{{ page.title }} <span class="visually-hidden">{{ site.settings.siteName|default('PitonCMS')}}</span></h1>
 
    <!-- FEATURE META BLOCK -->
    <div class="feature-recipe">

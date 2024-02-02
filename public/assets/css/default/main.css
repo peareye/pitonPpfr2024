@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* abstracts */
-@import url("https  ://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Lora:wght@600;700&display=swap");
 /* global */
 /* reset.scss */
 /* Box sizing rules */
@@ -114,7 +113,7 @@ p {
 }
 
 .text-danger {
-  color: hsl(354deg, 71%, 50%);
+  color: hsl(354deg, 71%, 49%);
   font-weight: 700;
   font-size: 1.25rem;
 }
@@ -125,7 +124,7 @@ p {
   font-weight: 300;
   line-height: 1.3;
   font-size: 0.9rem;
-  font-family: "Hind", serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .text-italic {
@@ -163,7 +162,7 @@ inline-text {
   margin-inline: auto;
 }
 .expand-btn:hover {
-  background-color: hsl(354deg, 71%, 50%);
+  background-color: hsl(324deg, 51%, 50%);
   color: white;
 }
 .expand-btn::before {
@@ -196,11 +195,10 @@ inline-text {
 
 /* Default.scss  */
 body {
-  font-family: "Hind", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 1.6;
   display: flex;
   flex-flow: column nowrap;
-  overflow-x: hidden;
 }
 
 img {
@@ -214,7 +212,6 @@ figure {
   padding-block: 2em 1em;
 }
 figure img {
-  max-height: 450px;
   border-radius: 7px;
   box-shadow: 0 0 15px -5px rgba(26, 26, 26, 0.15);
   object-fit: cover;
@@ -224,8 +221,18 @@ figure figcaption {
   font-size: 0.8rem;
   font-style: italic;
   font-weight: 300;
-  margin-top: 0.25em !important;
   text-align: center;
+}
+
+.element__title {
+  background-color: pink !important;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin-block-end: 20px;
+  color: #111111;
+  line-height: 1.3;
+  font-size: 1.625rem;
+  font-weight: 700;
 }
 
 .element__title + p {
@@ -237,7 +244,7 @@ a {
   transition: all 125ms ease;
 }
 a:hover {
-  color: hsl(354deg, 71%, 50%);
+  color: hsl(324deg, 51%, 50%);
 }
 
 h1,
@@ -246,9 +253,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Hind", serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   letter-spacing: 0.15ex;
-  color: hsl(354deg, 71%, 50%);
   text-transform: capitalize;
 }
 
@@ -289,7 +295,7 @@ h6 {
 }
 
 .text-danger {
-  color: hsl(354deg, 71%, 50%);
+  color: hsl(324deg, 51%, 50%);
 }
 
 .span {
@@ -299,7 +305,7 @@ h6 {
 /* Layout.scss */
 .wrapper {
   display: grid;
-  grid-template-columns: minmax(1rem, 1fr) minmax(auto, 1200px) minmax(1rem, 1fr);
+  grid-template-columns: minmax(1rem, 1fr) minmax(auto, 75rem) minmax(1rem, 1fr);
 }
 .wrapper > * {
   grid-column: 2/3;
@@ -515,7 +521,7 @@ textarea {
 input[type=text]:focus,
 input[type=email]:focus,
 textarea:focus {
-  border: 2px dashed hsl(354deg, 71%, 50%);
+  border: 2px dashed hsl(324deg, 51%, 50%);
   outline: none;
 }
 
@@ -613,7 +619,7 @@ textarea:focus {
   flex: 1;
 }
 .search__input::placeholder {
-  color: hsl(354deg, 71%, 50%);
+  color: hsl(324deg, 51%, 50%);
   opacity: 0.5;
   transition: opacity 0.25s linear;
   font-size: 1.5rem;
@@ -622,7 +628,7 @@ textarea:focus {
   opacity: 0;
 }
 .search__button {
-  background-color: hsl(354deg, 71%, 50%);
+  background-color: hsl(324deg, 51%, 50%);
   color: #fafafa;
   box-shadow: 0 0 15px -5px rgba(26, 26, 26, 0.15);
 }
@@ -637,7 +643,7 @@ textarea:focus {
 .header-wrapper {
   background-color: hsl(0deg, 0%, 94%);
   color: #1a1a1a;
-  border-bottom: solid 5px hsl(354deg, 71%, 50%);
+  border-bottom: solid 5px hsl(324deg, 51%, 50%);
 }
 
 .logo {
@@ -756,7 +762,7 @@ textarea:focus {
   transition: all 125ms;
 }
 .nav-link:hover, .nav-link:focus {
-  background-color: hsl(354deg, 71%, 50%);
+  background-color: hsl(324deg, 51%, 50%);
   color: #fafafa;
 }
 
@@ -834,73 +840,54 @@ textarea:focus {
   }
 }
 .subnav-link:hover, .subnav-link:focus {
-  background-color: hsl(354deg, 71%, 50%);
+  background-color: hsl(324deg, 51%, 50%);
   color: #fafafa;
 }
 
 .pagination {
-  margin-block: 2rem 1rem;
+  margin-block: 2em;
+  padding-block: 1em;
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.pagination * + * {
-  margin: 0;
-  padding: 0;
-}
 .pagination .page-link {
-  border-top: solid 1px rgba(240, 240, 240, 0.5);
-  border-bottom: solid 1px rgba(240, 240, 240, 0.5);
-  border-right: solid 1px rgba(240, 240, 240, 0.5);
-  background: white;
+  background-color: hsl(324deg, 51%, 50%);
+  color: #fafafa;
+  border-top: solid 2px hsl(0deg, 0%, 98%);
+  border-bottom: solid 2px hsl(0deg, 0%, 98%);
+  border-right: solid 2px hsl(0deg, 0%, 98%);
+  transition: background-color 125ms;
+}
+.pagination .page-link:hover, .pagination .page-link:focus-within {
+  background-color: #3ec172;
+  color: #fafafa;
 }
 .pagination .page-link:first-child {
-  border-left: solid 1px rgba(240, 240, 240, 0.5);
-  border-bottom-left-radius: 3px;
-  border-top-left-radius: 3px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 300;
+  border-left: solid 2px hsl(0deg, 0%, 98%);
+  border-bottom-left-radius: 7px;
+  border-top-left-radius: 7px;
 }
 .pagination .page-link:last-child {
-  border-right: solid 1px rgba(240, 240, 240, 0.5);
-  border-bottom-right-radius: 3px;
-  border-top-right-radius: 3px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 300;
+  border-right: solid 2px hsl(0deg, 0%, 98%);
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
 }
-.pagination .page-link a {
-  padding: 0.5rem;
-  text-decoration: none;
-  color: hsl(0deg, 0%, 94%);
+.pagination .page-link.disabled {
+  color: rgb(153, 153, 153);
+  cursor: normal;
+  pointer-events: none;
+}
+.pagination .page-link.disabled:hover, .pagination .page-link.disabled:focus-within {
+  background-color: hsl(324deg, 51%, 50%);
+  color: #fafafa;
+  color: rgb(153, 153, 153);
+}
+.pagination a {
+  padding: 0.5em;
+  color: inherit;
   display: block;
-  transition: all 250ms ease;
-}
-.pagination .page-link a:hover {
-  background: rgba(240, 240, 240, 0.5);
-  color: hsl(0deg, 0%, 98%);
-}
-.pagination .page-link a:hover a {
-  color: hsl(0deg, 0%, 98%);
-}
-.pagination .page-link.disabled a {
-  color: hsl(0deg, 0%, 80%);
-  cursor: default;
-  pointer-events: none;
-}
-.pagination .page-link.disabled:hover {
-  background: white;
-}
-.pagination .page-link.disabled:hover a {
-  color: hsl(0deg, 0%, 80%);
-}
-.pagination .page-link.active {
-  background: hsl(0deg, 0%, 94%);
-  color: hsl(0deg, 0%, 98%);
-  pointer-events: none;
-}
-.pagination .page-link.active a {
-  color: hsl(0deg, 0%, 98%);
 }
 
 /* footer.scss */
@@ -915,7 +902,7 @@ textarea:focus {
   transition: all 125ms ease;
 }
 .footer a:hover, .footer a:focus {
-  color: hsl(354deg, 71%, 50%);
+  color: hsl(324deg, 51%, 50%);
 }
 .footer ul {
   list-style: none;
@@ -960,7 +947,7 @@ textarea:focus {
 
 /* pages */
 .single-recipe .category-name {
-  color: hsl(354deg, 71%, 50%);
+  color: hsl(324deg, 51%, 50%);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.15ex;
@@ -977,7 +964,7 @@ textarea:focus {
   margin-bottom: 0.5rem;
 }
 .single-recipe .entry-meta__icon {
-  color: hsl(354deg, 71%, 50%);
+  color: hsl(324deg, 51%, 50%);
 }
 .single-recipe .single-meta {
   color: rgb(153, 153, 153);
@@ -1041,7 +1028,7 @@ textarea:focus {
 .sidebar__title {
   color: hsl(0deg, 0%, 40%);
   margin-bottom: 1rem;
-  font-family: "Hind", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1.25rem;
   font-weight: 400;
   text-transform: uppercase;
@@ -1075,7 +1062,7 @@ textarea:focus {
   padding-block: 0.75em;
 }
 .sidebarLatest__category {
-  color: hsl(354deg, 71%, 50%);
+  color: hsl(324deg, 51%, 50%);
   text-transform: uppercase;
   letter-spacing: 0.15ex;
   font-size: 0.8rem;
@@ -1085,7 +1072,7 @@ textarea:focus {
   line-height: 1.2;
   text-wrap: pretty;
   text-transform: capitalize;
-  font-family: "Hind", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   letter-spacing: 0.15ex;
 }
 .sidebarLatest__title a {
@@ -1098,7 +1085,7 @@ textarea:focus {
   background-color: transparent;
   text-decoration: none;
   outline: 0 none;
-  color: hsl(354deg, 71%, 50%);
+  color: hsl(324deg, 51%, 50%);
 }
 .sidebarLatest__author {
   font-size: 0.8rem;
@@ -1136,7 +1123,7 @@ textarea:focus {
 }
 .recipeDirections__layout > * ul li::before,
 .recipeDirections__layout > * ol li::before {
-  color: hsl(354deg, 71%, 50%);
+  color: hsl(324deg, 51%, 50%);
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -1152,7 +1139,7 @@ textarea:focus {
 .recipeDirections__layout > * ol li::before {
   content: counter(steps);
   font-size: 0.8rem;
-  background-color: hsl(354deg, 71%, 50%);
+  background-color: hsl(324deg, 51%, 50%);
   color: hsl(0deg, 0%, 98%);
   min-width: 1.5em;
   line-height: 1.5em;
