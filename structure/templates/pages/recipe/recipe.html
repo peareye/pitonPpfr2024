@@ -1,6 +1,6 @@
 {% extends 'pages/_base_layout.html' %}
 
-{% block body %} 
+{% block body %}
 
 {% embed 'embeds/_recipeLayout.html' %}
 
@@ -80,34 +80,32 @@
   {% block sideBar %}
   <!-- BEGIN SIDEBAR -->
   <div class="sidebar">
+
    <div class="sidebar__heading">
     <h2 class="sidebar__title">Latest Recipes</h2>
    </div>
 
-   <div class="sidebarLatest">
-    {{ include("includes/_recipeSidebarLatest.html") }}
-   </div>
-   <div class="sidebar-item recipeCategory" itemprop="recipeCategory">
+   {{ include("includes/_recipeSidebarLatest.html") }}
 
-    <div class="sidebar__heading" style="margin-block-start: 2em;">
+   <div class="sidebar-item recipeCategory" >
+    <div class="sidebar__heading">
      <h2 class="sidebar__title">Find More</h2>
     </div>
-   
-    
-  <div class="sidebarFindMore" >
+
+    <div class="sidebarFindMore">
      <a class="btn btn-findMore" href="https://perisplaceforrecipes.com/recipe/category/Starter"
       title="View recipes for Starter">Starter</a>
-    
-     
+
+
      <a class="btn btn-findMore" href="https://perisplaceforrecipes.com/recipe/category/Vegetarian"
       title="View recipes for Vegetarian">Vegetarian</a>
-    
-     
+
+
      <a class="btn btn-findMore" href="https://perisplaceforrecipes.com/recipe/category/Holiday"
       title="View recipes for Holiday">Holiday</a>
- 
-  </div>
-   
+
+    </div>
+
    </div>
   </div>
   {% endblock sideBar %}

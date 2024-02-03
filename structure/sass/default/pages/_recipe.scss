@@ -89,7 +89,7 @@
  }
 
  &__heading {
-  margin-bottom: 1em;
+  margin-block: $spacer;
   border-bottom: 1px solid neutral(2);
  }
 
@@ -104,78 +104,7 @@
  }
 }
 
-.sidebarLatest {
- display       : grid;
- grid-auto-rows: 90px;
- gap           : 1em;
 
- &__card {
-  outline   : solid 1px neutral(2);
-  box-shadow: $bs;
-  overflow  : hidden;
-
-  display          : flex;
-  gap              : 1em;
-  -webkit-box-align: start;
-  align-items      : flex-start;
- }
-
- &__img {
-  aspect-ratio: 1/1;
-
-  img {
-   object-fit: cover;
-   width     : 90px;
-   height    : 90px;
-  }
- }
-
- &__content {
-  flex         : 1;
-  padding-block: .75em;
- }
-
- &__category {
-  color         : color(accent);
-  text-transform: uppercase;
-  letter-spacing: $ls;
-  font-size     : .8rem;
- }
-
- &__title {
-  font-size        : 1.1rem;
-  line-height      : 1.2;
-  // text-wrap     : pretty;
-  text-transform   : capitalize;
-  font-family      : $ff-sans;
-  letter-spacing   : $ls;
-
-  & a {
-   font-weight    : $fw-n;
-   text-decoration: none;
-   color          : neutral(5);
-   transition     : all 0.3s ease-in-out;
-
-   &:hover {
-    background-color: transparent;
-    text-decoration : none;
-    outline         : 0 none;
-
-    color: color(accent);
-   }
-  }
- }
-
- &__author {
-  font-size: .8rem;
-  color    : neutral(3);
-
-  span {
-   color      : neutral(4);
-   font-weight: $fw-m;
-  }
- }
-}
 
 .sidebarFindMore {
  display              : grid;

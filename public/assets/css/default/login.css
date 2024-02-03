@@ -970,6 +970,69 @@ textarea:focus {
   font-weight: 300;
 }
 
+.sidebarLatest {
+  padding-block-end: 2em;
+  display: grid;
+  grid-auto-rows: 90px;
+  gap: 1em;
+}
+.sidebarLatest__card {
+  outline: solid 1px hsl(0deg, 0%, 94%);
+  box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
+  display: flex;
+}
+.sidebarLatest__img {
+  aspect-ratio: 1/1;
+}
+.sidebarLatest__img img {
+  object-fit: cover;
+  width: 90px;
+  height: 90px;
+}
+.sidebarLatest__content {
+  padding-inline: 0.5em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.sidebarLatest__category {
+  color: hsl(324deg, 51%, 50%);
+  text-transform: uppercase;
+  letter-spacing: 0.15ex;
+  font-size: 0.8rem;
+}
+.sidebarLatest__title {
+  font-size: 1.1rem;
+  line-height: 1;
+  text-wrap: wrap;
+  text-transform: capitalize;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  letter-spacing: 0.15ex;
+}
+.sidebarLatest__title a {
+  font-weight: 400;
+  text-decoration: none;
+  color: hsl(0deg, 0%, 10%);
+  transition: all 0.3s ease-in-out;
+}
+.sidebarLatest__title a:hover {
+  background-color: transparent;
+  text-decoration: none;
+  outline: 0 none;
+  color: hsl(324deg, 51%, 50%);
+}
+.sidebarLatest__author {
+  margin-block-start: auto;
+  padding-block-end: 5px;
+  font-size: 0.8rem;
+  color: rgb(153, 153, 153);
+}
+.sidebarLatest__author span {
+  color: hsl(0deg, 0%, 40%);
+  font-weight: 600;
+}
+
 /* pages */
 .single-recipe .category-name {
   color: hsl(324deg, 51%, 50%);
@@ -1045,7 +1108,7 @@ textarea:focus {
   }
 }
 .sidebar__heading {
-  margin-bottom: 1em;
+  margin-block: 1em;
   border-bottom: 1px solid hsl(0deg, 0%, 94%);
 }
 .sidebar__title {
@@ -1056,66 +1119,6 @@ textarea:focus {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.15ex;
-}
-
-.sidebarLatest {
-  display: grid;
-  grid-auto-rows: 90px;
-  gap: 1em;
-}
-.sidebarLatest__card {
-  outline: solid 1px hsl(0deg, 0%, 94%);
-  box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
-  overflow: hidden;
-  display: flex;
-  gap: 1em;
-  -webkit-box-align: start;
-  align-items: flex-start;
-}
-.sidebarLatest__img {
-  aspect-ratio: 1/1;
-}
-.sidebarLatest__img img {
-  object-fit: cover;
-  width: 90px;
-  height: 90px;
-}
-.sidebarLatest__content {
-  flex: 1;
-  padding-block: 0.75em;
-}
-.sidebarLatest__category {
-  color: hsl(324deg, 51%, 50%);
-  text-transform: uppercase;
-  letter-spacing: 0.15ex;
-  font-size: 0.8rem;
-}
-.sidebarLatest__title {
-  font-size: 1.1rem;
-  line-height: 1.2;
-  text-transform: capitalize;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  letter-spacing: 0.15ex;
-}
-.sidebarLatest__title a {
-  font-weight: 400;
-  text-decoration: none;
-  color: hsl(0deg, 0%, 10%);
-  transition: all 0.3s ease-in-out;
-}
-.sidebarLatest__title a:hover {
-  background-color: transparent;
-  text-decoration: none;
-  outline: 0 none;
-  color: hsl(324deg, 51%, 50%);
-}
-.sidebarLatest__author {
-  font-size: 0.8rem;
-  color: rgb(153, 153, 153);
-}
-.sidebarLatest__author span {
-  color: hsl(0deg, 0%, 40%);
-  font-weight: 600;
 }
 
 .sidebarFindMore {
