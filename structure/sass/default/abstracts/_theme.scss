@@ -1,6 +1,6 @@
 // Neutral Pallette
 
-$neutral-1 : hsl(0, 0%, 98%);
+$neutral-1 : hsl(0, 0%, 100%);
 $neutral-2 : hsl(0, 0%, 94%);
 $neutral-3 : rgb(153, 153, 153);
 $neutral-4 : hsl(0, 0%, 40%);
@@ -47,7 +47,7 @@ $fill: #da2536;
 $nav-height        : 3.75em;
 $scale             : 0; // Scales the navigation. valid #'s 0 -> 1. Zero value is collapsed.
 $br                : 7px;
-$bs                : 0 0 15px -5px rgba(neutral(5), .15);
+$bs                : 0 2px 15px rgba(neutral(5), .15);
 $ds                : drop-shadow(0 0 1em rgba(neutral(5), .15));
 $ls                : .15ex;
 $max-wrapper-width : 75rem;

@@ -9,9 +9,7 @@
 
  .recipe-title {
   color      : neutral(5);
-  line-height: 1.2;
-  font-size  : 2.3rem;
-  font-weight: 700;
+  line-height: 1.1;
  }
 
  .entry-meta {
@@ -85,13 +83,14 @@
 
 .sidebar {
  display: none;
+
  @include mq(medium) {
   display: block;
  }
 
  &__heading {
   margin-bottom: 1em;
-  border-bottom      : 1px solid neutral(2);
+  border-bottom: 1px solid neutral(2);
  }
 
  &__title {
@@ -111,9 +110,9 @@
  gap           : 1em;
 
  &__card {
-  outline      : solid 1px neutral(2);
-  box-shadow   : $bs;
-  overflow     : hidden;
+  outline   : solid 1px neutral(2);
+  box-shadow: $bs;
+  overflow  : hidden;
 
   display          : flex;
   gap              : 1em;
@@ -144,12 +143,12 @@
  }
 
  &__title {
-  font-size     : 1.1rem;
-  line-height   : 1.2;
-  text-wrap     : pretty;
-  text-transform: capitalize;
-  font-family   : $ff-sans;
-  letter-spacing: $ls;
+  font-size        : 1.1rem;
+  line-height      : 1.2;
+  // text-wrap     : pretty;
+  text-transform   : capitalize;
+  font-family      : $ff-sans;
+  letter-spacing   : $ls;
 
   & a {
    font-weight    : $fw-n;
@@ -169,9 +168,10 @@
 
  &__author {
   font-size: .8rem;
-  color: neutral(3);
+  color    : neutral(3);
+
   span {
-   color: neutral(4);
+   color      : neutral(4);
    font-weight: $fw-m;
   }
  }
@@ -209,11 +209,6 @@
 
    &::before {
     color                 : color(accent);
-    display               : inline-block;
-    font-style            : normal;
-    font-variant          : normal;
-    text-rendering        : auto;
-    -webkit-font-smoothing: antialiased;
     font-family           : "Font Awesome 5 Free";
     font-weight           : 900;
     content               : "\f35a";
@@ -221,17 +216,17 @@
   }
 
   >* ol li {
-
    counter-increment: steps;
 
    &::before {
+    margin-block-start: .5em;
     content         : counter(steps);
     font-size       : .8rem;
     background-color: color(accent);
     color           : neutral(1);
 
-    min-width    : 1.5em;
-    line-height  : 1.5em;
+    min-width    : 2.5em;
+    line-height  : 2.5em;
     border-radius: 1rem;
     text-align   : center;
    }
@@ -242,9 +237,7 @@
    margin-block-start: .25em;
    list-style        : none;
   }
-
  }
-
 
  &__title {
   color: neutral(5);
@@ -261,7 +254,6 @@
 .ingredients,
 .method {
  background-color: neutral(1);
- // padding-inline  : 1em;
 
  h3 {
   color        : neutral(5);
@@ -281,6 +273,5 @@
   padding      : .5rem;
   line-height  : 1.4;
   font-size    : 1rem;
-
  }
 }

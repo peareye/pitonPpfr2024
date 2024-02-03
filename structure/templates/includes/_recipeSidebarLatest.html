@@ -1,6 +1,6 @@
 <!-- // recent random popular -->
-{% set foo = getPublishedRankedCollectionPages('random') %}
-{% for recipe in foo %}
+{% set sidebar = getPublishedRankedCollectionPages('random', 4) %}
+{% for recipe in sidebar %}
 <div class="sidebarLatest__card">
  <div class="sidebarLatest__img">
   <a href="{{ getPathForPage(recipe.page_slug, recipe.collection_slug)}}"><img src="{{ getMediaPath(recipe.media.filename, 'thumb') }}" alt="{{ recipe.media.caption }}"></a>

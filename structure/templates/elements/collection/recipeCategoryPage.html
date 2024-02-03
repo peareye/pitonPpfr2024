@@ -1,39 +1,43 @@
-{# recipe Collection Landing Page  Element #}
+{# recipe Collection Landing Page Element #}
 
 {# Get the collection summary set. The second argument is the number of items to return per page #}
 
-{% set collection = getCollectionPagesWithPagination(element.collection_id, 5) %}
+{# {% set collection = getCollectionPagesWithPagination(element.collection_id, 18) %} #}
+
+{% set collection = getCollectionPagesWithPagination(element.collection_id, 16) %}
 
 <section id="recipeCategoryPageElement" class="element">
-  <h2>{{ element.title }}</h2>
-  {{ element.content }}
 
-  <ul class="cards">
-    {% for detail in collection %}
-    <a href="{{ getPathForPage(detail.page_slug, detail.collection_slug) }}">
-      <li class="card">
+ <h2 class="element__title">{{ element.title }}</h2>
 
-        {% if detail.media.filename %}
-        <div class="card__image">
+ {{ element.content }}
 
-          <img src="{{ getMediaPath(detail.media.filename, 'thumb') }}">
-        </div>
-        {% endif %}
+ <div class="cards">
 
-        <div class="card__title">
-          <h3>{{ detail.title }}</h3>
-        </div>
-        <p class="card__text">
-         <li class="single-meta"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ page.first_name }}</span></li>
-        </p>
+  {% for detail in collection %}
 
-      </li>
-    </a>
+  <a class="card" href="{{ getPathForPage(detail.page_slug, detail.collection_slug) }}">
 
-    {% endfor %}
-  </ul>
+   {% if detail.media.filename %}
+   <div class="card__image">
+    <img src="{{ getMediaPath(detail.media.filename, 'thumb') }}">
+   </div>
+   {% endif %}
 
-  {# Print pagination navigation #}
-  {{ pagination() }}
- </section>
+   <div class="card__content">
+    <h3 class="card__title">{{ detail.title }}</h3>
+    <div class="card__author">
+     <i class="icon fas fa-user"></i>
+     by
+     <span>{{ page.first_name }}</span>
+    </div>
+   </div>
 
+  </a>
+
+  {% endfor %}
+ </div>
+
+ {# Print pagination navigation #}
+ {{ pagination() }}
+</section>

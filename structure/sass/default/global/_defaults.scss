@@ -1,11 +1,12 @@
 /* Default.scss  */
 
 body {
+ @include dc(neutral(1));
  font-family: $ff-sans;
  line-height: 1.6;
  display    : flex;
  flex-flow  : column nowrap;
- // overflow-x : hidden;
+ overflow-x : hidden;
 }
 
 img {
@@ -35,14 +36,9 @@ figure {
 
 .element {
  &__title {
-background-color: pink !important;
-  -webkit-font-smoothing: antialiased;
-  text-rendering        : optimizeLegibility;
-  margin-block-end      : 20px;
-  color                 : #111111;
-  line-height           : 1.3;
-  font-size             : 1.625rem;
-  font-weight           : 700;
+  margin-block-end: $spacer;
+  line-height     : 1.1;
+  font-weight     : $fw-m;
  }
 }
 
@@ -72,16 +68,18 @@ h6 {
 
 h1 {
  font-size: 3rem;
-
+ font-size: clamp(2.25rem, 4vw, 3rem);
+ font-weight: $fw-b;
 }
 
 h2 {
  font-size: 2.25rem;
-
+ font-size: clamp(1.5rem, 4vw, 2.25rem);
 }
 
 h3 {
- font-size: 2rem;
+ font-size: 1.75rem;
+ font-size: clamp(1.25rem, 3vw, 1.5rem);
 
 }
 
@@ -107,8 +105,10 @@ h6 {
 .element {
  margin-block: 1rem;
 
- &-title {
-  margin-block-start: 1rem;
+
+ &__title {
+  margin-block: $spacer calc($spacer / 2);
+
  }
 }
 

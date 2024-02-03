@@ -1,15 +1,15 @@
 // Collection Styles
-.cards {
- display              : grid;
- grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
- gap                  : 1rem;
- list-style           : none;
+// .cards {
+//  display              : grid;
+//  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+//  gap                  : 1rem;
+//  list-style           : none;
 
- &__title {
-  padding   : 1rem;
-  height    : 100px;
- }
-}
+//  &__title {
+//   padding   : 1rem;
+//   height    : 100px;
+//  }
+// }
 
 // .cards {
 

@@ -119,7 +119,7 @@ p {
 }
 
 .text-muted {
-  background-color: hsl(0deg, 0%, 98%);
+  background-color: hsl(0deg, 0%, 100%);
   color: rgb(153, 153, 153);
   font-weight: 300;
   line-height: 1.3;
@@ -195,10 +195,13 @@ inline-text {
 
 /* Default.scss  */
 body {
+  background-color: hsl(0deg, 0%, 100%);
+  color: #1a1a1a;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 1.6;
   display: flex;
   flex-flow: column nowrap;
+  overflow-x: hidden;
 }
 
 img {
@@ -213,7 +216,7 @@ figure {
 }
 figure img {
   border-radius: 7px;
-  box-shadow: 0 0 15px -5px rgba(26, 26, 26, 0.15);
+  box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   object-fit: cover;
 }
 figure figcaption {
@@ -225,14 +228,9 @@ figure figcaption {
 }
 
 .element__title {
-  background-color: pink !important;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  margin-block-end: 20px;
-  color: #111111;
-  line-height: 1.3;
-  font-size: 1.625rem;
-  font-weight: 700;
+  margin-block-end: 1em;
+  line-height: 1.1;
+  font-weight: 600;
 }
 
 .element__title + p {
@@ -260,14 +258,18 @@ h6 {
 
 h1 {
   font-size: 3rem;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 700;
 }
 
 h2 {
   font-size: 2.25rem;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.75rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
 }
 
 h4 {
@@ -290,8 +292,8 @@ h6 {
 .element {
   margin-block: 1rem;
 }
-.element-title {
-  margin-block-start: 1rem;
+.element__title {
+  margin-block: 1em 0.5em;
 }
 
 .text-danger {
@@ -376,7 +378,7 @@ h6 {
   background-color: #bdbdbd;
   color: #1a1a1a;
   cursor: pointer;
-  box-shadow: 0 0 15px -5px rgba(26, 26, 26, 0.15);
+  box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
 }
 
 .btn-findMore {
@@ -386,7 +388,7 @@ h6 {
 }
 .btn-findMore:hover, .btn-findMore:focus-within {
   background-color: hsl(0deg, 0%, 10%);
-  color: #fafafa;
+  color: white;
 }
 
 .btn-cta {
@@ -447,14 +449,14 @@ h6 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: hsl(0deg, 0%, 98%);
+  color: hsl(0deg, 0%, 100%);
   border-radius: 7px;
   width: 60ch;
   max-width: 50%;
   z-index: 102;
 }
 .hero__content-title {
-  color: hsl(0deg, 0%, 98%);
+  color: hsl(0deg, 0%, 100%);
 }
 .hero__image {
   width: 100vw;
@@ -465,17 +467,6 @@ h6 {
   height: min(var(--hero-height), 1080px);
   object-fit: cover;
   z-index: 100;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-  list-style: none;
-}
-.cards__title {
-  padding: 1rem;
-  height: 100px;
 }
 
 .contact-form {
@@ -536,7 +527,7 @@ textarea:focus {
 }
 .gallery-wrapper .gallery-img img {
   border-radius: 7px;
-  box-shadow: 0 0 15px -5px rgba(26, 26, 26, 0.15);
+  box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   height: 250px;
   object-fit: cover;
 }
@@ -546,7 +537,7 @@ textarea:focus {
 }
 .imageElement__image img {
   border-radius: 7px;
-  box-shadow: 0 0 15px -5px rgba(26, 26, 26, 0.15);
+  box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   max-height: 450px;
   object-fit: cover;
 }
@@ -559,7 +550,7 @@ textarea:focus {
 }
 .pageMedia img {
   border-radius: 7px;
-  box-shadow: 0 0 15px -5px rgba(26, 26, 26, 0.15);
+  box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   max-height: 450px;
   object-fit: cover;
 }
@@ -587,15 +578,49 @@ textarea:focus {
   height: 100%;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-  list-style: none;
+#recipeCategoryPageElement {
+  padding-block-end: 3em;
 }
-.cards__title {
-  padding: 1rem;
-  height: 100px;
+#recipeCategoryPageElement .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  gap: 2em;
+}
+#recipeCategoryPageElement .card {
+  border-radius: 7px;
+  box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
+  padding: 0.5em;
+  background-color: hsl(0deg, 0%, 100%);
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+#recipeCategoryPageElement .card__image img {
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+#recipeCategoryPageElement .card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+#recipeCategoryPageElement .card__title {
+  text-wrap: wrap;
+  font-weight: 400;
+}
+#recipeCategoryPageElement .card__author {
+  margin-block-start: auto;
+  color: rgb(153, 153, 153);
+}
+#recipeCategoryPageElement .card__author span {
+  color: hsl(0deg, 0%, 40%);
+  font-weight: 600;
+}
+#recipeCategoryPageElement .card__author .icon {
+  color: hsl(324deg, 51%, 50%);
+  font-size: 0.8rem;
 }
 
 /* includes */
@@ -615,7 +640,7 @@ textarea:focus {
   border-bottom: solid 1px hsl(0deg, 0%, 94%);
   border-left: solid 1px hsl(0deg, 0%, 94%);
   border-top: solid 1px hsl(0deg, 0%, 94%);
-  box-shadow: 0 0 15px -5px rgba(26, 26, 26, 0.15);
+  box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   flex: 1;
 }
 .search__input::placeholder {
@@ -629,8 +654,8 @@ textarea:focus {
 }
 .search__button {
   background-color: hsl(324deg, 51%, 50%);
-  color: #fafafa;
-  box-shadow: 0 0 15px -5px rgba(26, 26, 26, 0.15);
+  color: white;
+  box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
 }
 
 .header {
@@ -681,7 +706,7 @@ textarea:focus {
   height: 4px;
   border-radius: 7px;
   background-color: hsl(0deg, 0%, 10%);
-  color: #fafafa;
+  color: white;
   position: relative;
 }
 .toggle-label-hamburger span::before,
@@ -763,7 +788,7 @@ textarea:focus {
 }
 .nav-link:hover, .nav-link:focus {
   background-color: hsl(324deg, 51%, 50%);
-  color: #fafafa;
+  color: white;
 }
 
 .nav-link:has(> .toggle-label) {
@@ -841,7 +866,7 @@ textarea:focus {
 }
 .subnav-link:hover, .subnav-link:focus {
   background-color: hsl(324deg, 51%, 50%);
-  color: #fafafa;
+  color: white;
 }
 
 .pagination {
@@ -854,23 +879,23 @@ textarea:focus {
 }
 .pagination .page-link {
   background-color: hsl(324deg, 51%, 50%);
-  color: #fafafa;
-  border-top: solid 2px hsl(0deg, 0%, 98%);
-  border-bottom: solid 2px hsl(0deg, 0%, 98%);
-  border-right: solid 2px hsl(0deg, 0%, 98%);
+  color: white;
+  border-top: solid 2px hsl(0deg, 0%, 100%);
+  border-bottom: solid 2px hsl(0deg, 0%, 100%);
+  border-right: solid 2px hsl(0deg, 0%, 100%);
   transition: background-color 125ms;
 }
 .pagination .page-link:hover, .pagination .page-link:focus-within {
   background-color: #3ec172;
-  color: #fafafa;
+  color: white;
 }
 .pagination .page-link:first-child {
-  border-left: solid 2px hsl(0deg, 0%, 98%);
+  border-left: solid 2px hsl(0deg, 0%, 100%);
   border-bottom-left-radius: 7px;
   border-top-left-radius: 7px;
 }
 .pagination .page-link:last-child {
-  border-right: solid 2px hsl(0deg, 0%, 98%);
+  border-right: solid 2px hsl(0deg, 0%, 100%);
   border-bottom-right-radius: 7px;
   border-top-right-radius: 7px;
 }
@@ -881,7 +906,7 @@ textarea:focus {
 }
 .pagination .page-link.disabled:hover, .pagination .page-link.disabled:focus-within {
   background-color: hsl(324deg, 51%, 50%);
-  color: #fafafa;
+  color: white;
   color: rgb(153, 153, 153);
 }
 .pagination a {
@@ -954,9 +979,7 @@ textarea:focus {
 }
 .single-recipe .recipe-title {
   color: hsl(0deg, 0%, 10%);
-  line-height: 1.2;
-  font-size: 2.3rem;
-  font-weight: 700;
+  line-height: 1.1;
 }
 .single-recipe .entry-meta {
   color: hsl(0deg, 0%, 94%);
@@ -1042,7 +1065,7 @@ textarea:focus {
 }
 .sidebarLatest__card {
   outline: solid 1px hsl(0deg, 0%, 94%);
-  box-shadow: 0 0 15px -5px rgba(26, 26, 26, 0.15);
+  box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   overflow: hidden;
   display: flex;
   gap: 1em;
@@ -1070,7 +1093,6 @@ textarea:focus {
 .sidebarLatest__title {
   font-size: 1.1rem;
   line-height: 1.2;
-  text-wrap: pretty;
   text-transform: capitalize;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   letter-spacing: 0.15ex;
@@ -1124,11 +1146,6 @@ textarea:focus {
 .recipeDirections__layout > * ul li::before,
 .recipeDirections__layout > * ol li::before {
   color: hsl(324deg, 51%, 50%);
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f35a";
@@ -1137,12 +1154,13 @@ textarea:focus {
   counter-increment: steps;
 }
 .recipeDirections__layout > * ol li::before {
+  margin-block-start: 0.5em;
   content: counter(steps);
   font-size: 0.8rem;
   background-color: hsl(324deg, 51%, 50%);
-  color: hsl(0deg, 0%, 98%);
-  min-width: 1.5em;
-  line-height: 1.5em;
+  color: hsl(0deg, 0%, 100%);
+  min-width: 2.5em;
+  line-height: 2.5em;
   border-radius: 1rem;
   text-align: center;
 }
@@ -1163,7 +1181,7 @@ textarea:focus {
 
 .ingredients,
 .method {
-  background-color: hsl(0deg, 0%, 98%);
+  background-color: hsl(0deg, 0%, 100%);
 }
 .ingredients h3,
 .method h3 {
