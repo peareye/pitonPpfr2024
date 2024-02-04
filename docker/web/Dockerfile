@@ -11,7 +11,7 @@ RUN apt-get update && \
       php7.4-cli \
       libapache2-mod-php7.4 \
       php-apcu \
-      php-xdebug \
+      php7.4-xdebug \
       php7.4-gd \
       php7.4-json \
       php7.4-ldap \

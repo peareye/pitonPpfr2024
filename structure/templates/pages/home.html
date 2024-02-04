@@ -6,7 +6,7 @@
 
 {% block body %}
 <div class="wrapper">
-
+<h1 class="visually-hidden">{{ page.title ~ ' | ' ~ site.settings.siteName|default('PitonCMS') }}</h1>
  {{ getBlockElementsHtml(page.blocks.contentBlock) }}
  </div>
  {% endblock body %}

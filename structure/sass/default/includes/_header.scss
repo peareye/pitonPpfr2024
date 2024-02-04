@@ -1,0 +1,20 @@
+// Header
+
+.header {
+ padding-inline : 1rem;
+ display        : flex;
+ align-items    : flex-end;
+ justify-content: space-between;
+
+ position: relative;
+ &-wrapper {
+  @include dc(color(primary));
+  border-bottom: solid 5px color(accent);
+ }
+}
+
+.logo {
+ padding-block: 1em;
+ height       : 100%;
+ width        : min(100%, 250px);
+}

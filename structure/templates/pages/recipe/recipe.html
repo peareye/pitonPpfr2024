@@ -7,12 +7,12 @@
 {% block recipeHeader %}
 
 {% block mainContent %}
-<div class="container">
+<div class="wrapper">
  <div class="recipeHeaderLayout">
   <div class="single-recipe">
-   <div class="category-name">{{page.settings.subCategory1}}</div>
+   <div class="category-name">{{page.collection_title}}</div>
 
-   <h1 class="recipe-title">{{page.title }}</h1>
+   <h1 class="recipe-title">{{ page.title }} <span class="visually-hidden">{{ site.settings.siteName|default('PitonCMS')}}</span></h1>
 
    <!-- FEATURE META BLOCK -->
    <div class="feature-recipe">
@@ -69,8 +69,7 @@
 
    </div>
    {% if page.blocks.storyBlock %}
-   <div class="recipe-story">
-    <h2 class="recipeDirections__title">Story</h2>
+   <div class="recipeStory">
     {{ getBlockElementsHtml(page.blocks.storyBlock) }}
    </div>
    {% endif %}
@@ -80,63 +79,32 @@
   {% block sideBar %}
   <!-- BEGIN SIDEBAR -->
   <div class="sidebar">
+
    <div class="sidebar__heading">
     <h2 class="sidebar__title">Latest Recipes</h2>
    </div>
 
-   <div class="sidebarLatest">
-    <div class="sidebarLatest__card">
-     <div class="sidebarLatest__img">
-      <a href="#"><img src="{{ getMediaPath(page.media.filename, 'thumb') }}" alt="{{ page.media.caption }}"></a>
-     </div>
-     <div class="sidebarLatest__content">
-      <div class="sidebarLatest__category">{{page.settings.subCategory1}}</div>
-      <h4 class="sidebarLatest__title"><a href="#">{{page.title }}</a></h4>
-      <div class="sidebarLatest__author"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ page.author }}</span></div>
-     </div>
-    </div>
-    <div class="sidebarLatest__card">
-     <div class="sidebarLatest__img">
-      <a href="#"><img src="{{ getMediaPath(page.media.filename, 'thumb') }}" alt="{{ page.media.caption }}"></a>
-     </div>
-     <div class="sidebarLatest__content">
-      <div class="sidebarLatest__category">{{page.settings.subCategory2}}</div>
-      <h4 class="sidebarLatest__title"><a href="#">{{page.title }}</a></h4>
-      <div class="sidebarLatest__author"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ page.author }}</span></div>
-     </div>
-    </div>
-    <div class="sidebarLatest__card">
-     <div class="sidebarLatest__img">
-      <a href="#"><img src="{{ getMediaPath(page.media.filename, 'thumb') }}" alt="{{ page.media.caption }}"></a>
-     </div>
-     <div class="sidebarLatest__content">
-      <div class="sidebarLatest__category">{{page.settings.subCategory3}}</div>
-      <h4 class="sidebarLatest__title"><a href="#">{{page.title }}</a></h4>
-      <div class="sidebarLatest__author"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ page.author }}</span></div>
-     </div>
-    </div>
-   </div>
-   <div class="sidebar-item recipeCategory" itemprop="recipeCategory">
+   {{ include("includes/_recipeSidebarLatest.html") }}
 
-    <div class="sidebar__heading" style="margin-block-start: 2em;">
+   <div class="sidebar-item recipeCategory">
+    <div class="sidebar__heading">
      <h2 class="sidebar__title">Find More</h2>
     </div>
-   
-    
-  <div class="sidebarFindMore" >
-     <a class="btn categories-item" href="https://perisplaceforrecipes.com/recipe/category/Starter"
+
+    <div class="sidebarFindMore">
+     <a class="btn btn-findMore" href="https://perisplaceforrecipes.com/recipe/category/Starter"
       title="View recipes for Starter">Starter</a>
-    
-     
-     <a class="btn categories-item" href="https://perisplaceforrecipes.com/recipe/category/Vegetarian"
+
+
+     <a class="btn btn-findMore" href="https://perisplaceforrecipes.com/recipe/category/Vegetarian"
       title="View recipes for Vegetarian">Vegetarian</a>
-    
-     
-     <a class="btn categories-item" href="https://perisplaceforrecipes.com/recipe/category/Holiday"
+
+
+     <a class="btn btn-findMore" href="https://perisplaceforrecipes.com/recipe/category/Holiday"
       title="View recipes for Holiday">Holiday</a>
- 
-  </div>
-   
+
+    </div>
+
    </div>
   </div>
   {% endblock sideBar %}
@@ -147,7 +115,7 @@
 {% block recipeDirections %}
 <!-- BEGIN RECIPE DIRECTIONS -->
 <main>
- <div class="container">
+ <div class="wrapper">
   <div class="recipeDirections__layout">
    {% if page.blocks.ingredientsBlock %}
    <div class="ingredients">
@@ -164,7 +132,7 @@
   </div>
   {% endif %}
 
-  {% if page.blocks.noteBlock %}
+  {% if page.blocks.notesBlock %}
   <div class="recipe-notes">
    <h2 class="recipeDirections__title">Notes</h2>
    {{ getBlockElementsHtml(page.blocks.notesBlock) }}

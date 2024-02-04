@@ -1,9 +1,11 @@
-{% extends 'pages/_base_layout.html' %}
+{% extends '/pages/_base_layout.html' %}
 
 {% block body %}
-<div class="container">  
 
-<div class="oneColLayout"> {{ getBlockElementsHtml(page.blocks.contentBlock) }}</div>
+<main class="content-grid">
+ {{ getBlockElementsHtml(page.blocks.contentBlock) }}
+</main> 
 
-</div>
+
+
 {% endblock body %}

@@ -5,10 +5,13 @@
 
 /* global */
 
+
 @import 'global/reset';
+@import 'global/utilities';
 @import 'global/defaults';
 @import 'global/layout';
 @import 'global/buttons';
+@import 'global/elements';
 
 /* elements */
 @import 'elements/text';
@@ -18,12 +21,16 @@
 @import 'elements/gallery';
 @import 'elements/image';
 @import 'elements/embedded';
+@import 'elements/recipeCategoryPageElement';
 
 /* includes */
+@import 'includes/search';
+@import 'includes/header';
 @import 'includes/hamburger';
 @import 'includes/navbar';
-@import 'includes/footer';
 @import 'includes/pagination';
+@import 'includes/footer';
+@import 'includes/recipeSidebarLatest';
 
 /* pages */
 @import 'pages/home';

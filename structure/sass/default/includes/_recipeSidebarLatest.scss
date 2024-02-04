@@ -1,0 +1,76 @@
+.sidebarLatest {
+ padding-block-end: calc($spacer * 2);
+ display          : grid;
+ grid-auto-rows   : 90px;
+ gap              : $spacer;
+
+ &__card {
+  outline   : solid 1px neutral(2);
+  box-shadow: $bs;
+
+  display: flex;
+ }
+
+ &__img {
+  aspect-ratio: 1/1;
+
+  img {
+   object-fit: cover;
+   width     : 90px;
+   height    : 90px;
+  }
+ }
+
+ &__content {
+  padding-inline: calc($spacer / 2);
+  width             : 100%;
+  height            : 100%;
+
+  display        : flex;
+  flex-direction : column;
+  // justify-content: center;
+ }
+
+ &__category {
+  color         : color(accent);
+  text-transform: uppercase;
+  letter-spacing: $ls;
+  font-size     : .8rem;
+ }
+
+ &__title {
+  font-size     : 1.1rem;
+  line-height   : 1;
+  text-wrap     : wrap;
+  text-transform: capitalize;
+  font-family   : $ff-sans;
+  letter-spacing: $ls;
+
+  & a {
+   font-weight    : $fw-n;
+   text-decoration: none;
+   color          : neutral(5);
+   transition     : all 0.3s ease-in-out;
+
+   &:hover {
+    background-color: transparent;
+    text-decoration : none;
+    outline         : 0 none;
+
+    color: color(accent);
+   }
+  }
+ }
+
+ &__author {
+  margin-block-start: auto;
+  padding-block-end: 5px;
+  font-size: .8rem;
+  color    : neutral(3);
+
+  span {
+   color      : neutral(4);
+   font-weight: $fw-m;
+  }
+ }
+}

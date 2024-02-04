@@ -1,36 +1,39 @@
 {# Collection Element #}
 
 {# Get the collection summary set. The second argument is the number of items to return per page #}
-{% set collection = getCollectionPagesWithPagination(element.collection_id, 6) %}
+{% set collection = getCollectionPagesWithPagination(element.collection_id) %}
 
-<div class="element">
-  <h2>{{ element.title }}</h2>
-  {{ element.content }}
+<div class="element flow">
+ <h2 class="element__title">{{ element.title }}</h2>
+ {{ element.content }}
 
-  <ul class="cards">
-    {% for detail in collection %}
-    <a href="{{ getPathForPage(detail.page_slug, detail.collection_slug) }}">
-      <li class="card">
+ <div class="collectionSummary">
+  {% for detail in collection %}
+  <a class="collectionSummary__card" href="{{ getPathForPage(detail.page_slug, detail.collection_slug) }}">
 
-        {% if detail.media.filename %}
-        <div class="card__image">
-          <img src="{{ getMediaPath(detail.media.filename, 'thumb') }}">
-        </div>
-        {% endif %}
+   {% if detail.media.filename %}
+   <div class="collectionSummary__image">
+    <img src="{{ getMediaPath(detail.media.filename, 'thumb') }}">
+   </div>
+   {% endif %}
 
-        <div class="card__title">
-          <h3>{{ detail.title }}</h3>
-        </div>
-        <p class="card__text">
-          {{ detail.first_element_content }}
-        </p>
+   <div class="collectionSummary__content">
 
-      </li>
-    </a>
+    <h3 class="collectionSummary__title">{{ detail.title }}</h3>
 
-    {% endfor %}
-  </ul>
+    {% if detail.first_element_content %}
+    <div class="collectionSummary__text cutoff-text">
+     {{ detail.first_element_content }}
+    </div>
+    {% endif %}
 
-  {# Print pagination navigation #}
-  {{ pagination() }}
+   </div>
+
+  </a>
+
+  {% endfor %}
+ </div>
+
+ {# Print pagination navigation #}
+ {{ pagination() }}
 </div>

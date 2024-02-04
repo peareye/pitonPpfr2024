@@ -26,6 +26,10 @@
 }
 .btn-findMore {
  padding-inline: .25em;
+ @include dc(color(primary));
+ &:hover,&:focus-within {
+  @include dc(neutral(5));
+ }
 }
 .btn-cta {
  font-size      : 1.25rem;

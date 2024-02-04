@@ -1,0 +1,48 @@
+.search {
+
+ &__form {
+  display: flex;
+ }
+
+ &__input,
+ &__button {
+  margin       : 0;
+  padding      : .5em 1em;
+  border       : none;
+  border       : none;
+  border-radius: none;
+ }
+
+ &__input {
+  font-size: 1.2rem;
+  padding  : 0.25em;
+
+  border-bottom            : solid 1px neutral(2);
+  border-left              : solid 1px neutral(2);
+  border-top               : solid 1px neutral(2);
+  // border-top-left-radius   : $br;
+  // border-bottom-left-radius: $br;
+  box-shadow: $bs;
+
+  flex: 1;
+ }
+
+ &__input::placeholder {
+  color     : color(accent);
+  opacity   : 0.5;
+  transition: opacity 0.25s linear;
+  font-size: 1.5rem;
+ }
+
+ &__input:focus::placeholder {
+  opacity: 0;
+ }
+
+ &__button {
+  @include dc(color(accent));
+  box-shadow: $bs;
+  // border-bottom-right-radius: $br;
+  // border-top-right-radius   : $br;
+ }
+
+}

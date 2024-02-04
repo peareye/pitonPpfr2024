@@ -1,56 +1,47 @@
 /* Default.scss  */
 
 body {
-  font-family     : $ff-sans-body;
-  line-height     : 1.6;
-
-  display  : flex;
-  flex-flow: column nowrap;
-
-  overflow-x: hidden;
+ @include dc(neutral(1));
+ font-family: $ff-sans;
+ line-height: 1.6;
+ display    : flex;
+ flex-flow  : column nowrap;
+ overflow-x : hidden;
 }
 
 img {
-  width  : 100%;
-  display: block;
-  height : auto;
-} 
-
-figure {
-  border-radius: $br;
-  padding-block: 2em 1em;
-
-  img {
-    max-height   : 450px;
-    border-radius: $br;
-    box-shadow   : $bs;
-    object-fit   : cover;
-  }
-
-  figcaption {
-    color      : neutral(4);
-    font-size  : .8rem;
-    font-style : italic;
-    font-weight: 300;
-    margin-top : .25em !important;
-    text-align : center;
-  }
+ width  : 100%;
+ display: block;
+ height : auto;
 }
 
-.element__title+p {
-  margin-block-start: 1rem;
+figure {
+ border-radius: $br;
+ padding-block: 2em 1em;
+
+ img {
+  border-radius: $br;
+  box-shadow   : $bs;
+  object-fit   : cover;
+ }
+
+ figcaption {
+  color      : neutral(4);
+  font-size  : .8rem;
+  font-style : italic;
+  font-weight: 300;
+  text-align : center;
+ }
 }
 
 a {
-  text-decoration: none;
+ text-decoration: none;
+ transition     : all 125ms ease;
 
-  transition: all 125ms ease;
-
-  &:hover {
-    color: color(accent);
-  }
+ &:hover {
+  color: color(accent);
+ }
 }
-
 
 
 h1,
@@ -59,53 +50,53 @@ h3,
 h4,
 h5,
 h6 {
-  font-family   : $ff-sans-headings;
-  letter-spacing: $ls;
-  color         : $clr-accent;
-  text-transform: capitalize;
+ font-family   : $ff-sans;
+ letter-spacing: $ls;
+ text-transform: capitalize;
 }
 
 h1 {
-  font-size: 3rem;
+ font-size: 3rem;
+ font-size: clamp(2.25rem, 4vw, 3rem);
+ font-weight: $fw-b;
 }
 
 h2 {
-  font-size: 2.25rem;
+ font-size: 2.25rem;
+ font-size: clamp(1.5rem, 4vw, 2.25rem);
 }
 
 h3 {
-  font-size: 2rem;
+ font-size: 1.75rem;
+ font-size: clamp(1.25rem, 3vw, 1.5rem);
+
 }
 
 h4 {
-  font-size: 1.5rem;
+ font-size: 1.5rem;
+
 }
 
 h5 {
-  font-size: 1.25rem;
+ font-size: 1.25rem;
+
 }
 
 h6 {
-  font-size: 1rem;
+ font-size: 1rem;
 }
 
-.hero+.container main {
-  margin: 0;
-  padding: 0;
+.hero+.wrapper main {
+ margin : 0;
+ padding: 0;
 }
 
-.element {
-  margin-block: 1rem;
 
-  &-title {
-    margin-block-start: 1rem;
-  }
-}
 
 .text-danger {
-  color: color(accent);
+ color: color(accent);
 }
 
 .span {
-  grid-column: 1 / -1;
+ grid-column: 1 / -1;
 }

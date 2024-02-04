@@ -5,8 +5,8 @@
 #}
 {% set results = getSearchResultsWithPagination(6) %}
 
-<div class="element">
-    <h2>{{ element.title }}</h2>
+<section class="element">
+    <h2 class="element__title">{{ element.title }}</h2>
     {{ element.content }}
 
     <ul class="cards">
@@ -38,4 +38,4 @@
 
     {# Print pagination navigation #}
     {{ pagination() }}
-  </div>
+  </section>
