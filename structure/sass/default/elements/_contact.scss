@@ -1,44 +1,48 @@
  // Contact Styles
-   .contact-form {
-     margin-block-start: 1em;
-     display              : grid;
-     grid-template-columns: 1fr;
-     gap                  : 1em;
-  
-     @include mq(small) {
-      grid-template-columns: repeat(2, 1fr);
-     }
-   }
-   ::placeholder {
-     color: rgba(neutral(4), .75);
-   }
- 
- .input-group {
-   display    : flex;
-   flex-flow  : column nowrap;
-   align-items: baseline;
+ .contact-form {
+  display              : grid;
+  grid-template-columns: 1fr;
+  gap                  : $spacer;
+
+  @include mq(small) {
+   grid-template-columns: repeat(2, 1fr);
+  }
  }
+
+ ::placeholder {
+  color    : rgba(neutral(3), .85);
+  font-size: 1.2rem;
+ }
+
+ .input-group {
+  display    : flex;
+  flex-flow  : column nowrap;
+  gap        : calc($spacer * .25);
+  align-items: baseline;
+ }
+
  /* Add styles to 'label' selector */
  label {
-   font-size: 1.2em;
+  font-size: 1.2rem;
  }
+
  /* Add styles to 'input' and 'textarea' selectors */
  input[type=text],
  input[type=email],
  textarea {
-   width: 100%;
-   padding-block: .75em;
-   padding-inline: 1em;
-   // border       : 1px solid neutral(3);
-   // border-radius: $br;
-   grid-column  : 2 / 3;
-   font-size: inherit;
-   transition   : all 125ms ease-in-out;
+  width         : 100%;
+  padding-block : .75em;
+  padding-inline: 1em;
+  border        : 1px solid neutral(3);
+  border-radius : $br;
+  font-size     : inherit;
+  transition    : all 125ms ease-in-out;
  }
+
  /* Add styles to show 'focus' of selector */
  input[type=text]:focus,
  input[type=email]:focus,
  textarea:focus {
-   border : 2px dashed color(accent);
-   outline: none;
+  border : 2px dashed color(accent);
+  outline: none;
  }

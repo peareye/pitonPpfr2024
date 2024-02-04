@@ -1,23 +1,23 @@
 <!-- // recent random popular -->
+
 <div class="sidebarLatest">
+
  {% set sidebar = getPublishedRankedCollectionPages('random', 4) %}
+
  {% for recipe in sidebar %}
- <div class="sidebarLatest__card">
 
-  {% if recipe.media.filename %}
+  <a class="sidebarLatest__card" href="{{ getPathForPage(recipe.page_slug, recipe.collection_slug)}}">
+   {% if recipe.media.filename %}
+   <div class="sidebarLatest__img">
+    <img src="{{ getMediaPath(recipe.media.filename, 'thumb') }}" alt="{{ recipe.media.caption }}">
+   </div>
+   {% endif %}
+   <div class="sidebarLatest__content">
+    <div class="sidebarLatest__category">{{page.settings.subCategory1}}</div>
+    <h4 class="sidebarLatest__title">{{recipe.title }}</h4>
+    <div class="sidebarLatest__author"><i class="fas fa-user"></i> by <span>{{ recipe.author }}</span></div>
+   </div>
+  </a>
 
-  <div class="sidebarLatest__img">
-   <a href="{{ getPathForPage(recipe.page_slug, recipe.collection_slug)}}"><img src="{{ getMediaPath(recipe.media.filename, 'thumb') }}" alt="{{ recipe.media.caption }}"></a>
-  </div>
-
-  {% endif %}
-
-  <div class="sidebarLatest__content">
-   <div class="sidebarLatest__category">{{page.settings.subCategory1}}</div>
-   <h4 class="sidebarLatest__title"><a href="#">{{recipe.title }}</a></h4>
-   <div class="sidebarLatest__author"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ recipe.author }}</span></div>
-  </div>
+  {% endfor %}
  </div>
-
- {% endfor %}
-</div>

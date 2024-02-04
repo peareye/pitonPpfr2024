@@ -1,14 +1,12 @@
 // Gallery Element
 
 .gallery-wrapper {
-  padding-block: 2em;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
-  gap: 1.5em;
+  gap: $spacer;
 
   .gallery-img{
-    margin-block-start: 0;
-
+   
     img {
       border-radius: $br;
       box-shadow   : $bs;

@@ -69,8 +69,7 @@
 
    </div>
    {% if page.blocks.storyBlock %}
-   <div class="recipe-story">
-    <h2 class="recipeDirections__title">Story</h2>
+   <div class="recipeStory">
     {{ getBlockElementsHtml(page.blocks.storyBlock) }}
    </div>
    {% endif %}
@@ -87,7 +86,7 @@
 
    {{ include("includes/_recipeSidebarLatest.html") }}
 
-   <div class="sidebar-item recipeCategory" >
+   <div class="sidebar-item recipeCategory">
     <div class="sidebar__heading">
      <h2 class="sidebar__title">Find More</h2>
     </div>

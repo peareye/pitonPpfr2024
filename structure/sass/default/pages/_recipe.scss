@@ -89,7 +89,7 @@
  }
 
  &__heading {
-  margin-block: $spacer;
+  margin-block : $spacer;
   border-bottom: 1px solid neutral(2);
  }
 
@@ -137,10 +137,10 @@
    }
 
    &::before {
-    color                 : color(accent);
-    font-family           : "Font Awesome 5 Free";
-    font-weight           : 900;
-    content               : "\f35a";
+    color      : color(accent);
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content    : "\f35a";
    }
   }
 
@@ -149,10 +149,10 @@
 
    &::before {
     margin-block-start: .5em;
-    content         : counter(steps);
-    font-size       : .8rem;
-    background-color: color(accent);
-    color           : neutral(1);
+    content           : counter(steps);
+    font-size         : .8rem;
+    background-color  : color(accent);
+    color             : neutral(1);
 
     min-width    : 2.5em;
     line-height  : 2.5em;
@@ -202,5 +202,14 @@
   padding      : .5rem;
   line-height  : 1.4;
   font-size    : 1rem;
+ }
+}
+
+.recipeStory {
+ display: block;
+
+ &__title {
+  margin : 0;
+  padding: 0;
  }
 }

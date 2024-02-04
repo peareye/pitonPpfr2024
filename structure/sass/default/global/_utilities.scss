@@ -43,7 +43,7 @@ inline-text {
 
 
  @include mq(small) {
-  --max-lines: 5;
+  --max-lines: 3;
  }
 }
 

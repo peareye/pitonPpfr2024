@@ -34,18 +34,6 @@ figure {
  }
 }
 
-.element {
- &__title {
-  margin-block-end: $spacer;
-  line-height     : 1.1;
-  font-weight     : $fw-m;
- }
-}
-
-.element__title+p {
- margin-block-start: 1rem;
-}
-
 a {
  text-decoration: none;
  transition     : all 125ms ease;
@@ -54,6 +42,7 @@ a {
   color: color(accent);
  }
 }
+
 
 h1,
 h2,
@@ -102,15 +91,7 @@ h6 {
  padding: 0;
 }
 
-.element {
- margin-block: 1rem;
 
-
- &__title {
-  margin-block: $spacer calc($spacer / 2);
-
- }
-}
 
 .text-danger {
  color: color(accent);

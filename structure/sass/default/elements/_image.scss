@@ -10,17 +10,9 @@
     object-fit   : cover;
    }
   }
-
-  &__content {
-
-   margin-block-start: 1rem;
-  }
-
  }
 
  .pageMedia {
-
-  margin-block-start: 1rem;
 
   img {
    border-radius: $br;
@@ -28,9 +20,4 @@
    max-height   : 450px;
    object-fit   : cover;
   }
- }
-
- .imageElement__image+.imageElement__content {
-
-  margin-block-start: 2rem;
  }
