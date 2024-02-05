@@ -1,14 +1,17 @@
 {# Collection Element #}
 
 {# Get the collection summary set. The second argument is the number of items to return per page #}
+
+
 {% set collection = getCollectionPagesWithPagination(element.collection_id) %}
 
-<div class="element flow">
+<section class="collectionSummarySection element flow">
  <h2 class="element__title">{{ element.title }}</h2>
  {{ element.content }}
 
  <div class="collectionSummary">
   {% for detail in collection %}
+
   <a class="collectionSummary__card" href="{{ getPathForPage(detail.page_slug, detail.collection_slug) }}">
 
    {% if detail.media.filename %}
@@ -30,10 +33,12 @@
    </div>
 
   </a>
-
+  {% else %}
+  {# For when no search results are found #}
+  <h3 class="collectionSummary__title">No search results found.</h3>
   {% endfor %}
  </div>
 
  {# Print pagination navigation #}
  {{ pagination() }}
-</div>
+</section>

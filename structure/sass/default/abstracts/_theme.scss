@@ -15,9 +15,9 @@ $clr-orange : hsl(24, 100%, 50%);
 $clr-red    : hsl(354, 71%, 49%);
 $clr-green  : hsl(154, 91%, 31%);
 
-$clr-primary  : $clr-blue;
+$clr-primary  : $neutral-1;
 $clr-secondary: adjust-hue($clr-primary, -30);
-$clr-accent   : $clr-red;
+$clr-accent   : $neutral-5;
 
 $clrs: (primary: $clr-primary,
  primary-dark: darken($clr-primary, 20%),

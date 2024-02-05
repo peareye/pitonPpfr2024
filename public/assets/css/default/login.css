@@ -162,7 +162,7 @@ inline-text {
   margin-inline: auto;
 }
 .expand-btn:hover {
-  background-color: hsl(354deg, 71%, 49%);
+  background-color: hsl(0deg, 0%, 10%);
   color: white;
 }
 .expand-btn::before {
@@ -232,7 +232,7 @@ a {
   transition: all 125ms ease;
 }
 a:hover {
-  color: hsl(354deg, 71%, 49%);
+  color: hsl(0deg, 0%, 10%);
 }
 
 h1,
@@ -280,11 +280,36 @@ h6 {
 }
 
 .text-danger {
-  color: hsl(354deg, 71%, 49%);
+  color: hsl(0deg, 0%, 10%);
 }
 
 .span {
   grid-column: 1/-1;
+}
+
+/* Add styles to 'label' selector */
+label {
+  font-size: 1.2rem;
+}
+
+/* Add styles to 'input' and 'textarea' selectors */
+input[type=text],
+input[type=email],
+textarea {
+  width: 100%;
+  padding-block: 0.5em;
+  padding-inline: 1em;
+  border: 1px solid rgb(153, 153, 153);
+  border-radius: 7px;
+  font-size: inherit;
+}
+
+/* Add styles to show 'focus' of selector */
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+  border: 2px dashed hsl(0deg, 0%, 10%);
+  outline: none;
 }
 
 /* Layout.scss */
@@ -365,8 +390,8 @@ img.full-width {
   font-size: inherit;
   text-align: center;
   display: inline-block;
-  background-color: hsl(210deg, 50%, 40%);
-  color: white;
+  background-color: hsl(0deg, 0%, 100%);
+  color: #1a1a1a;
   padding-block: 0.5em;
   padding-inline: 1em;
   border: solid 1px rgba(102, 102, 102, 0.25);
@@ -379,16 +404,16 @@ img.full-width {
   text-decoration: none;
 }
 .btn:hover {
-  background-color: #1a334d;
-  color: white;
+  background-color: #cccccc;
+  color: #1a1a1a;
   cursor: pointer;
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
 }
 
 .btn-findMore {
   padding-inline: 0.25em;
-  background-color: hsl(210deg, 50%, 40%);
-  color: white;
+  background-color: hsl(0deg, 0%, 100%);
+  color: #1a1a1a;
 }
 .btn-findMore:hover, .btn-findMore:focus-within {
   background-color: hsl(0deg, 0%, 10%);
@@ -413,12 +438,12 @@ img.full-width {
   transition: 220ms all ease-in-out;
 }
 .btn-cta:hover, .btn-cta:active {
-  background-color: #4785c2;
+  background-color: white;
 }
 .btn-cta:focus {
   outline-style: dashed;
   outline-color: transparent;
-  box-shadow: 0 0 0 4px #8cb3d9;
+  box-shadow: 0 0 0 4px white;
 }
 
 .btn-link {
@@ -539,32 +564,6 @@ img.full-width {
   align-items: baseline;
 }
 
-/* Add styles to 'label' selector */
-label {
-  font-size: 1.2rem;
-}
-
-/* Add styles to 'input' and 'textarea' selectors */
-input[type=text],
-input[type=email],
-textarea {
-  width: 100%;
-  padding-block: 0.75em;
-  padding-inline: 1em;
-  border: 1px solid rgb(153, 153, 153);
-  border-radius: 7px;
-  font-size: inherit;
-  transition: all 125ms ease-in-out;
-}
-
-/* Add styles to show 'focus' of selector */
-input[type=text]:focus,
-input[type=email]:focus,
-textarea:focus {
-  border: 2px dashed hsl(354deg, 71%, 49%);
-  outline: none;
-}
-
 .gallery-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
@@ -653,7 +652,7 @@ textarea:focus {
   font-weight: 600;
 }
 #recipeCategoryPageElement .card__author .icon {
-  color: hsl(354deg, 71%, 49%);
+  color: hsl(0deg, 0%, 10%);
   font-size: 0.8rem;
 }
 
@@ -661,35 +660,43 @@ textarea:focus {
 .search__form {
   display: flex;
 }
-.search__input, .search__button {
+.search input[type=text], .search__button {
   margin: 0;
-  padding: 0.5em 1em;
-  border: none;
   border: none;
   border-radius: none;
 }
-.search__input {
+.search input[type=text] {
   font-size: 1.2rem;
-  padding: 0.25em;
-  border-bottom: solid 1px hsl(0deg, 0%, 94%);
-  border-left: solid 1px hsl(0deg, 0%, 94%);
-  border-top: solid 1px hsl(0deg, 0%, 94%);
+  border-bottom: solid 1px hsl(0deg, 0%, 10%);
+  border-left: solid 1px hsl(0deg, 0%, 10%);
+  border-top: solid 1px hsl(0deg, 0%, 10%);
+  border-top-left-radius: 7px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 7px;
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   flex: 1;
 }
-.search__input::placeholder {
-  color: hsl(354deg, 71%, 49%);
-  opacity: 0.5;
+.search input[type=text]::placeholder {
+  color: #404040;
+  opacity: 1;
   transition: opacity 0.25s linear;
   font-size: 1.5rem;
 }
-.search__input:focus::placeholder {
+.search input[type=text]:focus::placeholder, .search input[type=text]:focus-within::placeholder {
   opacity: 0;
 }
 .search__button {
-  background-color: hsl(354deg, 71%, 49%);
+  background-color: hsl(0deg, 0%, 10%);
   color: white;
+  padding-block: 1em;
+  padding-inline: 0.5em;
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
+  border-bottom: solid 1px hsl(0deg, 0%, 10%);
+  border-right: solid 1px hsl(0deg, 0%, 10%);
+  border-top: solid 1px hsl(0deg, 0%, 10%);
 }
 
 .header {
@@ -700,9 +707,9 @@ textarea:focus {
   position: relative;
 }
 .header-wrapper {
-  background-color: hsl(210deg, 50%, 40%);
-  color: white;
-  border-bottom: solid 5px hsl(354deg, 71%, 49%);
+  background-color: hsl(0deg, 0%, 100%);
+  color: #1a1a1a;
+  border-bottom: solid 5px hsl(0deg, 0%, 10%);
 }
 
 .logo {
@@ -785,8 +792,8 @@ textarea:focus {
 
 .nav {
   white-space: nowrap;
-  background-color: hsl(210deg, 50%, 40%);
-  color: white;
+  background-color: hsl(0deg, 0%, 100%);
+  color: #1a1a1a;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -818,10 +825,10 @@ textarea:focus {
   letter-spacing: 0.15ex;
   position: relative;
   display: block;
-  transition: all 125ms;
+  transition: background-color 125ms;
 }
 .nav-link:hover, .nav-link:focus {
-  background-color: hsl(354deg, 71%, 49%);
+  background-color: hsl(0deg, 0%, 10%);
   color: white;
 }
 
@@ -856,8 +863,8 @@ textarea:focus {
 }
 
 .subnav {
-  background-color: #339999;
-  color: white;
+  background-color: white;
+  color: #1a1a1a;
   position: absolute;
   top: 100%;
   left: 0;
@@ -885,12 +892,11 @@ textarea:focus {
   color: hsl(0deg, 0%, 10%);
   font-weight: 300;
   letter-spacing: 0.15ex;
-  transition: all 125ms;
+  transition: background-color 125ms;
 }
 @media screen and (min-width: 991px) {
   .subnav-link {
-    border-bottom: 1px solid hsl(0deg, 0%, 10%);
-    padding-inline: 1rem;
+    padding-inline: 1em;
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 2em;
@@ -899,7 +905,7 @@ textarea:focus {
   }
 }
 .subnav-link:hover, .subnav-link:focus {
-  background-color: hsl(354deg, 71%, 49%);
+  background-color: hsl(0deg, 0%, 10%);
   color: white;
 }
 
@@ -912,7 +918,7 @@ textarea:focus {
   justify-content: center;
 }
 .pagination .page-link {
-  background-color: hsl(354deg, 71%, 49%);
+  background-color: hsl(0deg, 0%, 10%);
   color: white;
   border-top: solid 2px hsl(0deg, 0%, 100%);
   border-bottom: solid 2px hsl(0deg, 0%, 100%);
@@ -920,7 +926,7 @@ textarea:focus {
   transition: background-color 125ms;
 }
 .pagination .page-link:hover, .pagination .page-link:focus-within {
-  background-color: #29dbc9;
+  background-color: #e5e5e5;
   color: #1a1a1a;
 }
 .pagination .page-link:first-child {
@@ -939,7 +945,7 @@ textarea:focus {
   pointer-events: none;
 }
 .pagination .page-link.disabled:hover, .pagination .page-link.disabled:focus-within {
-  background-color: hsl(354deg, 71%, 49%);
+  background-color: hsl(0deg, 0%, 10%);
   color: white;
   color: rgb(153, 153, 153);
 }
@@ -953,15 +959,15 @@ textarea:focus {
 .footer {
   margin-block-start: auto;
   padding-block-start: 1em;
-  background-color: hsl(210deg, 50%, 40%);
-  color: white;
+  background-color: hsl(0deg, 0%, 100%);
+  color: #1a1a1a;
   font-size: 0.9rem;
 }
 .footer a {
   transition: all 125ms ease;
 }
 .footer a:hover, .footer a:focus {
-  color: hsl(354deg, 71%, 49%);
+  color: hsl(0deg, 0%, 10%);
 }
 .footer ul {
   list-style: none;
@@ -991,8 +997,8 @@ textarea:focus {
 .footer .footer2 {
   padding-block: 1em;
   margin-block-start: 1em;
-  background-color: #1a334d;
-  color: white;
+  background-color: #cccccc;
+  color: #1a1a1a;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -1031,7 +1037,7 @@ textarea:focus {
   flex-direction: column;
 }
 .sidebarLatest__category {
-  color: hsl(354deg, 71%, 49%);
+  color: hsl(0deg, 0%, 10%);
   text-transform: uppercase;
   letter-spacing: 0.15ex;
   font-size: 0.8rem;
@@ -1054,7 +1060,7 @@ textarea:focus {
   background-color: transparent;
   text-decoration: none;
   outline: 0 none;
-  color: hsl(354deg, 71%, 49%);
+  color: hsl(0deg, 0%, 10%);
 }
 .sidebarLatest__author {
   margin-block-start: auto;
@@ -1069,7 +1075,7 @@ textarea:focus {
 
 /* pages */
 .single-recipe .category-name {
-  color: hsl(354deg, 71%, 49%);
+  color: hsl(0deg, 0%, 10%);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.15ex;
@@ -1084,7 +1090,7 @@ textarea:focus {
   margin-bottom: 0.5rem;
 }
 .single-recipe .entry-meta__icon {
-  color: hsl(354deg, 71%, 49%);
+  color: hsl(0deg, 0%, 10%);
 }
 .single-recipe .single-meta {
   color: rgb(153, 153, 153);
@@ -1182,7 +1188,7 @@ textarea:focus {
 }
 .recipeDirections__layout > * ul li::before,
 .recipeDirections__layout > * ol li::before {
-  color: hsl(354deg, 71%, 49%);
+  color: hsl(0deg, 0%, 10%);
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f35a";
@@ -1194,7 +1200,7 @@ textarea:focus {
   margin-block-start: 0.5em;
   content: counter(steps);
   font-size: 0.8rem;
-  background-color: hsl(354deg, 71%, 49%);
+  background-color: hsl(0deg, 0%, 10%);
   color: hsl(0deg, 0%, 100%);
   min-width: 2.5em;
   line-height: 2.5em;
