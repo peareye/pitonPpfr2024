@@ -1,7 +1,7 @@
 // navigation
 
 .nav {
- white-space        : nowrap;
+ white-space: nowrap;
  @include dc(color(primary));
  text-align: center;
 
@@ -37,14 +37,12 @@
   padding-block : 1em;
   letter-spacing: $ls;
 
-  position  : relative;
-  display   : block;
-  transition: all 125ms;
+  position     : relative;
+  display      : block;
+  transition: background-color 125ms;
 
   &:hover,
   &:focus {
-   // background-color: $accent;
-   // color           : $bg;
    @include dc(color(accent));
   }
  }
@@ -91,7 +89,7 @@
  top     : 100%;
  left    : 0;
  right   : 0;
- z-index: 10;
+ z-index : 10;
 
  display        : grid;
  justify-content: center;
@@ -116,11 +114,10 @@
   font-weight   : 300;
   letter-spacing: $ls;
 
-  transition: all 125ms;
+  transition: background-color 125ms;
 
   @media screen and (min-width: $breakpoint) {
-   border-bottom : 1px solid neutral(5);
-   padding-inline: 1rem;
+   padding-inline: $spacer;
 
    display              : grid;
    grid-template-columns: auto 1fr;
