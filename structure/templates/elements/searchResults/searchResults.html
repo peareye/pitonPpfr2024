@@ -5,36 +5,40 @@
 #}
 {% set results = getSearchResultsWithPagination(6) %}
 
-<section class="element">
+<section class="element flow">
     <h2 class="element__title">{{ element.title }}</h2>
     {{ element.content }}
 
-    <ul class="cards">
+    <div class="collectionSummary">
     {% for p in results %}
-        <a href="{{ getPathForPage(p.page_slug, p.collection_slug) }}">
-        <li class="card">
+    
+        <a class="collectionSummary__card" href="{{ getPathForPage(p.page_slug, p.collection_slug) }}">
 
           {% if p.media.filename %}
-          <div class="card__image">
+          <div class="collectionSummary__image">
             <img src="{{ getMediaPath(p.media.filename, 'thumb') }}">
           </div>
           {% endif %}
 
-          <div class="card__title">
-            <h3>{{ p.title }}</h3>
-          </div>
-          <p class="card__text">
-            {{ p.first_element_content }}
-          </p>
+       <div class="collectionSummary__content">
+        
+             <h3  class="collectionSummary__title">{{ p.title }}</h3>
+        
+             {% if p.first_element_content %}
+             <div class="collectionSummary__text cutoff-text">
+              {{ p.first_element_content }}
+             </div>
+             {% endif %}
 
-        </li>
+       </div>
+
       </a>
       {% else %}
       {# For when no search results are found #}
-      <h3>No search results found.</h3>
+      <h3 class="collectionSummary__title">No search results found.</h3>
 
     {% endfor %}
-    </ul>
+     </div>
 
     {# Print pagination navigation #}
     {{ pagination() }}
