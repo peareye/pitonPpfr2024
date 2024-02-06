@@ -30,15 +30,16 @@
  }
 
  &-link {
-  outline       : none;
-  color         : inherit;
-  text-transform: uppercase;
-  padding-inline: 1em;
-  padding-block : 1em;
-  letter-spacing: $ls;
+  text-decoration: none;
+  outline        : none;
+  color          : inherit;
+  text-transform : uppercase;
+  padding-inline : 1em;
+  padding-block  : 1em;
+  letter-spacing : $ls;
 
-  position     : relative;
-  display      : block;
+  position  : relative;
+  display   : block;
   transition: background-color 125ms;
 
   &:hover,
@@ -98,7 +99,7 @@
 
  transform       : scaleY($scale);
  opacity         : $scale;
- transition      : transform 125ms ease, opacity 250ms ease-out;
+ transition      : transform 125ms ease, opacity 125ms ease-out;
  transform-origin: top;
 
  @media screen and (min-width: $breakpoint) {
@@ -107,12 +108,13 @@
  }
 
  &-link {
-  width         : 100%;
-  padding-inline: 1rem;
-  line-height   : calc($nav-height /1.5);
-  color         : neutral(5);
-  font-weight   : 300;
-  letter-spacing: $ls;
+  text-decoration: none;
+  width          : 100%;
+  padding-inline : 1rem;
+  line-height    : calc($nav-height /1.5);
+  color          : neutral(5);
+  font-weight    : 300;
+  letter-spacing : $ls;
 
   transition: background-color 125ms;
 

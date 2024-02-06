@@ -8,6 +8,7 @@
  }
 
  .card {
+  text-decoration: none;
   border-radius: $br;
   box-shadow   : $bs;
   padding      : calc($spacer /2);

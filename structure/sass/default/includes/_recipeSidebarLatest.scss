@@ -5,6 +5,7 @@
  gap              : $spacer;
 
  &__card {
+  text-decoration: none;
   outline   : solid 1px neutral(2);
   box-shadow: $bs;
 

@@ -204,6 +204,11 @@ body {
   overflow-x: hidden;
 }
 
+::selection {
+  background-color: hsl(0deg, 0%, 10%);
+  color: white;
+}
+
 img {
   width: 100%;
   display: block;
@@ -225,14 +230,6 @@ figure figcaption {
   font-style: italic;
   font-weight: 300;
   text-align: center;
-}
-
-a {
-  text-decoration: none;
-  transition: all 125ms ease;
-}
-a:hover {
-  color: hsl(0deg, 0%, 10%);
 }
 
 h1,
@@ -299,9 +296,10 @@ textarea {
   width: 100%;
   padding-block: 0.5em;
   padding-inline: 1em;
-  border: 1px solid rgb(153, 153, 153);
+  border: purple 5px solid;
   border-radius: 7px;
   font-size: inherit;
+  transition: border 125ms;
 }
 
 /* Add styles to show 'focus' of selector */
@@ -435,7 +433,7 @@ img.full-width {
   min-height: 2.5rem;
   text-align: center;
   line-height: 1.1;
-  transition: 220ms all ease-in-out;
+  transition: 125ms all ease-in-out;
 }
 .btn-cta:hover, .btn-cta:active {
   background-color: white;
@@ -515,6 +513,7 @@ img.full-width {
   gap: 1em;
 }
 .collectionSummary__card {
+  text-decoration: none;
   height: 100%;
   border-radius: 7px;
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
@@ -620,6 +619,7 @@ img.full-width {
   gap: 2em;
 }
 #recipeCategoryPageElement .card {
+  text-decoration: none;
   border-radius: 7px;
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   padding: 0.5em;
@@ -700,16 +700,15 @@ img.full-width {
 }
 
 .header {
-  padding-inline: 1rem;
+  background-color: hsl(0deg, 0%, 100%);
+  color: #1a1a1a;
+  border-bottom: solid 3px #cccccc;
+  padding-inline: 1em;
+  box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   position: relative;
-}
-.header-wrapper {
-  background-color: hsl(0deg, 0%, 100%);
-  color: #1a1a1a;
-  border-bottom: solid 5px hsl(0deg, 0%, 10%);
 }
 
 .logo {
@@ -817,6 +816,7 @@ img.full-width {
   }
 }
 .nav-link {
+  text-decoration: none;
   outline: none;
   color: inherit;
   text-transform: uppercase;
@@ -876,7 +876,7 @@ img.full-width {
   justify-content: stretch;
   transform: scaleY(0);
   opacity: 0;
-  transition: transform 125ms ease, opacity 250ms ease-out;
+  transition: transform 125ms ease, opacity 125ms ease-out;
   transform-origin: top;
 }
 @media screen and (min-width: 991px) {
@@ -886,6 +886,7 @@ img.full-width {
   }
 }
 .subnav-link {
+  text-decoration: none;
   width: 100%;
   padding-inline: 1rem;
   line-height: 2.5em;
@@ -965,6 +966,7 @@ img.full-width {
 }
 .footer a {
   transition: all 125ms ease;
+  text-decoration: none;
 }
 .footer a:hover, .footer a:focus {
   color: hsl(0deg, 0%, 10%);
@@ -1017,6 +1019,7 @@ img.full-width {
   gap: 1em;
 }
 .sidebarLatest__card {
+  text-decoration: none;
   outline: solid 1px hsl(0deg, 0%, 94%);
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   display: flex;

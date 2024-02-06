@@ -1,16 +1,17 @@
 // Header
 
 .header {
- padding-inline : 1rem;
+ @include dc(color(primary));
+ border-bottom : solid 3px color(primary-dark);
+ padding-inline: $spacer;
+ box-shadow: $bs;
+
  display        : flex;
  align-items    : flex-end;
  justify-content: space-between;
 
  position: relative;
- &-wrapper {
-  @include dc(color(primary));
-  border-bottom: solid 5px color(accent);
- }
+
 }
 
 .logo {

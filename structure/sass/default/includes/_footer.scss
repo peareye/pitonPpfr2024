@@ -7,6 +7,7 @@
 
  a {
   transition: all 125ms ease;
+  text-decoration: none;
 
   &:hover, &:focus {
    color: color(accent);

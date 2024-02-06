@@ -8,7 +8,9 @@ body {
  flex-flow  : column nowrap;
  overflow-x : hidden;
 }
-
+::selection {
+ @include dc(color(accent));
+}
 img {
  width  : 100%;
  display: block;
@@ -31,15 +33,6 @@ figure {
   font-style : italic;
   font-weight: 300;
   text-align : center;
- }
-}
-
-a {
- text-decoration: none;
- transition     : all 125ms ease;
-
- &:hover {
-  color: color(accent);
  }
 }
 
@@ -91,8 +84,6 @@ h6 {
  padding: 0;
 }
 
-
-
 .text-danger {
  color: color(accent);
 }
@@ -113,10 +104,10 @@ h6 {
   width         : 100%;
   padding-block : calc($spacer / 2);
   padding-inline: $spacer;
-  border        : 1px solid neutral(3);
+  border: purple 5px solid;
   border-radius : $br;
   font-size     : inherit;
-  // transition    : all 125ms;
+  transition    : border 125ms;
  }
 
  /* Add styles to show 'focus' of selector */
