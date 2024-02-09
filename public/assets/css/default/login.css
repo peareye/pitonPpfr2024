@@ -1,5 +1,15 @@
 @charset "UTF-8";
 /* abstracts */
+:root {
+  --fs-300: clamp(0.94rem, calc(0.92rem + 0.08vw), 1rem);
+  --fs-400: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.31rem);
+  --fs-500: clamp(1.35rem, calc(1.21rem + 0.69vw), 1.75rem);
+  --fs-600: clamp(1.62rem, calc(1.37rem + 1.24vw), 2.33rem);
+  --fs-700: clamp(1.94rem, calc(1.54rem + 2.03vw), 3.11rem);
+  --fs-800: clamp(2.33rem, calc(1.7rem + 3.15vw), 4.14rem);
+  --fs-900: clamp(2.8rem, calc(1.85rem + 4.74vw), 5.52rem);
+}
+
 /* global */
 /* reset.scss */
 /* Box sizing rules */
@@ -144,7 +154,7 @@ inline-text {
   position: relative;
   -webkit-box-pack: end;
 }
-@media only screen and (min-width: 50rem) {
+@media only screen and (min-width: 52rem) {
   .cutoff-text {
     --max-lines: 3;
   }
@@ -162,7 +172,7 @@ inline-text {
   margin-inline: auto;
 }
 .expand-btn:hover {
-  background-color: hsl(0deg, 0%, 10%);
+  background-color: hsl(0deg, 0%, 40%);
   color: white;
 }
 .expand-btn::before {
@@ -205,7 +215,7 @@ body {
 }
 
 ::selection {
-  background-color: hsl(0deg, 0%, 10%);
+  background-color: hsl(0deg, 0%, 40%);
   color: white;
 }
 
@@ -241,30 +251,33 @@ h6 {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   letter-spacing: 0.15ex;
   text-transform: capitalize;
+  font-weight: 600;
 }
 
 h1 {
-  font-size: 3rem;
-  font-size: clamp(2.25rem, 4vw, 3rem);
-  font-weight: 700;
+  font-size: var(--fs-700);
 }
 
 h2 {
   font-size: 2.25rem;
   font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: var(--fs-600);
 }
 
 h3 {
   font-size: 1.75rem;
   font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-size: var(--fs-500);
 }
 
 h4 {
   font-size: 1.5rem;
+  font-size: var(--fs-400);
 }
 
 h5 {
   font-size: 1.25rem;
+  font-size: var(--fs-300);
 }
 
 h6 {
@@ -277,7 +290,7 @@ h6 {
 }
 
 .text-danger {
-  color: hsl(0deg, 0%, 10%);
+  color: hsl(0deg, 0%, 40%);
 }
 
 .span {
@@ -285,10 +298,6 @@ h6 {
 }
 
 /* Add styles to 'label' selector */
-label {
-  font-size: 1.2rem;
-}
-
 /* Add styles to 'input' and 'textarea' selectors */
 input[type=text],
 input[type=email],
@@ -296,7 +305,7 @@ textarea {
   width: 100%;
   padding-block: 0.5em;
   padding-inline: 1em;
-  border: purple 5px solid;
+  border: hsl(0deg, 0%, 94%) 1px solid;
   border-radius: 7px;
   font-size: inherit;
   transition: border 125ms;
@@ -306,7 +315,7 @@ textarea {
 input[type=text]:focus,
 input[type=email]:focus,
 textarea:focus {
-  border: 2px dashed hsl(0deg, 0%, 10%);
+  border: 2px dashed hsl(0deg, 0%, 40%);
   outline: none;
 }
 
@@ -388,30 +397,29 @@ img.full-width {
   font-size: inherit;
   text-align: center;
   display: inline-block;
-  background-color: hsl(0deg, 0%, 100%);
-  color: #1a1a1a;
+  background-color: hsl(210deg, 50%, 40%);
+  color: white;
   padding-block: 0.5em;
   padding-inline: 1em;
   border: solid 1px rgba(102, 102, 102, 0.25);
   border-radius: 7px;
   letter-spacing: 0.15ex;
   text-transform: uppercase;
-  z-index: 999;
   box-shadow: none;
   transition: all ease-in-out 125ms;
   text-decoration: none;
 }
 .btn:hover {
-  background-color: #cccccc;
-  color: #1a1a1a;
+  background-color: #1a334d;
+  color: white;
   cursor: pointer;
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
 }
 
 .btn-findMore {
   padding-inline: 0.25em;
-  background-color: hsl(0deg, 0%, 100%);
-  color: #1a1a1a;
+  background-color: hsl(210deg, 50%, 40%);
+  color: white;
 }
 .btn-findMore:hover, .btn-findMore:focus-within {
   background-color: hsl(0deg, 0%, 10%);
@@ -436,12 +444,12 @@ img.full-width {
   transition: 125ms all ease-in-out;
 }
 .btn-cta:hover, .btn-cta:active {
-  background-color: white;
+  background-color: #4785c2;
 }
 .btn-cta:focus {
   outline-style: dashed;
   outline-color: transparent;
-  box-shadow: 0 0 0 4px white;
+  box-shadow: 0 0 0 4px #8cb3d9;
 }
 
 .btn-link {
@@ -541,11 +549,12 @@ img.full-width {
 }
 
 .contact-form {
+  padding-block: 1em;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1em;
 }
-@media only screen and (min-width: 50rem) {
+@media only screen and (min-width: 52rem) {
   .contact-form {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -561,6 +570,11 @@ img.full-width {
   flex-flow: column nowrap;
   gap: 0.25em;
   align-items: baseline;
+}
+.input-group label {
+  font-size: var(--fs-400);
+  font-weight: 300;
+  letter-spacing: 0.15ex;
 }
 
 .gallery-wrapper {
@@ -652,7 +666,7 @@ img.full-width {
   font-weight: 600;
 }
 #recipeCategoryPageElement .card__author .icon {
-  color: hsl(0deg, 0%, 10%);
+  color: hsl(0deg, 0%, 40%);
   font-size: 0.8rem;
 }
 
@@ -667,9 +681,9 @@ img.full-width {
 }
 .search input[type=text] {
   font-size: 1.2rem;
-  border-bottom: solid 1px hsl(0deg, 0%, 10%);
-  border-left: solid 1px hsl(0deg, 0%, 10%);
-  border-top: solid 1px hsl(0deg, 0%, 10%);
+  border-bottom: solid 1px hsl(0deg, 0%, 40%);
+  border-left: solid 1px hsl(0deg, 0%, 40%);
+  border-top: solid 1px hsl(0deg, 0%, 40%);
   border-top-left-radius: 7px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -678,7 +692,7 @@ img.full-width {
   flex: 1;
 }
 .search input[type=text]::placeholder {
-  color: #404040;
+  color: #8c8c8c;
   opacity: 1;
   transition: opacity 0.25s linear;
   font-size: 1.5rem;
@@ -687,22 +701,22 @@ img.full-width {
   opacity: 0;
 }
 .search__button {
-  background-color: hsl(0deg, 0%, 10%);
+  background-color: hsl(0deg, 0%, 40%);
   color: white;
   padding-block: 1em;
   padding-inline: 0.5em;
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   border-bottom-right-radius: 7px;
   border-top-right-radius: 7px;
-  border-bottom: solid 1px hsl(0deg, 0%, 10%);
-  border-right: solid 1px hsl(0deg, 0%, 10%);
-  border-top: solid 1px hsl(0deg, 0%, 10%);
+  border-bottom: solid 1px hsl(0deg, 0%, 40%);
+  border-right: solid 1px hsl(0deg, 0%, 40%);
+  border-top: solid 1px hsl(0deg, 0%, 40%);
 }
 
 .header {
-  background-color: hsl(0deg, 0%, 100%);
-  color: #1a1a1a;
-  border-bottom: solid 3px #cccccc;
+  background-color: hsl(210deg, 50%, 40%);
+  color: white;
+  border-bottom: solid 3px #1a334d;
   padding-inline: 1em;
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   display: flex;
@@ -734,7 +748,7 @@ img.full-width {
   z-index: 100;
   width: 3rem;
 }
-@media only screen and (min-width: 50rem) {
+@media only screen and (min-width: 52rem) {
   .toggle-label-hamburger {
     display: none;
   }
@@ -742,11 +756,10 @@ img.full-width {
 .toggle-label-hamburger span,
 .toggle-label-hamburger span::before,
 .toggle-label-hamburger span::after {
-  width: calc(3rem / 2);
+  width: 2rem;
   height: 4px;
   border-radius: 7px;
-  background-color: hsl(0deg, 0%, 10%);
-  color: white;
+  background-color: hsl(0deg, 0%, 100%);
   position: relative;
 }
 .toggle-label-hamburger span::before,
@@ -791,8 +804,8 @@ img.full-width {
 
 .nav {
   white-space: nowrap;
-  background-color: hsl(0deg, 0%, 100%);
-  color: #1a1a1a;
+  background-color: #4080bf;
+  color: white;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -800,15 +813,17 @@ img.full-width {
   top: 100%;
   left: 0;
   right: 0;
-  z-index: 9;
+  z-index: 10;
   transform: scaleY(0);
   opacity: 0;
   transition: transform 0.2s ease, opacity 250ms ease-out;
   transform-origin: top;
 }
-@media only screen and (min-width: 50rem) {
+@media only screen and (min-width: 52rem) {
   .nav {
     flex-flow: row nowrap;
+    background-color: hsl(210deg, 50%, 40%);
+    color: white;
     transform: scaleY(1);
     opacity: 1;
     position: static;
@@ -816,50 +831,35 @@ img.full-width {
   }
 }
 .nav-link {
+  font-size: var(--fs-300);
   text-decoration: none;
   outline: none;
   color: inherit;
   text-transform: uppercase;
   padding-inline: 1em;
   padding-block: 1em;
-  letter-spacing: 0.15ex;
+  cursor: pointer;
   position: relative;
-  display: block;
-  transition: background-color 125ms;
+  transition: background-color 250ms ease;
 }
 .nav-link:hover, .nav-link:focus {
-  background-color: hsl(0deg, 0%, 10%);
+  background-color: hsl(0deg, 0%, 40%);
   color: white;
 }
 
-.nav-link:has(> .toggle-label) {
-  padding-block: 0;
-}
-@media screen and (min-width: 991px) {
-  .nav-link:has(> .toggle-label) {
-    padding-block: 1em;
-  }
-}
-
 .toggle-label {
-  cursor: pointer;
-  font-size: inherit;
-  padding-inline-end: 0.5em;
   padding-block: 1em;
-  position: relative;
-  display: block;
 }
 .toggle-label::after {
   content: "▼";
   font-size: 0.8rem;
   position: relative;
   top: -1px;
-  right: -10px;
+  right: -5px;
 }
-@media screen and (min-width: 991px) {
-  .toggle-label {
-    display: inline;
-  }
+
+label[for^=sub-nav-toggle] {
+  cursor: pointer;
 }
 
 .subnav {
@@ -871,7 +871,6 @@ img.full-width {
   right: 0;
   z-index: 10;
   display: grid;
-  justify-content: center;
   text-align: center;
   justify-content: stretch;
   transform: scaleY(0);
@@ -879,7 +878,7 @@ img.full-width {
   transition: transform 125ms ease, opacity 125ms ease-out;
   transform-origin: top;
 }
-@media screen and (min-width: 991px) {
+@media only screen and (min-width: 52rem) {
   .subnav {
     right: auto;
     box-shadow: 0 0px 25px rgba(0, 0, 0, 0.15);
@@ -888,14 +887,15 @@ img.full-width {
 .subnav-link {
   text-decoration: none;
   width: 100%;
-  padding-inline: 1rem;
-  line-height: 2.5em;
-  color: hsl(0deg, 0%, 10%);
+  padding-block: 1em;
+  padding-inline: 1em;
+  background-color: #339999;
+  color: white;
   font-weight: 300;
   letter-spacing: 0.15ex;
   transition: background-color 125ms;
 }
-@media screen and (min-width: 991px) {
+@media only screen and (min-width: 52rem) {
   .subnav-link {
     padding-inline: 1em;
     display: grid;
@@ -906,7 +906,7 @@ img.full-width {
   }
 }
 .subnav-link:hover, .subnav-link:focus {
-  background-color: hsl(0deg, 0%, 10%);
+  background-color: hsl(0deg, 0%, 40%);
   color: white;
 }
 
@@ -919,7 +919,7 @@ img.full-width {
   justify-content: center;
 }
 .pagination .page-link {
-  background-color: hsl(0deg, 0%, 10%);
+  background-color: hsl(0deg, 0%, 40%);
   color: white;
   border-top: solid 2px hsl(0deg, 0%, 100%);
   border-bottom: solid 2px hsl(0deg, 0%, 100%);
@@ -927,7 +927,7 @@ img.full-width {
   transition: background-color 125ms;
 }
 .pagination .page-link:hover, .pagination .page-link:focus-within {
-  background-color: #e5e5e5;
+  background-color: #999999;
   color: #1a1a1a;
 }
 .pagination .page-link:first-child {
@@ -946,7 +946,7 @@ img.full-width {
   pointer-events: none;
 }
 .pagination .page-link.disabled:hover, .pagination .page-link.disabled:focus-within {
-  background-color: hsl(0deg, 0%, 10%);
+  background-color: hsl(0deg, 0%, 40%);
   color: white;
   color: rgb(153, 153, 153);
 }
@@ -960,8 +960,8 @@ img.full-width {
 .footer {
   margin-block-start: auto;
   padding-block-start: 1em;
-  background-color: hsl(0deg, 0%, 100%);
-  color: #1a1a1a;
+  background-color: hsl(210deg, 50%, 40%);
+  color: white;
   font-size: 0.9rem;
 }
 .footer a {
@@ -969,7 +969,7 @@ img.full-width {
   text-decoration: none;
 }
 .footer a:hover, .footer a:focus {
-  color: hsl(0deg, 0%, 10%);
+  color: hsl(0deg, 0%, 40%);
 }
 .footer ul {
   list-style: none;
@@ -980,7 +980,7 @@ img.full-width {
   grid-template-columns: 1fr;
   gap: 2em;
 }
-@media only screen and (min-width: 50rem) {
+@media only screen and (min-width: 52rem) {
   .footer .footer1 {
     grid-template-columns: auto 1fr auto auto;
   }
@@ -999,8 +999,8 @@ img.full-width {
 .footer .footer2 {
   padding-block: 1em;
   margin-block-start: 1em;
-  background-color: #cccccc;
-  color: #1a1a1a;
+  background-color: #1a334d;
+  color: white;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -1040,7 +1040,7 @@ img.full-width {
   flex-direction: column;
 }
 .sidebarLatest__category {
-  color: hsl(0deg, 0%, 10%);
+  color: hsl(0deg, 0%, 40%);
   text-transform: uppercase;
   letter-spacing: 0.15ex;
   font-size: 0.8rem;
@@ -1063,7 +1063,7 @@ img.full-width {
   background-color: transparent;
   text-decoration: none;
   outline: 0 none;
-  color: hsl(0deg, 0%, 10%);
+  color: hsl(0deg, 0%, 40%);
 }
 .sidebarLatest__author {
   margin-block-start: auto;
@@ -1078,7 +1078,7 @@ img.full-width {
 
 /* pages */
 .single-recipe .category-name {
-  color: hsl(0deg, 0%, 10%);
+  color: hsl(0deg, 0%, 40%);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.15ex;
@@ -1093,7 +1093,7 @@ img.full-width {
   margin-bottom: 0.5rem;
 }
 .single-recipe .entry-meta__icon {
-  color: hsl(0deg, 0%, 10%);
+  color: hsl(0deg, 0%, 40%);
 }
 .single-recipe .single-meta {
   color: rgb(153, 153, 153);
@@ -1191,7 +1191,7 @@ img.full-width {
 }
 .recipeDirections__layout > * ul li::before,
 .recipeDirections__layout > * ol li::before {
-  color: hsl(0deg, 0%, 10%);
+  color: hsl(0deg, 0%, 40%);
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f35a";
@@ -1203,7 +1203,7 @@ img.full-width {
   margin-block-start: 0.5em;
   content: counter(steps);
   font-size: 0.8rem;
-  background-color: hsl(0deg, 0%, 10%);
+  background-color: hsl(0deg, 0%, 40%);
   color: hsl(0deg, 0%, 100%);
   min-width: 2.5em;
   line-height: 2.5em;

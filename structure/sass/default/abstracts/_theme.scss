@@ -15,11 +15,12 @@ $clr-orange : hsl(24, 100%, 50%);
 $clr-red    : hsl(354, 71%, 49%);
 $clr-green  : hsl(154, 91%, 31%);
 
-$clr-primary  : $neutral-1;
+$clr-primary  : $clr-blue;
 $clr-secondary: adjust-hue($clr-primary, -30);
-$clr-accent   : $neutral-5;
+$clr-accent   : $neutral-4;
 
-$clrs: (primary: $clr-primary,
+$clrs: (
+ primary: $clr-primary,
  primary-dark: darken($clr-primary, 20%),
  primary-light: lighten($clr-primary, 10%),
  primary-lighter: lighten($clr-primary, 50%),
@@ -40,7 +41,7 @@ $neutrals: (1: $neutral-1,
  5: $neutral-5,
 );
 
-$fill: #da2536;
+// $fill: #da2536;
 
 // Default Variables
 
@@ -77,8 +78,18 @@ $fw-b : 700;
 // Media Query Breakpoints
 $breakpoints: (
  xs : 36rem, // 576px
- small      : 50rem, // 800px
+ small      : 52rem, // 831px
  medium     : 62rem, // 991px
  big        : 75rem); // 1200px
 
 $breakpoint: 991px;
+
+:root {
+ --fs-300: clamp(0.94rem, calc(0.92rem + 0.08vw), 1rem);
+ --fs-400: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.31rem);
+ --fs-500: clamp(1.35rem, calc(1.21rem + 0.69vw), 1.75rem);
+ --fs-600: clamp(1.62rem, calc(1.37rem + 1.24vw), 2.33rem);
+ --fs-700: clamp(1.94rem, calc(1.54rem + 2.03vw), 3.11rem);
+ --fs-800: clamp(2.33rem, calc(1.7rem + 3.15vw), 4.14rem);
+ --fs-900: clamp(2.8rem, calc(1.85rem + 4.74vw), 5.52rem);
+}

@@ -2,7 +2,7 @@
 
 .nav {
  white-space: nowrap;
- @include dc(color(primary));
+ @include dc(color(primary-light));
  text-align: center;
 
  display       : flex;
@@ -12,16 +12,16 @@
  top     : 100%;
  left    : 0;
  right   : 0;
- z-index : 9;
+ z-index : 10;
 
  transform       : scaleY($scale); //Set to zero for animation
  opacity         : $scale; //Set to zero for animation
  transition      : transform .2s ease, opacity 250ms ease-out;
  transform-origin: top;
 
- // @media screen and (min-width: $breakpoint) 
  @include mq(small) {
   flex-flow: row nowrap;
+  @include dc(color(primary));
 
   transform: scaleY(1); // Scale set to 1 for desktop navigation
   opacity  : 1; // Opacity set to 1 for desktop navigation
@@ -30,18 +30,19 @@
  }
 
  &-link {
-  font-size: var(--fs-300);
-  text-decoration: none;
-  outline        : none;
-  color          : inherit;
-  text-transform : uppercase;
-  padding-inline : 1em;
-  padding-block  : 1em;
-  letter-spacing : $ls;
+  font-size            : var(--fs-300);
+  text-decoration      : none;
+  outline              : none;
+  color                : inherit;
+  text-transform       : uppercase;
+  padding-inline       : $spacer;
+  padding-block        : $spacer;
+  cursor               : pointer;
+  // letter-spacing    : $ls;
 
-  position  : relative;
-  display   : block;
-  transition: background-color 125ms;
+  position     : relative;
+  // display   : block;
+  transition   : background-color 250ms ease;
 
   &:hover,
   &:focus {
@@ -51,41 +52,23 @@
 }
 
 // Static placeholder for navigation with sub menu. Uses the checkbox/label trick to toggle
-.nav-link:has(>.toggle-label) {
- padding-block: 0;
-
- @media screen and (min-width: $breakpoint) {
-  padding-block: 1em;
- }
-}
-
 .toggle-label {
- cursor            : pointer;
- font-size         : inherit;
- padding-inline-end: .5em;
- padding-block     : 1em;
-
- position: relative;
-
- display: block;
-
+ padding-block: $spacer;
 
  &::after {
   content  : '\25bc';
   font-size: .8rem;
   position : relative;
   top      : -1px;
-  right    : -10px;
- }
-
- @media screen and (min-width: $breakpoint) {
-  display: inline;
+  right    : -5px;
  }
 }
-
+label[for^="sub-nav-toggle"]{
+ cursor: pointer;
+}
 // subnav
 .subnav {
- @include dc(color(accent-light));
+ @include dc(color(secondary-lighter));
 
  position: absolute;
  top     : 100%;
@@ -94,7 +77,6 @@
  z-index : 10;
 
  display        : grid;
- justify-content: center;
  text-align     : center;
  justify-content: stretch;
 
@@ -103,7 +85,7 @@
  transition      : transform 125ms ease, opacity 125ms ease-out;
  transform-origin: top;
 
- @media screen and (min-width: $breakpoint) {
+ @include mq(small) {
   right     : auto;
   box-shadow: 0 0px 25px rgba(black, .15);
  }
@@ -111,15 +93,16 @@
  &-link {
   text-decoration: none;
   width          : 100%;
-  padding-inline : 1rem;
-  line-height    : calc($nav-height /1.5);
-  color          : neutral(5);
-  font-weight    : 300;
-  letter-spacing : $ls;
+  padding-block  : $spacer;
+  padding-inline : $spacer;
+
+  @include dc(color(secondary));
+  font-weight   : $fw-l;
+  letter-spacing: $ls;
 
   transition: background-color 125ms;
 
-  @media screen and (min-width: $breakpoint) {
+  @include mq(small) {
    padding-inline: $spacer;
 
    display              : grid;
