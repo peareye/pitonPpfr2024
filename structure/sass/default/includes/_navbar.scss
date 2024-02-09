@@ -14,8 +14,8 @@
  right   : 0;
  z-index : 9;
 
- transform       : scaleY(0); //Set to zero for animation
- opacity         : 0; //Set to zero for animation
+ transform       : scaleY($scale); //Set to zero for animation
+ opacity         : $scale; //Set to zero for animation
  transition      : transform .2s ease, opacity 250ms ease-out;
  transform-origin: top;
 
@@ -23,13 +23,14 @@
  @include mq(small) {
   flex-flow: row nowrap;
 
-  transform: scaleY(1); //Scale set to 1 for desktop navigation
-  opacity  : 1; //Opacity set to 1 for desktop navigation
+  transform: scaleY(1); // Scale set to 1 for desktop navigation
+  opacity  : 1; // Opacity set to 1 for desktop navigation
   position : static; //Position static for desktop navigation
   width    : auto; //Width Auto to break subnav outside of parent
  }
 
  &-link {
+  font-size: var(--fs-300);
   text-decoration: none;
   outline        : none;
   color          : inherit;
@@ -84,7 +85,7 @@
 
 // subnav
 .subnav {
- @include dc(color(secondary));
+ @include dc(color(accent-light));
 
  position: absolute;
  top     : 100%;
