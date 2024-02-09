@@ -30,11 +30,10 @@
  span,
  span::before,
  span::after {
-  width        : calc(#{3rem} / 2);
+  width        : 2rem;
   height       : 4px;
-  border-radius: 7px;
-  // background   : neutral(5);
-  @include dc(neutral(5));
+  border-radius: $br;
+  background-color: $neutral-1;
   position     : relative;
  }
 

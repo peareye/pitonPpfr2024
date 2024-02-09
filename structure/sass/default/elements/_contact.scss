@@ -1,5 +1,6 @@
  // Contact Styles
  .contact-form {
+  padding-block: $spacer;
   display              : grid;
   grid-template-columns: 1fr;
   gap                  : $spacer;
@@ -19,5 +20,11 @@
   flex-flow  : column nowrap;
   gap        : calc($spacer * .25);
   align-items: baseline;
+  label {
+   font-size: var(--fs-400);
+   font-weight: $fw-l;
+   letter-spacing: $ls;
+
+  }
  }
 

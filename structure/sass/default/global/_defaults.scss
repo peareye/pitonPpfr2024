@@ -46,32 +46,35 @@ h6 {
  font-family   : $ff-sans;
  letter-spacing: $ls;
  text-transform: capitalize;
+ font-weight: $fw-m;
 }
 
 h1 {
- font-size: 3rem;
- font-size: clamp(2.25rem, 4vw, 3rem);
- font-weight: $fw-b;
+ font-size: var(--fs-700);
 }
 
 h2 {
  font-size: 2.25rem;
  font-size: clamp(1.5rem, 4vw, 2.25rem);
+ font-size: var(--fs-600);
 }
 
 h3 {
  font-size: 1.75rem;
  font-size: clamp(1.25rem, 3vw, 1.5rem);
+ font-size: var(--fs-500);
 
 }
 
 h4 {
  font-size: 1.5rem;
+ font-size: var(--fs-400);
 
 }
 
 h5 {
  font-size: 1.25rem;
+ font-size: var(--fs-300);
 
 }
 
@@ -93,9 +96,6 @@ h6 {
 }
 
  /* Add styles to 'label' selector */
- label {
-  font-size: 1.2rem;
- }
 
  /* Add styles to 'input' and 'textarea' selectors */
  input[type=text],
@@ -104,7 +104,7 @@ h6 {
   width         : 100%;
   padding-block : calc($spacer / 2);
   padding-inline: $spacer;
-  border: purple 5px solid;
+  border: $neutral-2 1px solid;
   border-radius : $br;
   font-size     : inherit;
   transition    : border 125ms;
