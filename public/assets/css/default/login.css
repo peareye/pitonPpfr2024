@@ -704,7 +704,7 @@ img.full-width {
   background-color: hsl(0deg, 0%, 40%);
   color: white;
   padding-block: 1em;
-  padding-inline: 0.5em;
+  padding-inline: 1em;
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   border-bottom-right-radius: 7px;
   border-top-right-radius: 7px;
