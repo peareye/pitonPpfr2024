@@ -1,5 +1,6 @@
 <header class="header">
- <div class="logo"> <a href="{{ pathFor('home') }}">
+ <div class="logo">
+  <a href="{{ pathFor('home') }}">
    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297.83 111.02">
     <defs>
      <style>
@@ -33,13 +34,9 @@
     <rect y="51.25" width="297.83" height="2" style="fill: currentColor" />
    </svg>
   </a>
-
  </div>
+
  {{ include("includes/_navbar.html") }}
-
-
-
 </header>
-
 
 {{ include ("includes/_search.html") }}
