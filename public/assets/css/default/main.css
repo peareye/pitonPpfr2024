@@ -684,9 +684,9 @@ textarea:focus {
 .header {
   background-color: hsl(210deg, 50%, 40%);
   color: white;
-  border-bottom: solid 3px #1a334d;
-  padding-inline: 1em;
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
+}
+.header__inner {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -779,8 +779,8 @@ textarea:focus {
   flex-direction: column;
   position: absolute;
   top: 100%;
-  left: 0;
-  right: 0;
+  left: -50%;
+  right: -50%;
   z-index: 10;
   transform: scaleY(0);
   opacity: 0;
