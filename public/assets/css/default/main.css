@@ -322,7 +322,7 @@ textarea:focus {
 /* Layout.scss */
 .wrapper {
   display: grid;
-  grid-template-columns: minmax(1rem, 1fr) minmax(auto, 75rem) minmax(1rem, 1fr);
+  grid-template-columns: minmax(1em, 1fr) minmax(auto, 75rem) minmax(1em, 1fr);
 }
 .wrapper > * {
   grid-column: 2/3;
@@ -332,7 +332,7 @@ textarea:focus {
   margin-inline: auto;
   width: min(100%, var(--max-wrapper-width));
   display: grid;
-  grid-template-columns: minmax(1rem, 1fr) minmax(auto, var(--max-wrapper-width)) minmax(1rem, 1fr);
+  grid-template-columns: minmax(1em, 1fr) minmax(auto, var(--max-wrapper-width)) minmax(1em, 1fr);
 }
 .wrapper-narrow > * {
   grid-column: 2/3;
@@ -358,38 +358,6 @@ textarea:focus {
     grid-template-columns: 0.75fr 1fr;
     padding-inline: 0;
   }
-}
-
-.content-grid {
-  --padding-inline: 1rem;
-  --content-max-width: 1100px;
-  --breakout-max-width: 1300px;
-  --breakout-size: calc(
-    (var(--breakout-max-width) - var(--content-max-width)) / 2
-  );
-  display: grid;
-  grid-template-columns: [full-width-start] minmax(var(--padding-inline), 1fr) [breakout-start] minmax(0, var(--breakout-size)) [content-start] min(100% - var(--padding-inline) * 2, var(--content-max-width)) [content-end] minmax(0, var(--breakout-size)) [breakout-end] minmax(var(--padding-inline), 1fr) [full-width-end];
-}
-
-.content-grid > :not(.breakout),
-.full-width > :not(.breakout) {
-  grid-column: content;
-}
-
-.content-grid > .breakout {
-  grid-column: breakout;
-}
-
-.content-grid > .full-width {
-  grid-column: full-width;
-  display: grid;
-  grid-template-columns: inherit;
-}
-
-img.full-width {
-  width: 100%;
-  max-height: 45vh;
-  object-fit: cover;
 }
 
 /* Buttons.scss */
