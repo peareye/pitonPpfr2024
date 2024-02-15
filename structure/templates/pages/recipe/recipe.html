@@ -78,7 +78,7 @@
 
   {% block sideBar %}
   <!-- BEGIN SIDEBAR -->
-  <div class="sidebar">
+  <div class="sidebar flow">
 
    <div class="sidebar__heading">
     <h2 class="sidebar__title">Latest Recipes</h2>
@@ -86,31 +86,19 @@
 
    {{ include("includes/_recipeSidebarLatest.html") }}
 
-   <div class="sidebar-item recipeCategory">
+ 
     <div class="sidebar__heading">
      <h2 class="sidebar__title">Find More</h2>
     </div>
 
-    <div class="sidebarFindMore">
-     <a class="btn btn-findMore" href="https://perisplaceforrecipes.com/recipe/category/Starter"
-      title="View recipes for Starter">Starter</a>
-
-
-     <a class="btn btn-findMore" href="https://perisplaceforrecipes.com/recipe/category/Vegetarian"
-      title="View recipes for Vegetarian">Vegetarian</a>
-
-
-     <a class="btn btn-findMore" href="https://perisplaceforrecipes.com/recipe/category/Holiday"
-      title="View recipes for Holiday">Holiday</a>
-
-    </div>
+    {{ include("includes/_recipeSidebarFindMore.html") }}
 
    </div>
-  </div>
+
   {% endblock sideBar %}
  </div>
 </div>
-{% endblock %}
+{% endblock recipeHeader %}
 
 {% block recipeDirections %}
 <!-- BEGIN RECIPE DIRECTIONS -->

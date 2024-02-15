@@ -1,0 +1,21 @@
+{# Find More Include into main recipe page. #}
+
+<div class="sidebarFindMore">
+{% if page.settings.subCategory1 %}
+ <a class="btn btn-findMore" href="{{ baseUrl() }}/search?terms={{page.settings.subCategory1}}"
+  title="View recipes for Starter">{{page.settings.subCategory1}}</a>
+{% endif %}
+{% if page.settings.subCategory2 %}
+  <a class="btn btn-findMore" href="{{ baseUrl() }}/search?terms={{page.settings.subCategory2}}"
+  title="View recipes for Vegetarian">{{page.settings.subCategory2}}</a>
+  {% endif %}
+  {% if page.settings.subCategory3 %}
+ <a class="btn btn-findMore" href="{{ baseUrl() }}/search?terms={{page.settings.subCategory3}}"
+  title="View recipes for Holiday">
+  
+  {{page.settings.subCategory3}}
+ 
+ </a>
+ {% endif %}
+
+ </div>

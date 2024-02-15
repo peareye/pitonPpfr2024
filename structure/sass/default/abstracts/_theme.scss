@@ -51,11 +51,12 @@ $br                : 7px;
 $bs                : 0 2px 15px rgba(neutral(5), .15);
 $ds                : drop-shadow(0 0 1em rgba(neutral(5), .15));
 $ls                : .15ex;
-$max-wrapper-width : 75rem;
+$max-wrapper-width : 1200px;
 $spacer            : 1em;
 
 // Font Family
-
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap');
+$ff-serif:  "Lora", serif;
 $ff-sans : system-ui,
 -apple-system,
 BlinkMacSystemFont,

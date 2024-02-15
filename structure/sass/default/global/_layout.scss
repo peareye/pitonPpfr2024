@@ -4,7 +4,6 @@
  display              : grid;
  grid-template-columns: minmax($spacer, 1fr) minmax(auto, $max-wrapper-width) minmax($spacer, 1fr);
 
-
  >* {
   grid-column: 2 / 3;
  }
@@ -23,20 +22,10 @@
 
 }
 
-// .twoColLayout {
-//  display              : grid;
-//  grid-template-columns: 2fr 350px;
-//  gap                  : 1.5em;
-
-//  @include mq(large) {
-//   grid-template-columns: 1fr;
-//  }
-// }
-
 .recipeHeaderLayout {
  display              : grid;
  grid-template-columns: 1fr;
- gap                  : 2em;
+ gap                  : 3.75rem;
 
  @include mq(medium) {
   grid-template-columns: 1fr 350px;
