@@ -131,7 +131,7 @@ p {
 
 .text-muted {
   background-color: hsl(0deg, 0%, 100%);
-  color: rgb(153, 153, 153);
+  color: hsl(0deg, 0%, 66%);
   font-weight: 300;
   line-height: 1.3;
   font-size: 0.9rem;
@@ -173,7 +173,7 @@ inline-text {
   margin-inline: auto;
 }
 .expand-btn:hover {
-  background-color: hsl(0deg, 0%, 40%);
+  background-color: hsl(24deg, 100%, 50%);
   color: white;
 }
 .expand-btn::before {
@@ -216,7 +216,7 @@ body {
 }
 
 ::selection {
-  background-color: hsl(0deg, 0%, 40%);
+  background-color: hsl(24deg, 100%, 50%);
   color: white;
 }
 
@@ -291,7 +291,7 @@ h6 {
 }
 
 .text-danger {
-  color: hsl(0deg, 0%, 40%);
+  color: hsl(24deg, 100%, 50%);
 }
 
 .span {
@@ -306,7 +306,7 @@ textarea {
   width: 100%;
   padding-block: 0.5em;
   padding-inline: 1em;
-  border: hsl(0deg, 0%, 94%) 1px solid;
+  border: hsl(0deg, 0%, 95%) 1px solid;
   border-radius: 7px;
   font-size: inherit;
   transition: border 125ms;
@@ -316,7 +316,7 @@ textarea {
 input[type=text]:focus,
 input[type=email]:focus,
 textarea:focus {
-  border: 2px dashed hsl(0deg, 0%, 40%);
+  border: 2px dashed hsl(24deg, 100%, 50%);
   outline: none;
 }
 
@@ -422,7 +422,7 @@ textarea:focus {
 }
 
 .btn-link {
-  color: rgb(153, 153, 153);
+  color: hsl(0deg, 0%, 66%);
   text-align: right;
   font-size: 0.9rem;
   font-weight: 300;
@@ -530,7 +530,7 @@ textarea:focus {
 }
 
 ::placeholder {
-  color: rgba(153, 153, 153, 0.85);
+  color: rgba(168, 168, 168, 0.85);
   font-size: 1.2rem;
 }
 
@@ -628,14 +628,14 @@ textarea:focus {
 }
 #recipeCategoryPageElement .card__author {
   margin-block-start: auto;
-  color: rgb(153, 153, 153);
+  color: hsl(0deg, 0%, 66%);
 }
 #recipeCategoryPageElement .card__author span {
   color: hsl(0deg, 0%, 40%);
   font-weight: 600;
 }
 #recipeCategoryPageElement .card__author .icon {
-  color: hsl(0deg, 0%, 40%);
+  color: hsl(24deg, 100%, 50%);
   font-size: 0.8rem;
 }
 
@@ -650,9 +650,9 @@ textarea:focus {
 }
 .search input[type=text] {
   font-size: 1.2rem;
-  border-bottom: solid 1px hsl(0deg, 0%, 40%);
-  border-left: solid 1px hsl(0deg, 0%, 40%);
-  border-top: solid 1px hsl(0deg, 0%, 40%);
+  border-bottom: solid 1px hsl(24deg, 100%, 50%);
+  border-left: solid 1px hsl(24deg, 100%, 50%);
+  border-top: solid 1px hsl(24deg, 100%, 50%);
   border-top-left-radius: 7px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -660,8 +660,14 @@ textarea:focus {
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   flex: 1;
 }
+.search input[type=text]:focus, .search input[type=text]:focus-within {
+  background-color: hsl(0deg, 0%, 95%);
+  border-style: dashed;
+  border-width: 3px;
+  border-right: transparent 1px solid;
+}
 .search input[type=text]::placeholder {
-  color: #8c8c8c;
+  color: #ff944d;
   opacity: 1;
   transition: opacity 0.25s linear;
   font-size: 1.5rem;
@@ -670,16 +676,16 @@ textarea:focus {
   opacity: 0;
 }
 .search__button {
-  background-color: hsl(0deg, 0%, 40%);
+  background-color: hsl(24deg, 100%, 50%);
   color: white;
   padding-block: 1em;
   padding-inline: 1em;
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   border-bottom-right-radius: 7px;
   border-top-right-radius: 7px;
-  border-bottom: solid 1px hsl(0deg, 0%, 40%);
-  border-right: solid 1px hsl(0deg, 0%, 40%);
-  border-top: solid 1px hsl(0deg, 0%, 40%);
+  border-bottom: solid 1px hsl(24deg, 100%, 50%);
+  border-right: solid 1px hsl(24deg, 100%, 50%);
+  border-top: solid 1px hsl(24deg, 100%, 50%);
 }
 
 .header {
@@ -812,7 +818,7 @@ textarea:focus {
   transition: background-color 250ms ease;
 }
 .nav-link:hover, .nav-link:focus {
-  background-color: hsl(0deg, 0%, 40%);
+  background-color: hsl(24deg, 100%, 50%);
   color: white;
 }
 
@@ -875,7 +881,7 @@ label[for^=sub-nav-toggle] {
   }
 }
 .subnav-link:hover, .subnav-link:focus {
-  background-color: hsl(0deg, 0%, 40%);
+  background-color: hsl(24deg, 100%, 50%);
   color: white;
 }
 
@@ -888,7 +894,7 @@ label[for^=sub-nav-toggle] {
   justify-content: center;
 }
 .pagination .page-link {
-  background-color: hsl(0deg, 0%, 40%);
+  background-color: hsl(24deg, 100%, 50%);
   color: white;
   border-top: solid 2px hsl(0deg, 0%, 100%);
   border-bottom: solid 2px hsl(0deg, 0%, 100%);
@@ -896,8 +902,8 @@ label[for^=sub-nav-toggle] {
   transition: background-color 125ms;
 }
 .pagination .page-link:hover, .pagination .page-link:focus-within {
-  background-color: #999999;
-  color: #1a1a1a;
+  background-color: #0099ff;
+  color: white;
 }
 .pagination .page-link:first-child {
   border-left: solid 2px hsl(0deg, 0%, 100%);
@@ -910,14 +916,14 @@ label[for^=sub-nav-toggle] {
   border-top-right-radius: 7px;
 }
 .pagination .page-link.disabled {
-  color: rgb(153, 153, 153);
+  color: hsl(0deg, 0%, 66%);
   cursor: normal;
   pointer-events: none;
 }
 .pagination .page-link.disabled:hover, .pagination .page-link.disabled:focus-within {
-  background-color: hsl(0deg, 0%, 40%);
+  background-color: hsl(24deg, 100%, 50%);
   color: white;
-  color: rgb(153, 153, 153);
+  color: hsl(0deg, 0%, 66%);
 }
 .pagination a {
   padding: 0.5em;
@@ -938,7 +944,7 @@ label[for^=sub-nav-toggle] {
   text-decoration: none;
 }
 .footer a:hover, .footer a:focus {
-  color: hsl(0deg, 0%, 40%);
+  color: hsl(24deg, 100%, 50%);
 }
 .footer ul {
   list-style: none;
@@ -1017,7 +1023,7 @@ label[for^=sub-nav-toggle] {
   flex: 1;
 }
 .sidebarLatest__category {
-  color: hsl(0deg, 0%, 40%);
+  color: hsl(24deg, 100%, 50%);
   font-weight: 600;
   font-size: 0.8rem;
 }
@@ -1038,7 +1044,7 @@ label[for^=sub-nav-toggle] {
   text-decoration: none;
 }
 .sidebarLatest__title a:hover {
-  color: hsl(0deg, 0%, 40%);
+  color: hsl(24deg, 100%, 50%);
 }
 .sidebarLatest__author {
   line-height: 1;
@@ -1053,11 +1059,11 @@ label[for^=sub-nav-toggle] {
   transition: all 0.3s ease-in-out;
 }
 .sidebarLatest__author a i {
-  color: hsl(0deg, 0%, 40%);
+  color: hsl(24deg, 100%, 50%);
   font-size: 0.8rem;
 }
 .sidebarLatest__author a:hover {
-  color: hsl(0deg, 0%, 40%);
+  color: hsl(24deg, 100%, 50%);
 }
 
 .sidebarFindMore {
@@ -1067,8 +1073,12 @@ label[for^=sub-nav-toggle] {
 }
 
 /* pages */
+.single-recipe__meta {
+  display: grid;
+  gap: 1em;
+}
 .single-recipe .category-name {
-  color: hsl(0deg, 0%, 40%);
+  color: hsl(24deg, 100%, 50%);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.15ex;
@@ -1081,15 +1091,17 @@ label[for^=sub-nav-toggle] {
   line-height: 1.1;
 }
 .single-recipe .entry-meta {
-  color: hsl(0deg, 0%, 94%);
+  color: hsl(0deg, 0%, 95%);
   font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1em;
+  margin-block-end: 0;
+  line-height: 1;
 }
 .single-recipe .entry-meta__icon {
-  color: hsl(0deg, 0%, 40%);
+  color: hsl(24deg, 100%, 50%);
 }
 .single-recipe .single-meta {
-  color: rgb(153, 153, 153);
+  color: hsl(0deg, 0%, 66%);
   font-size: 0.9rem;
   display: inline-block;
   margin-right: 0.9rem;
@@ -1104,13 +1116,43 @@ label[for^=sub-nav-toggle] {
   aspect-ratio: 16/9;
   object-fit: cover;
 }
-.single-recipe .feature-details {
+
+.feature-details {
+  border-top: solid 1px hsl(0deg, 0%, 100%);
+  border-bottom: solid 1px hsl(0deg, 0%, 100%);
+  background-color: hsl(0deg, 0%, 95%);
+  color: #1a1a1a;
   display: flex;
   flex-wrap: wrap;
 }
-.single-recipe .feature-details > * {
-  flex: 1;
+.feature-details__title {
+  text-transform: uppercase;
+  font-weight: 600;
+  white-space: nowrap;
+  font-size: 1.125rem;
 }
+.feature-details__subtitle {
+  color: hsl(0deg, 0%, 66%);
+  line-height: 1.1;
+}
+.feature-details__item {
+  padding-block: 1em;
+  padding-inline: 1.125em;
+  border-right: solid 1px hsl(0deg, 0%, 100%);
+  display: flex;
+  flex: 1;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+}
+.feature-details__item:last-child {
+  border-right: none;
+}
+.feature-details__item .fas {
+  font-size: 1.5rem;
+  color: hsl(0deg, 0%, 66%);
+}
+
 .sidebar {
   display: none;
 }
@@ -1120,8 +1162,17 @@ label[for^=sub-nav-toggle] {
   }
 }
 .sidebar__heading {
-  margin-block: 1em;
-  border-bottom: 1px solid hsl(0deg, 0%, 94%);
+  margin-block-start: 3em;
+  border-bottom: 1px solid hsl(0deg, 0%, 95%);
+  position: relative;
+}
+.sidebar__heading::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 15%;
+  height: 2px;
+  background-color: hsl(24deg, 100%, 50%);
 }
 .sidebar__title {
   color: hsl(0deg, 0%, 40%);
@@ -1150,11 +1201,11 @@ label[for^=sub-nav-toggle] {
 }
 .recipeDirections__layout > * ul li:nth-child(odd),
 .recipeDirections__layout > * ol li:nth-child(odd) {
-  background-color: hsl(0deg, 0%, 94%);
+  background-color: hsl(0deg, 0%, 95%);
 }
 .recipeDirections__layout > * ul li::before,
 .recipeDirections__layout > * ol li::before {
-  color: hsl(0deg, 0%, 40%);
+  color: hsl(24deg, 100%, 50%);
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f35a";
@@ -1163,13 +1214,12 @@ label[for^=sub-nav-toggle] {
   counter-increment: steps;
 }
 .recipeDirections__layout > * ol li::before {
-  margin-block-start: 0.5em;
   content: counter(steps);
   font-size: 0.8rem;
-  background-color: hsl(0deg, 0%, 40%);
+  background-color: hsl(24deg, 100%, 50%);
   color: hsl(0deg, 0%, 100%);
-  min-width: 2.5em;
-  line-height: 2.5em;
+  min-width: 2.25em;
+  line-height: 2.25em;
   border-radius: 1rem;
   text-align: center;
 }
@@ -1195,11 +1245,10 @@ label[for^=sub-nav-toggle] {
 .ingredients h3,
 .method h3 {
   color: hsl(0deg, 0%, 10%);
-  border-bottom: solid hsl(0deg, 0%, 94%) 1px;
+  border-bottom: solid hsl(0deg, 0%, 95%) 1px;
   line-height: 1.2;
   margin-block: 1.1em 0.5em;
   padding-block-end: 0.5em;
-  font-family: "Hind", sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
   text-transform: capitalize;

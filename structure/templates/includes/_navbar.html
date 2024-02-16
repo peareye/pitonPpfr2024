@@ -19,7 +19,7 @@
             {% for child in navLink.childNav %}
           
               <a class="subnav-link" href="{{ getNavigationLink(child) }}">
-               <span><i class="fa-solid fa-utensils"></i>  {{ child.title }}</span></a>
+               {{ child.title }}</a>
            
             {% endfor %}
           </div>

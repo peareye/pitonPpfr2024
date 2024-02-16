@@ -10,65 +10,76 @@
 <div class="wrapper">
  <div class="recipeHeaderLayout">
   <div class="single-recipe">
-   <div class="category-name">{{page.collection_title}}</div>
+   
+<div class="single-recipe__meta">
+    <div class="category-name">{{page.collection_title}}</div>
+ 
+    <h1 class="recipe-title">{{ page.title }} <span class="visually-hidden">{{ site.settings.siteName|default('PitonCMS')}}</span></h1>
+ 
+    <!-- FEATURE META BLOCK -->
+    <div class="feature-recipe">
+     <ul class="entry-meta">
+      <li class="single-meta"><i class="entry-meta__icon fas fa-calendar-alt"></i> <span>{{ page.created_date | date("F d, Y")}}</span></li>
+      <li class="single-meta"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ page.author }}</span></li>
+      <li class="single-meta"><i class="entry-meta__icon fas fa-eye"></i><span> {{ page.view_count}}</span> Views</li>
+      {# <li class="single-meta"><i class="entry-meta__icon fas fa-heart"></i><span> XX</span> Likes</li> #}
+     </ul>
+    </div>
+</div>
 
-   <h1 class="recipe-title">{{ page.title }} <span class="visually-hidden">{{ site.settings.siteName|default('PitonCMS')}}</span></h1>
-
-   <!-- FEATURE META BLOCK -->
-   <div class="feature-recipe">
-    <ul class="entry-meta">
-     <li class="single-meta">
-      <i class="entry-meta__icon fas fa-calendar-alt"></i> <span>{{ page.created_date | date("F d, Y")}}</span>
-     </li>
-     <li class="single-meta"><i class="entry-meta__icon fas fa-user"></i> by <span>{{ page.author }}</span></li>
-     <li class="single-meta"><i class="entry-meta__icon fas fa-eye"></i><span> {{ page.view_count}}</span> Views</li>
-     <li class="single-meta"><i class="entry-meta__icon fas fa-heart"></i><span> XX</span> Likes</li>
-    </ul>
-   </div>
    <!-- FEATURE RECIPE IMAGE -->
    <div class="recipe-figure">
     <img src="{{ getMediaPath(page.media.filename, 'large') }}" alt="{{ page.media.caption }}">
    </div>
+
+   {# RECIPE FEATURE DETAILS START HERE #}
    <div class="feature-details">
+
     {% if page.settings.prepTime %}
-    <div class="feature-details__icon prep-time">
+    <div class="feature-details__item">
      <i class="fas fa-clock"></i>
      <div>
       <div class="feature-details__title">Prep Time</div>
-      <div><span itemprop="prepTime" content="PT30M">{{page.settings.prepTime}}</span></div>
+      <div class="feature-details__subtitle" itemprop="prepTime" content="PT30M">{{page.settings.prepTime}}</div>
      </div>
     </div>
     {% endif %}
+
     {% if page.settings.ovenTemp %}
-    <div class="feature-details__icon oven-temp">
+    <div class="feature-details__item">
      <i class="fas fa-temperature-three-quarters"></i>
      <div>
       <div class="feature-details__title">Oven Temp</div>
-      <div class="feature-details__detail"><span itemprop="prepTime" content="PT30M">{{ page.settings.ovenTemp}}</span></div>
+      <div class="feature-details__subtitle"><span itemprop="prepTime" content="PT30M">{{ page.settings.ovenTemp}}</span></div>
      </div>
     </div>
     {% endif %}
+
     {% if page.settings.cookTime %}
-    <div class="feature-details__icon cook-time">
+    <div class="feature-details__item cook-time">
      <i class="fas fa-utensils"></i>
      <div>
       <div class="feature-details__title">Cook Time</div>
-      <div class="feature-details__detail"><span itemprop="cookTime" content="PT20M">{{ page.settings.cookTime}}</span></div>
+      <div class="feature-details__subtitle"><span itemprop="cookTime" content="PT20M">{{ page.settings.cookTime}}</span></div>
      </div>
     </div>
     {% endif %}
+
     {% if page.settings.servings %}
-    <div class="feature-details__icon servings">
+    <div class="feature-details__item servings">
      <i class="fas fa-users"></i>
      <div>
       <div class="feature-details__title">Servings</div>
-      <div class="feature-details__detail" itemprop="recipeYield">{{ page.settings.servings}}</div>
+      <div class="feature-details__subtitle" itemprop="recipeYield">{{ page.settings.servings}}</div>
      </div>
     </div>
     {% endif %}
 
    </div>
+
+
    {% if page.blocks.storyBlock %}
+   {# Recipe Story Starts Here #}
    <div class="recipeStory">
     {{ getBlockElementsHtml(page.blocks.storyBlock) }}
    </div>
