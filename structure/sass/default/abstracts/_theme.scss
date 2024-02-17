@@ -1,12 +1,10 @@
 // Neutral Pallette
 
 $neutral-1 : hsl(0, 0%, 100%);
-$neutral-2 : hsl(0, 0%, 94%);
-$neutral-3 : rgb(153, 153, 153);
+$neutral-2 : hsl(0, 0%, 95%);
+$neutral-3 : hsl(0, 0%, 66%);
 $neutral-4 : hsl(0, 0%, 40%);
 $neutral-5 : hsl(0, 0%, 10%);
-
-
 
 // Color Pallette
 $clr-pink   : hsl(324, 51%, 50%);
@@ -17,7 +15,7 @@ $clr-green  : hsl(154, 91%, 31%);
 
 $clr-primary  : $clr-blue;
 $clr-secondary: adjust-hue($clr-primary, -30);
-$clr-accent   : $neutral-4;
+$clr-accent   : $clr-orange;
 
 $clrs: (
  primary: $clr-primary,
@@ -45,17 +43,18 @@ $neutrals: (1: $neutral-1,
 
 // Default Variables
 
-$nav-height        : 3.75em;
+// $nav-height        : 3.75em;
 $scale             : 0; // Scales the navigation. valid #'s 0 -> 1. Zero value is collapsed.
 $br                : 7px;
 $bs                : 0 2px 15px rgba(neutral(5), .15);
 $ds                : drop-shadow(0 0 1em rgba(neutral(5), .15));
 $ls                : .15ex;
-$max-wrapper-width : 75rem;
+$max-wrapper-width : 1200px;
 $spacer            : 1em;
 
 // Font Family
-
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap');
+$ff-serif:  "Lora", serif;
 $ff-sans : system-ui,
 -apple-system,
 BlinkMacSystemFont,

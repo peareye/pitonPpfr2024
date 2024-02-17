@@ -107,7 +107,7 @@ h6 {
   border: $neutral-2 1px solid;
   border-radius : $br;
   font-size     : inherit;
-  transition    : border 125ms;
+  transition    : border 125ms ease;
  }
 
  /* Add styles to show 'focus' of selector */

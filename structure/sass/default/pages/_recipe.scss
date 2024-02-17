@@ -1,4 +1,8 @@
 .single-recipe {
+ &__meta {
+  display: grid;
+  gap    : $spacer;
+ }
 
  .category-name {
   color         : color(accent);
@@ -9,13 +13,18 @@
 
  .recipe-title {
   color      : neutral(5);
+  font-size  : 26px;
+  font-family: $ff-serif;
+  font-weight: $fw-b;
   line-height: 1.1;
  }
 
  .entry-meta {
-  color        : neutral(2);
-  font-size    : .9rem;
-  margin-bottom: .5rem;
+  color           : neutral(2);
+  font-size       : .9rem;
+  margin-bottom   : $spacer;
+  margin-block-end: 0;
+  line-height     : 1;
 
   &__icon {
    color: color(accent);
@@ -40,41 +49,48 @@
   aspect-ratio: 16/9;
   object-fit  : cover;
  }
+}
 
- .feature-details {
-  color           : neutral(4);
-  font-weight     : $fw-n;
-  margin-block-end: 1em;
+// Feature Details 
 
-  display  : flex;
-  flex-wrap: wrap;
-  gap      : 2px;
+.feature-details {
+ border-top   : solid 1px $neutral-1;
+ border-bottom: solid 1px $neutral-1;
+ @include dc(neutral(2));
 
-  &__detail {
-   line-height: 1.1;
+ display  : flex;
+ flex-wrap: wrap;
+
+ &__title {
+  text-transform: uppercase;
+  font-weight   : 600;
+  white-space   : nowrap;
+  font-size     : 1.125rem;
+ }
+
+ &__subtitle {
+  color      : neutral(3);
+  line-height: 1.1;
+ }
+
+ &__item {
+  padding-block : $spacer;
+  padding-inline: calc($spacer * 1.125);
+  border-right  : solid 1px $neutral-1;
+
+  &:last-child {
+   border-right: none
   }
 
-  &__title {
-   text-transform: uppercase;
-   font-weight   : 600;
-   color         : neutral(5);
-  }
+  display        : flex;
+  flex           : 1;
+  gap            : 1em;
+  align-items    : center;
+  justify-content: center;
 
-  &__icon {
-   padding-block   : .75em;
-   padding-inline  : .25em;
-   background-color: neutral(2);
-
-   display        : flex;
-   flex           : 1;
-   gap            : 1em;
-   align-items    : center;
-   justify-content: center;
-
-   & .fas {
-    font-size: 1.5rem;
-    color    : neutral(3);
-   }
+  & .fas {
+   font-size: 1.5rem;
+   color    : neutral(3);
   }
  }
 }
@@ -89,8 +105,17 @@
  }
 
  &__heading {
-  margin-block : $spacer;
+  margin-block-start : calc($spacer * 3);
   border-bottom: 1px solid neutral(2);
+  position: relative;
+  &::before {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   width: 15%;
+   height: 2px;
+   background-color: $clr-accent;
+  }
  }
 
  &__title {
@@ -101,15 +126,7 @@
   font-weight   : $fw-n;
   text-transform: uppercase;
   letter-spacing: $ls;
- }
-}
-
-
-
-.sidebarFindMore {
- display              : grid;
- grid-template-columns: auto;
- gap                  : 1rem;
+   }
 }
 
 // Recipe Direction Styles
@@ -148,14 +165,14 @@
    counter-increment: steps;
 
    &::before {
-    margin-block-start: .5em;
+  
     content           : counter(steps);
     font-size         : .8rem;
     background-color  : color(accent);
     color             : neutral(1);
 
-    min-width    : 2.5em;
-    line-height  : 2.5em;
+    min-width    : 2.25em;
+    line-height  : 2.25em;
     border-radius: 1rem;
     text-align   : center;
    }
@@ -191,9 +208,9 @@
   line-height      : 1.2;
   margin-block     : 1.1em .5em;
   padding-block-end: .5em;
-  font-family      : 'Hind', sans-serif;
+
   font-size        : 1.2rem;
-  font-weight      : 400;
+  font-weight      : $fw-n;
   text-transform   : capitalize;
  }
 

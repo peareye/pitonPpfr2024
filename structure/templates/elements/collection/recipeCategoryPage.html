@@ -6,7 +6,7 @@
 
 {% set collection = getCollectionPagesWithPagination(element.collection_id, 16) %}
 
-<section id="recipeCategoryPageElement" class="element">
+<section id="recipeCategoryPageElement" class="element flow">
 
  <h2 class="element__title">{{ element.title }}</h2>
 
@@ -34,7 +34,9 @@
    </div>
 
   </a>
-
+  {% else %}
+  {# For when no search results are found #}
+  <h3 class="collectionSummary__title">There are currently no recipes in this collection.</h3>
   {% endfor %}
  </div>
 
