@@ -23,7 +23,6 @@
 
   input,
   textarea {
-
    border: solid 1px color(accent-lighter);
    transition: border 125ms ease-in;
 
@@ -32,7 +31,6 @@
     background-color: $neutral-2;
     border-style    : dashed;
     border-width    : 3px;
-    border-right    : transparent 1px solid;
    }
   }
 

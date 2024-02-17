@@ -7,21 +7,20 @@
 
 {# Prints out the sub categories that have been assigned to the recipe. If the sub category matches
  the collection title is should not print it. The logic needs to be added to make that happen. #}
+
  {% if page.settings.subCategory1 %}
  <a class="btn btn-findMore" href="{{ baseUrl() }}/search?terms={{page.settings.subCategory1}}"
   title="View recipes for {{page.settings.subCategory1}}">{{page.settings.subCategory1}}</a>
  {% endif %}
+
  {% if page.settings.subCategory2 %}
  <a class="btn btn-findMore" href="{{ baseUrl() }}/search?terms={{page.settings.subCategory2}}"
   title="View recipes for {{page.settings.subCategory2}}">{{page.settings.subCategory2}}</a>
  {% endif %}
+
  {% if page.settings.subCategory3 %}
  <a class="btn btn-findMore" href="{{ baseUrl() }}/search?terms={{page.settings.subCategory3}}"
-  title="View recipes for {{page.settings.subCategory3}}">
-
-  {{page.settings.subCategory3}}
-
- </a>
+  title="View recipes for {{page.settings.subCategory3}}">{{page.settings.subCategory3}}</a>
  {% endif %}
 
 </div>
