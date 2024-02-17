@@ -48,15 +48,16 @@
  }
 
  &__button {
-  @include dc(color(accent));
+  background-color          : color(accent-lighter);
+  color                     : neutral(1);
   padding-block             : $spacer;
   padding-inline            : calc($spacer / 1);
   box-shadow                : $bs;
   border-bottom-right-radius: $br;
   border-top-right-radius   : $br;
 
-  border-bottom: solid 1px color(accent);
-  border-right : solid 1px color(accent);
-  border-top   : solid 1px color(accent);
+  border-bottom: solid 1px color(accent-lighter);
+  border-right : solid 1px color(accent-lighter);
+  border-top   : solid 1px color(accent-lighter);
  }
 }

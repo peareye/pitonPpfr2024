@@ -309,7 +309,7 @@ textarea {
   border: hsl(0deg, 0%, 95%) 1px solid;
   border-radius: 7px;
   font-size: inherit;
-  transition: border 125ms;
+  transition: border 125ms ease;
 }
 
 /* Add styles to show 'focus' of selector */
@@ -530,7 +530,7 @@ textarea:focus {
 }
 
 ::placeholder {
-  color: rgba(168, 168, 168, 0.85);
+  color: rgba(102, 102, 102, 0.85);
   font-size: 1.2rem;
 }
 
@@ -539,6 +539,19 @@ textarea:focus {
   flex-flow: column nowrap;
   gap: 0.25em;
   align-items: baseline;
+}
+.input-group input,
+.input-group textarea {
+  border: solid 1px #ff944d;
+  transition: border 125ms ease-in;
+}
+.input-group input:focus, .input-group input:focus-within,
+.input-group textarea:focus,
+.input-group textarea:focus-within {
+  background-color: hsl(0deg, 0%, 95%);
+  border-style: dashed;
+  border-width: 3px;
+  border-right: transparent 1px solid;
 }
 .input-group label {
   font-size: var(--fs-400);
@@ -676,16 +689,16 @@ textarea:focus {
   opacity: 0;
 }
 .search__button {
-  background-color: hsl(24deg, 100%, 50%);
-  color: white;
+  background-color: #ff944d;
+  color: hsl(0deg, 0%, 100%);
   padding-block: 1em;
   padding-inline: 1em;
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   border-bottom-right-radius: 7px;
   border-top-right-radius: 7px;
-  border-bottom: solid 1px hsl(24deg, 100%, 50%);
-  border-right: solid 1px hsl(24deg, 100%, 50%);
-  border-top: solid 1px hsl(24deg, 100%, 50%);
+  border-bottom: solid 1px #ff944d;
+  border-right: solid 1px #ff944d;
+  border-top: solid 1px #ff944d;
 }
 
 .header {
