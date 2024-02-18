@@ -80,6 +80,26 @@
    "help": "If this recipe falls within one of the subcategories, select it here",
    "options": [
     {
+     "name": "Select a Category",
+     "value": ""
+    },
+    {
+     "name": "Baking",
+     "value": "baking"
+    },
+    {
+     "name": "Baking",
+     "value": "baking"
+    },
+    {
+     "name": "Baking",
+     "value": "baking"
+    },
+    {
+     "name": "Baking",
+     "value": "baking"
+    },
+    {
      "name": "Baking",
      "value": "baking"
     },
@@ -100,8 +120,8 @@
      "value": "entree"
     },
     {
-     "name": "Holiday",
-     "value": "holiday"
+     "name": "Holidays",
+     "value": "holidays"
     },
     {
      "name": "Keto",
@@ -142,6 +162,10 @@
    "help": "If this recipe falls within one of the subcategories, select it here",
    "options": [
     {
+     "name": "Select a Category",
+     "value": ""
+    },
+    {
      "name": "Baking",
      "value": "baking"
     },
@@ -162,8 +186,8 @@
      "value": "entree"
     },
     {
-     "name": "Holiday",
-     "value": "holiday"
+     "name": "Holidays",
+     "value": "holidays"
     },
     {
      "name": "Keto",
@@ -204,6 +228,10 @@
    "help": "If this recipe falls within one of the subcategories, select it here",
    "options": [
     {
+     "name": "Select a Category",
+     "value": ""
+    },
+    {
      "name": "Baking",
      "value": "baking"
     },
@@ -224,8 +252,8 @@
      "value": "entree"
     },
     {
-     "name": "Holiday",
-     "value": "holiday"
+     "name": "Holidays",
+     "value": "holidays"
     },
     {
      "name": "Keto",

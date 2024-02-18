@@ -108,6 +108,7 @@
   margin-block-start : calc($spacer * 3);
   border-bottom: 1px solid neutral(2);
   position: relative;
+  z-index: -1;
   &::before {
    content: '';
    position: absolute;
@@ -202,16 +203,16 @@
  background-color: neutral(1);
 
  h3 {
-  color        : neutral(5);
+  // color        : neutral(5);
   border-bottom: solid neutral(2) 1px;
 
-  line-height      : 1.2;
+  // line-height      : 1.2;
   margin-block     : 1.1em .5em;
   padding-block-end: .5em;
 
-  font-size        : 1.2rem;
+  font-size        : 1.4rem;
   font-weight      : $fw-n;
-  text-transform   : capitalize;
+  // text-transform   : capitalize;
  }
 
  p {
