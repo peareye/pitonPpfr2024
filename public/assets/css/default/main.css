@@ -1031,6 +1031,7 @@ label[for^=sub-nav-toggle] {
   transition: all 0.3s ease-in-out;
 }
 .sidebarLatest__content {
+  grid-column: 2/3;
   display: grid;
   flex: 1;
 }
@@ -1177,6 +1178,7 @@ label[for^=sub-nav-toggle] {
   margin-block-start: 3em;
   border-bottom: 1px solid hsl(0deg, 0%, 95%);
   position: relative;
+  z-index: -1;
 }
 .sidebar__heading::before {
   content: "";
@@ -1256,14 +1258,11 @@ label[for^=sub-nav-toggle] {
 }
 .ingredients h3,
 .method h3 {
-  color: hsl(0deg, 0%, 10%);
   border-bottom: solid hsl(0deg, 0%, 95%) 1px;
-  line-height: 1.2;
   margin-block: 1.1em 0.5em;
   padding-block-end: 0.5em;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 400;
-  text-transform: capitalize;
 }
 .ingredients p,
 .method p {

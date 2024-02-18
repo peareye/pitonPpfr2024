@@ -36,6 +36,7 @@
  }
 
  &__content {
+  grid-column: 2 / 3;
   display           : grid;
   // padding-inline-end: .5em;
   // padding-block-end : .5em;
