@@ -1,4 +1,5 @@
 {
     "elementName": "Recipe Method",
-    "elementDescription": "Single Recipe Method Element"
+    "elementDescription": "Single Recipe Method Element",
+    "contentTextareaDefaultValue": "<ol><li></li></ol>"
 }
