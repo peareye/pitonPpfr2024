@@ -5,9 +5,6 @@
  <a class="btn btn-findMore" href="{{ baseUrl() }}/{{page.collection_slug}}"
   title="View recipes for {{page.collection_slug}}">{{page.collection_slug}}</a>
 
-{# Prints out the sub categories that have been assigned to the recipe. If the sub category matches
- the collection title is should not print it. The logic needs to be added to make that happen. #}
-
  {% if page.settings.subCategory1 and page.collection_slug != page.settings.subCategory1 %}
  <a class="btn btn-findMore" href="{{ baseUrl() }}/search?terms={{page.settings.subCategory1}}"
   title="View recipes for {{page.settings.subCategory1}}">{{page.settings.subCategory1}}</a>

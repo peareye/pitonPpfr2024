@@ -1,0 +1,40 @@
+// Collection Styles
+
+// .collectionSummary {
+
+//  display              : grid;
+//  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+//  gap                  : $spacer;
+
+//  &__card {
+//   text-decoration: none;
+//   height         : 100%;
+//   border-radius  : $br;
+//   box-shadow     : $bs;
+//   padding        : calc($spacer /2);
+//   @include dc(neutral(1));
+//   display       : flex;
+//   flex-direction: column;
+//   gap           : $spacer;
+//  }
+
+//  &__image {
+//   img {
+//    aspect-ratio: 3 / 2;
+//    object-fit  : cover;
+//   }
+//  }
+
+//  &__content {
+//   margin-block-start: auto;
+//   flex              : 1;
+//   display           : flex;
+//   flex-direction    : column;
+//   gap               : $spacer;
+//  }
+
+//  &__title {
+//   text-wrap  : wrap;
+//   font-weight: $fw-n;
+//  }
+// }

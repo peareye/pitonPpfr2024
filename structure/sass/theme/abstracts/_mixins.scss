@@ -1,0 +1,14 @@
+// Media Queries
+@mixin mq($size) {
+ $value: map-get($breakpoints, $size);
+
+ @media only screen and (min-width: $value) {
+  @content;
+ }
+}
+
+// Dynamic Colors
+@mixin dc($color) {
+ background-color: $color;
+ color           : dynamic-color($color);
+}

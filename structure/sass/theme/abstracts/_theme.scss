@@ -1,0 +1,94 @@
+// Neutral Pallette
+
+$neutral-1 : hsl(0, 0%, 100%);
+$neutral-2 : hsl(0, 0%, 95%);
+$neutral-3 : hsl(0, 0%, 66%);
+$neutral-4 : hsl(0, 0%, 40%);
+$neutral-5 : hsl(0, 0%, 10%);
+
+// Color Pallette
+$clr-pink   : hsl(324, 51%, 50%);
+$clr-blue   : hsl(210, 50%, 40%);
+$clr-orange : hsl(24, 100%, 50%);
+$clr-red    : hsl(354, 71%, 49%);
+$clr-green  : hsl(154, 91%, 31%);
+
+$clr-primary  : $neutral-1;
+// $clr-secondary: adjust-hue($clr-primary, -30);
+$clr-secondary: $clr-green;
+$clr-accent   : $clr-red;
+
+$clrs: (
+ primary: $clr-primary,
+ primary-dark: darken($clr-primary, 20%),
+ primary-light: lighten($clr-primary, 10%),
+ primary-lighter: lighten($clr-primary, 50%),
+ secondary: $clr-secondary,
+ secondary-dark: darken($clr-secondary, 20%),
+ secondary-light: lighten($clr-secondary, 10%),
+ secondary-lighter: lighten($clr-secondary, 60%),
+ accent: $clr-accent,
+ accent-dark: darken($clr-accent, 20%),
+ accent-light: lighten($clr-accent, 10%),
+ accent-lighter: lighten($clr-accent, 15%),
+);
+
+$neutrals: (
+ 1: $neutral-1,
+ 2: $neutral-2,
+ 3: $neutral-3,
+ 4: $neutral-4,
+ 5: $neutral-5,
+);
+
+// Default Variables
+
+// $nav-height        : 3.75em;
+// $scale             : 0; // Scales the navigation. valid #'s 0 -> 1. Zero value is collapsed.
+// $br                : 7px;
+// $bs                : 0 2px 15px rgba(neutral(5), .15);
+// $ds                : drop-shadow(0 0 1em rgba(neutral(5), .15));
+// $ls                : .15ex;
+// $max-wrapper-width : 1200px;
+// $spacer            : 1em;
+
+// Font Family
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap');
+$ff-serif:  "Lora", serif;
+$ff-sans : system-ui,
+-apple-system,
+BlinkMacSystemFont,
+'Segoe UI',
+Roboto,
+Oxygen,
+Ubuntu,
+Cantarell,
+'Open Sans',
+'Helvetica Neue',
+sans-serif;
+
+// Font Weights
+// $fw-l : 300;
+// $fw-n : 400;
+// $fw-m : 600;
+// $fw-b : 700;
+
+
+// Media Query Breakpoints
+$breakpoints: (
+ xs : 36rem, // 576px
+ small      : 52rem, // 831px
+ medium     : 62rem, // 991px
+ big        : 75rem); // 1200px
+
+// $breakpoint: 991px;
+
+:root {
+ --fs-300: clamp(0.94rem, calc(0.92rem + 0.08vw), 1rem);
+ --fs-400: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.31rem);
+ --fs-500: clamp(1.35rem, calc(1.21rem + 0.69vw), 1.75rem);
+ --fs-600: clamp(1.62rem, calc(1.37rem + 1.24vw), 2.33rem);
+ --fs-700: clamp(1.94rem, calc(1.54rem + 2.03vw), 3.11rem);
+ --fs-800: clamp(2.33rem, calc(1.7rem + 3.15vw), 4.14rem);
+ --fs-900: clamp(2.8rem, calc(1.85rem + 4.74vw), 5.52rem);
+}
