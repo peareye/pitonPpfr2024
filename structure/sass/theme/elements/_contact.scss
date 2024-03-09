@@ -1,0 +1,43 @@
+ // Contact Styles
+ .contact-form {
+  padding-block        : $spacer;
+  display              : grid;
+  grid-template-columns: 1fr;
+  gap                  : $spacer;
+
+  @include mq(small) {
+   grid-template-columns: repeat(2, 1fr);
+  }
+ }
+
+ ::placeholder {
+  color    : rgba(neutral(4), .85);
+  font-size: 1.2rem;
+ }
+
+ .input-group {
+  display    : flex;
+  flex-flow  : column nowrap;
+  gap        : calc($spacer * .25);
+  align-items: baseline;
+
+  input,
+  textarea {
+   border: solid 1px color(accent-lighter);
+   transition: border 125ms ease-in;
+
+   &:focus,
+   &:focus-within {
+    background-color: $neutral-2;
+    border-style    : dashed;
+    border-width    : 3px;
+   }
+  }
+
+  label {
+   font-size     : var(--fs-400);
+   font-weight   : $fw-l;
+   letter-spacing: $ls;
+
+  }
+ }

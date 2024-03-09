@@ -1,0 +1,71 @@
+/* footer.scss */
+.footer {
+ margin-block-start : auto;
+ padding-block-start: 1em;
+ @include dc(color(primary));
+ font-size: .9rem;
+
+ &__title {
+  padding-block-end: .5em;
+  margin-block-end: .5em;
+  border-bottom: solid 1px $clr-accent;
+  font-size       : var(--h5);
+ }
+
+ a {
+  transition     : all 125ms ease;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+   color: color(accent);
+  }
+ }
+
+ ul {
+  list-style: none;
+ }
+
+ .footer1 {
+  padding-block        : 2em;
+  display              : grid;
+  grid-template-columns: 1fr;
+  gap                  : 2em;
+
+  @include mq(small) {
+   grid-template-columns: auto 1fr auto auto;
+  }
+
+
+
+  .footer-social {
+   .social-icon {
+    padding-block : .25em;
+    padding-inline: .5em;
+   }
+  }
+
+  .footer-address {
+   *+* {
+    margin-block-start: 1em;
+   }
+  }
+
+ }
+
+ .footer2 {
+  padding-block     : 1em;
+  margin-block-start: 1em;
+  @include dc(color(primary-dark));
+  display        : flex;
+  flex-flow      : column nowrap;
+  justify-content: center;
+  align-items    : center;
+
+  p {
+   margin     : 0;
+   font-size  : .8em;
+   font-weight: $fw-l;
+  }
+ }
+}

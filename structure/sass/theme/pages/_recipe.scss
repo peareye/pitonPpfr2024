@@ -1,0 +1,233 @@
+.single-recipe {
+ &__meta {
+  display: grid;
+  gap    : $spacer;
+ }
+
+ .category-name {
+  color         : color(accent);
+  font-size     : .8rem;
+  text-transform: uppercase;
+  letter-spacing: $ls;
+ }
+
+ .recipe-title {
+  color      : neutral(5);
+  font-size  : 26px;
+  font-family: $ff-serif;
+  font-weight: $fw-b;
+  line-height: 1.1;
+ }
+
+ .entry-meta {
+  color           : neutral(2);
+  font-size       : .9rem;
+  margin-bottom   : $spacer;
+  margin-block-end: 0;
+  line-height     : 1;
+
+  &__icon {
+   color: color(accent);
+  }
+ }
+
+ .single-meta {
+  color        : neutral(3);
+  font-size    : .9rem;
+  display      : inline-block;
+  margin-right : .9rem;
+  margin-bottom: .5rem;
+  font-weight  : $fw-l;
+
+  span {
+   color      : neutral(4);
+   font-weight: $fw-n;
+  }
+ }
+
+ .recipe-figure img {
+  aspect-ratio: 16/9;
+  object-fit  : cover;
+ }
+}
+
+// Feature Details 
+
+.feature-details {
+ border-top   : solid 1px $neutral-1;
+ border-bottom: solid 1px $neutral-1;
+ @include dc(neutral(2));
+
+ display  : flex;
+ flex-wrap: wrap;
+
+ &__title {
+  text-transform: uppercase;
+  font-weight   : 600;
+  white-space   : nowrap;
+  font-size     : 1.125rem;
+ }
+
+ &__subtitle {
+  color      : neutral(3);
+  line-height: 1.1;
+ }
+
+ &__item {
+  padding-block : $spacer;
+  padding-inline: calc($spacer * 1.125);
+  border-right  : solid 1px $neutral-1;
+
+  &:last-child {
+   border-right: none
+  }
+
+  display        : flex;
+  flex           : 1;
+  gap            : 1em;
+  align-items    : center;
+  justify-content: center;
+
+  & .fas {
+   font-size: 1.5rem;
+   color    : neutral(3);
+  }
+ }
+}
+
+// Sidebar Layout
+
+.sidebar {
+ display: none;
+
+ @include mq(medium) {
+  display: block;
+ }
+
+ &__heading {
+  margin-block-start : calc($spacer * 3);
+  border-bottom: 1px solid neutral(2);
+  position: relative;
+  z-index: -1;
+  &::before {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   width: 15%;
+   height: 2px;
+   background-color: $clr-accent;
+  }
+ }
+
+ &__title {
+  color         : neutral(4);
+  margin-bottom : 1rem;
+  font-family   : $ff-sans;
+  font-size     : 1.25rem;
+  font-weight   : $fw-n;
+  text-transform: uppercase;
+  letter-spacing: $ls;
+   }
+}
+
+// Recipe Direction Styles
+
+.recipeDirections {
+
+ &__layout {
+  padding-block-end: 4em;
+
+  >* ul li,
+  >* ol li {
+   list-style    : none;
+   padding-block : .5em;
+   padding-inline: .5em;
+   line-height   : 1.3;
+   font-size     : 1.1rem;
+
+   display              : grid;
+   gap                  : .5em;
+   grid-template-columns: auto 1fr;
+   align-items          : start;
+
+   &:nth-child(odd) {
+    background-color: neutral(2);
+   }
+
+   &::before {
+    color      : color(accent);
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content    : "\f35a";
+   }
+  }
+
+  >* ol li {
+   counter-increment: steps;
+
+   &::before {
+  
+    content           : counter(steps);
+    font-size         : .8rem;
+    background-color  : color(accent);
+    color             : neutral(1);
+
+    min-width    : 2.25em;
+    line-height  : 2.25em;
+    border-radius: 1rem;
+    text-align   : center;
+   }
+  }
+
+  >* ul,
+  >* ol {
+   margin-block-start: .25em;
+   list-style        : none;
+  }
+ }
+
+ &__title {
+  color: neutral(5);
+
+  line-height   : 1.2;
+  margin-block  : 1rem 0;
+  font-family   : 'Hind', sans-serif;
+  font-size     : 1.5em;
+  font-weight   : 500;
+  text-transform: uppercase;
+ }
+}
+
+.ingredients,
+.method {
+ background-color: neutral(1);
+
+ h3 {
+  // color        : neutral(5);
+  border-bottom: solid neutral(2) 1px;
+
+  // line-height      : 1.2;
+  margin-block     : 1.1em .5em;
+  padding-block-end: .5em;
+
+  font-size        : 1.4rem;
+  font-weight      : $fw-n;
+  // text-transform   : capitalize;
+ }
+
+ p {
+  margin-inline: .25em;
+  padding      : .5rem;
+  line-height  : 1.4;
+  font-size    : 1rem;
+ }
+}
+
+.recipeStory {
+ display: block;
+
+ &__title {
+  margin : 0;
+  padding: 0;
+ }
+}

@@ -1,0 +1,26 @@
+// Gray scale 
+@function neutral($shade: 4) {
+ @if type-of($shade) !=number or $shade < 1 or $shade>5 {
+  @error 'gray() only accepts numbers between 1 and 5';
+ }
+
+ $value: map-get($neutrals, $shade);
+ @return $value;
+}
+
+// Color Theme 
+@function color($clr: primary) {
+ $value: map-get($clrs, $clr);
+ @return $value;
+}
+
+// Dynamic Color. Sets the text color to constrast with background
+@function dynamic-color($color) {
+ @if lightness($color)>50% {
+  @return rgba(neutral(5), 1);
+ }
+
+ @else {
+  @return rgba(neutral(1), 1);
+ }
+}

@@ -3,7 +3,7 @@
 {# Executes the site search and assigns results to a Twig variable.
    The argument is the number of items to return per page. Leave variable blank to use config default.
 #}
-{% set results = getSearchResultsWithPagination(6) %}
+{% set results = getSearchResultsWithPagination() %}
 
 <section class="element flow">
     <h2 class="element__title">{{ element.title }}</h2>

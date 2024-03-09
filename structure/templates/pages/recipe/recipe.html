@@ -14,7 +14,7 @@
 <div class="single-recipe__meta">
     <div class="category-name">{{page.collection_title}}</div>
  
-    <h1 class="recipe-title">{{ page.title }} <span class="visually-hidden">{{ site.settings.siteName|default('PitonCMS')}}</span></h1>
+    <h1>{{ page.title }} <span class="visually-hidden">| {{ site.settings.siteName|default('PitonCMS')}}</span></h1>
  
     <!-- FEATURE META BLOCK -->
     <div class="feature-recipe">
@@ -94,14 +94,14 @@
   <div class="sidebar flow">
 
    <div class="sidebar__heading">
-    <h2 class="sidebar__title">Latest Recipes</h2>
+    <div class="sidebar__title">Latest Recipes</div>
    </div>
 
    {{ include("includes/_recipeSidebarLatest.html") }}
 
  
     <div class="sidebar__heading">
-     <h2 class="sidebar__title">Find More</h2>
+     <div class="sidebar__title">Find More</div>
     </div>
 
     {{ include("includes/_recipeSidebarFindMore.html") }}

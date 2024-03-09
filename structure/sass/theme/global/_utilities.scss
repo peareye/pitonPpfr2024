@@ -1,0 +1,97 @@
+// Utilities
+
+.visually-hidden {
+ position   : absolute;
+ position   : absolute !important;
+ width      : 1px !important;
+ height     : 1px !important;
+ padding    : 0 !important;
+ margin     : -1px !important;
+ overflow   : hidden !important;
+ clip       : rect(0, 0, 0, 0) !important;
+ white-space: nowrap !important;
+ border     : 0 !important;
+}
+
+.flow>*+* {
+ margin-block-start: $spacer;
+}
+
+.span {
+ grid-column: 1 / -1;
+}
+
+// .text-small {
+//  font-size  : .8rem;
+//  font-weight: $fw-l;
+// }
+
+// .text-danger {
+//  color      : $clr-red;
+//  font-weight: $fw-b;
+//  font-size  : 1.25rem;
+// }
+
+
+// .text-muted {
+//  background-color: neutral(1);
+//  color           : neutral(3);
+//  font-weight     : $fw-l;
+//  line-height     : 1.3;
+//  font-size       : .9rem;
+//  font-family     : $ff-sans;
+// }
+
+// .text-italic {
+//  font-style: italic;
+// }
+
+// inline-text {
+//  display: inline-block;
+// }
+
+// // Cutoff Text Styles
+// .cutoff-text {
+//  --max-lines       : 2;
+//  display           : -webkit-box;
+//  overflow          : hidden;
+//  -webkit-box-orient: vertical;
+//  -webkit-line-clamp: var(--max-lines);
+//  position          : relative;
+//  -webkit-box-pack  : end;
+
+
+//  @include mq(small) {
+//   --max-lines: 2;
+//  }
+// }
+
+// .expand-btn {
+//  appearance   : none;
+//  color        : neutral(5);
+//  border       : 1px solid hsl(0, 0%, 85%);
+//  padding      : .25em;
+//  border-radius: .25em;
+//  cursor       : pointer;
+//  margin-top   : $spacer;
+//  width        : fit-content;
+//  margin-inline: auto;
+
+//  &:hover {
+//   background-color: $clr-accent;
+//   color           : white;
+//  }
+
+//  &::before {
+//   content: 'Read More';
+//  }
+
+//  &:checked::before {
+//   content: 'Read Less';
+//  }
+// }
+
+// .cutoff-text:has(+ .expand-btn:checked) {
+//  max-height: none;
+// }
+ 

@@ -73,218 +73,68 @@
   },
   {
    "category": "page",
-   "label": "Sub Category 1",
-   "key": "subCategory1",
-   "value": "",
-   "inputType": "select",
-   "help": "If this recipe falls within one of the subcategories, select it here",
+   "label": "Sub Category",
+   "key": "subCategory",
+   "inputType": "checkbox",
+   "help": "Select all categories for this recipe.",
    "options": [
     {
-     "name": "Select a Category",
-     "value": ""
-    },
-    {
      "name": "Baking",
-     "value": "baking"
+     "value": "Baking"
     },
     {
-     "name": "Baking",
-     "value": "baking"
+     "name": "Brunch",
+     "value": "Brunch"
     },
     {
-     "name": "Baking",
-     "value": "baking"
+     "name": "Desserts",
+     "value": "Desserts"
     },
     {
-     "name": "Baking",
-     "value": "baking"
+     "name": "Drinks",
+     "value": "Drinks"
     },
     {
-     "name": "Baking",
-     "value": "baking"
-    },
-    {
-     "name": "Breakfast",
-     "value": "breakfast"
-    },
-    {
-     "name": "Dessert",
-     "value": "dessert"
-    },
-    {
-     "name": "Drink",
-     "value": "drink"
-    },
-    {
-     "name": "Entree",
-     "value": "entree"
+     "name": "Entrees",
+     "value": "Entrees"
     },
     {
      "name": "Holidays",
-     "value": "holidays"
+     "value": "Holidays"
     },
     {
      "name": "Keto",
-     "value": "keto"
+     "value": "Keto"
     },
     {
      "name": "Meat",
-     "value": "meat"
+     "value": "Meat"
     },
     {
      "name": "Miscellaneous",
-     "value": "miscellaneous"
+     "value": "Miscellaneous"
     },
     {
-     "name": "Salad",
-     "value": "salad"
+     "name": "Salads",
+     "value": "Salads"
     },
     {
-     "name": "Soup",
-     "value": "soup"
+     "name": "Sides",
+     "value": "Sides"
     },
     {
-     "name": "Starter",
-     "value": "starter"
+     "name": "Soups",
+     "value": "Soups"
     },
     {
-     "name": "Vegetarian",
-     "value": "vegetarian"
-    }
-   ]
-  },
-  {
-   "category": "page",
-   "label": "Sub Category 2",
-   "key": "subCategory2",
-   "value": "",
-   "inputType": "select",
-   "help": "If this recipe falls within one of the subcategories, select it here",
-   "options": [
-    {
-     "name": "Select a Category",
-     "value": ""
-    },
-    {
-     "name": "Baking",
-     "value": "baking"
-    },
-    {
-     "name": "Breakfast",
-     "value": "breakfast"
-    },
-    {
-     "name": "Dessert",
-     "value": "dessert"
-    },
-    {
-     "name": "Drink",
-     "value": "drink"
-    },
-    {
-     "name": "Entree",
-     "value": "entree"
-    },
-    {
-     "name": "Holidays",
-     "value": "holidays"
-    },
-    {
-     "name": "Keto",
-     "value": "keto"
-    },
-    {
-     "name": "Meat",
-     "value": "meat"
-    },
-    {
-     "name": "Miscellaneous",
-     "value": "miscellaneous"
-    },
-    {
-     "name": "Salad",
-     "value": "salad"
-    },
-    {
-     "name": "Soup",
-     "value": "soup"
-    },
-    {
-     "name": "Starter",
-     "value": "starter"
+     "name": "Starters",
+     "value": "Starters"
     },
     {
      "name": "Vegetarian",
-     "value": "vegetarian"
-    }
-   ]
-  },
-  {
-   "category": "page",
-   "label": "Sub Category 3",
-   "key": "subCategory3",
-   "value": "",
-   "inputType": "select",
-   "help": "If this recipe falls within one of the subcategories, select it here",
-   "options": [
-    {
-     "name": "Select a Category",
-     "value": ""
-    },
-    {
-     "name": "Baking",
-     "value": "baking"
-    },
-    {
-     "name": "Breakfast",
-     "value": "breakfast"
-    },
-    {
-     "name": "Dessert",
-     "value": "dessert"
-    },
-    {
-     "name": "Drink",
-     "value": "drink"
-    },
-    {
-     "name": "Entree",
-     "value": "entree"
-    },
-    {
-     "name": "Holidays",
-     "value": "holidays"
-    },
-    {
-     "name": "Keto",
-     "value": "keto"
-    },
-    {
-     "name": "Meat",
-     "value": "meat"
-    },
-    {
-     "name": "Miscellaneous",
-     "value": "miscellaneous"
-    },
-    {
-     "name": "Salad",
-     "value": "salad"
-    },
-    {
-     "name": "Soup",
-     "value": "soup"
-    },
-    {
-     "name": "Starter",
-     "value": "starter"
-    },
-    {
-     "name": "Vegetarian",
-     "value": "vegetarian"
+     "value": "Vegetarian"
     }
    ]
   }
-
  ]
 }

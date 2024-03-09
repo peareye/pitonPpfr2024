@@ -1,0 +1,24 @@
+ // Image Element
+
+ .imageElement {
+  &__image {
+   max-height: 450px;
+
+   img {
+    border-radius: $br;
+    box-shadow   : $bs;
+    max-height   : 450px;
+    object-fit   : cover;
+   }
+  }
+ }
+
+ .pageMedia {
+
+  img {
+   border-radius: $br;
+   box-shadow   : $bs;
+   max-height   : 450px;
+   object-fit   : cover;
+  }
+ }

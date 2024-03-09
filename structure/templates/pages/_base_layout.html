@@ -17,7 +17,7 @@
 
 </head>
 
-<body class="{% block theme %}default{% endblock %} flow">
+<body class="{{ site.settings.theme|default('default') }} flow">
  {{ include("includes/_header.html") }}
 
  {% block hero %}
