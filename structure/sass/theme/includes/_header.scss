@@ -1,20 +1,20 @@
 // Header
 
-// .header {
-//  @include dc(color(primary));
-//  box-shadow: $bs;
+.header {
+ @include dc(color(primary));
+ box-shadow: $bs;
  
-// &__inner {
-//  display        : flex;
-//  align-items    : flex-end;
-//  justify-content: space-between;
+&__inner {
+ display        : flex;
+ align-items    : flex-end;
+ justify-content: space-between;
 
-//  position: relative;
-// }
-// }
+ position: relative;
+}
+}
 
-// .logo {
-//  padding-block: 1em;
-//  height       : 100%;
-//  width        : min(100%, 250px);
-// }
+.logo {
+ padding-block: 1em;
+ height       : 100%;
+ width        : min(100%, 250px);
+}

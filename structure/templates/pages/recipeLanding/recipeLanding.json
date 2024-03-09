@@ -1,0 +1,6 @@
+{
+ "templateName": "Recipe Category Landing Page",
+ "templateDescription": "Page that lists recipe by category in a card format.",
+ "showFeaturedImage": false,
+ "templateType": "page"
+}

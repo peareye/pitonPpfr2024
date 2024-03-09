@@ -1,74 +1,74 @@
 /* Buttons.scss */
-// .btn {
-//  font-size : inherit;
-//  text-align: center;
-//  display   : inline-block;
+.btn {
+ font-size : inherit;
+ text-align: center;
+ display   : inline-block;
 
-//   @include dc(color(primary));
+  @include dc(color(primary));
 
-//  padding-block  : .5em;
-//  padding-inline : 1em;
-//  border         : solid 1px rgba(neutral(4), .25);
-//  border-radius  : $br;
-//  letter-spacing: $ls;
-//  text-transform: uppercase;
+ padding-block  : .5em;
+ padding-inline : 1em;
+ border         : solid 1px rgba(neutral(4), .25);
+ border-radius  : $br;
+ letter-spacing: $ls;
+ text-transform: uppercase;
 
-//  // z-index        : 999;
-//  box-shadow     : none;
-//  transition     : all ease-in-out 125ms;
-//  text-decoration: none;
+ // z-index        : 999;
+ box-shadow     : none;
+ transition     : all ease-in-out 125ms;
+ text-decoration: none;
 
-//  &:hover {
-//  @include dc(color(primary-dark));
-//   cursor    : pointer;
-//   box-shadow: $bs;
-//  }
-// }
-// .btn-findMore {
-//  padding-inline: .25em;
-//  @include dc(color(primary));
-//  &:hover,&:focus-within {
-//   @include dc(neutral(5));
-//  }
-// }
-// .btn-cta {
-//  font-size      : 1.25rem;
-//  color          : neutral(5);
-//  font-weight    : 500;
-//  text-decoration: none;
-//  display        : inline-flex;
-//  align-items    : center;
-//  border-radius  : 8px;
-//  box-shadow     : 1px 3px 5px rgba(0, 0, 0, 0.3);
-//  padding        : 0.25em 0.75em;
+ &:hover {
+ @include dc(color(primary-dark));
+  cursor    : pointer;
+  box-shadow: $bs;
+ }
+}
+.btn-findMore {
+ padding-inline: .25em;
+ @include dc(color(primary));
+ &:hover,&:focus-within {
+  @include dc(neutral(5));
+ }
+}
+.btn-cta {
+ font-size      : 1.25rem;
+ color          : neutral(5);
+ font-weight    : 500;
+ text-decoration: none;
+ display        : inline-flex;
+ align-items    : center;
+ border-radius  : 8px;
+ box-shadow     : 1px 3px 5px rgba(0, 0, 0, 0.3);
+ padding        : 0.25em 0.75em;
 
-//  margin-block: 2rem 1rem;
-//  min-width   : 10ch;
-//  min-height  : 2.5rem;
-//  text-align  : center;
-//  line-height : 1.1;
-//  transition  : 125ms all ease-in-out;
+ margin-block: 2rem 1rem;
+ min-width   : 10ch;
+ min-height  : 2.5rem;
+ text-align  : center;
+ line-height : 1.1;
+ transition  : 125ms all ease-in-out;
 
-//  &:hover,
-//  &:active {
-//   background-color: scale-color($clr-primary, $lightness: 20%);
-//  }
+ &:hover,
+ &:active {
+  background-color: scale-color($clr-primary, $lightness: 20%);
+ }
 
-//  &:focus {
-//   outline-style: dashed;
-//   outline-color: transparent;
-//   box-shadow   : 0 0 0 4px scale-color($clr-primary, $lightness: 50%);
-//  }
-// }
+ &:focus {
+  outline-style: dashed;
+  outline-color: transparent;
+  box-shadow   : 0 0 0 4px scale-color($clr-primary, $lightness: 50%);
+ }
+}
 
-// // Button for Collection Summary Element
-// .btn-link {
-//  color          : neutral(3);
-//  text-align     : right;
-//  font-size      : .9rem;
-//  font-weight    : 300;
-//  text-decoration: none;
+// Button for Collection Summary Element
+.btn-link {
+ color          : neutral(3);
+ text-align     : right;
+ font-size      : .9rem;
+ font-weight    : 300;
+ text-decoration: none;
 
-//  font-style: italic;
+ font-style: italic;
 
-// }
+}

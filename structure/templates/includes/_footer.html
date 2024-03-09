@@ -5,7 +5,7 @@
 
             <div class="footer-nav">
                 <nav class="nav-footer">
-                    <h5>Navigation</h5>
+                    <div class="footer__title">Navigation</div>
                     <ul class="nav-footer__nav">
                         {# This example footer nav does not display drop down nav links #}
                         {% for navItem in getNavigator('footer') %}
@@ -19,13 +19,13 @@
 
             {% if site.settings.footerAbout %}
             <div class="footer-about">
-                <h5>About {{ site.settings.siteName|default('Piton<span>CMS</span>') }}</h5>
+                <div class="footer__title">About {{ site.settings.siteName|default('Piton<span>CMS</span>') }}</div>
                 {{ site.settings.footerAbout|nl2br}}
             </div>
             {% endif %}
 
             <div class="footer-social">
-                <h5>Get Social With Us</h5>
+                <div class="footer__title">Get Social With Us</div>
                 <div class="get-social-icons">
 
                     {% if site.settings.facebookLink %}
@@ -50,12 +50,12 @@
             <div class="footer-address">
 
                 {% if site.settings.contactAddress %}
-                <h5>Address</h5>
+                <div class="footer__title">Address</div>
                 {{ site.settings.contactAddress|nl2br}}
                 {% endif %}
 
                 {% if site.settings.contactPhone %}
-                <h5>Phone</h5>
+                <div class="footer__title">Phone</div>
                 <a href="tel:{{site.settings.contactPhone}}"> {{ site.settings.contactPhone }}</a>
 
                 {% endif %}
