@@ -79,8 +79,7 @@
 
    </div>
 
-
-   {% if page.blocks.storyBlock %}
+   {% if page.blocks.storyBlock[0].content %}
    {# Recipe Story Starts Here #}
    <div class="recipeStory">
     {{ getBlockElementsHtml(page.blocks.storyBlock) }}
