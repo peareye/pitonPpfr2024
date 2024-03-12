@@ -11,7 +11,12 @@ declare(strict_types=1);
 
 use PitonCMS\Controllers\RecipeFrontController;
 
-// Manage requests for legacy PPFR urls
+// Handle requests for legacy PPFR urls
 $app->get('/recipe/show/{id:[0-9]+}/{slug:[a-zA-Z0-9-]+}', function ($args) {
     return (new RecipeFrontController($this))->ppfrLegacyUrl($args);
+});
+
+// Handle requests for Collection or Category landing page
+$app->get('/recipes/{type:[a-z-]+}', function ($args) {
+    return (new RecipeFrontController($this))->collectionOrCategoryLandingPage($args);
 });

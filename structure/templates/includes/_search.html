@@ -3,7 +3,7 @@
 <div class="wrapper-narrow">
  <div class="search">
 
-  <form class="search__form" action="{{ pathFor('submitSearch') }}" method="get" accept-charset="utf-8">
+  <form class="search__form" action="{{ getPathForPage('search') }}" method="get" accept-charset="utf-8">
    <input class="search__input" type="text" placeholder="Find a recipe..." aria-label="Search" id="searchInput" autocomplete="off" name="terms" />
    <button class="search__button" type="submit">
     <i class="fas fa-search"></i>
