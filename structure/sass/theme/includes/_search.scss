@@ -2,6 +2,8 @@
 
  &__form {
   display: flex;
+  @include dc(color(primary));
+  margin-block: $spacer;
  }
 
  input[type=text],

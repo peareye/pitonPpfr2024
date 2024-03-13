@@ -581,6 +581,9 @@ textarea:focus {
 /* includes */
 .search__form {
   display: flex;
+  background-color: hsl(0, 0%, 10%);
+  color: white;
+  margin-block: 1em;
 }
 .search input[type=text], .search__button {
   margin: 0;
