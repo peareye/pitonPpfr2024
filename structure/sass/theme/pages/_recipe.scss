@@ -1,7 +1,9 @@
 .single-recipe {
  &__meta {
-  display: grid;
-  gap    : $spacer;
+ >* {
+   padding-inline-end: calc($spacer * 1);
+  }
+
  }
 
  .category-name {
@@ -101,7 +103,6 @@
   margin-block-start: calc($spacer * 3);
   border-bottom     : 1px solid neutral(2);
   position          : relative;
-  z-index           : -1;
 
   &::before {
    content         : '';
@@ -194,9 +195,13 @@
   color        : neutral(5);
   font-family  : $ff-sans;
   border       : none;
-  padding-block: $spacer .5em;
+  padding-block-start: .5em;
+ 
 
   text-transform: capitalize;
+  &:not(:first-child){
+   padding-block: .5em .25em;
+  }
  }
 
  p {

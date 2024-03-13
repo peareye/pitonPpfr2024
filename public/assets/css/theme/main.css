@@ -218,48 +218,31 @@ h6 {
   padding-block-end: 0.25em;
   margin-block-end: 0.25em;
   display: inline-block;
+  padding-inline-end: 1em;
 }
 
 h1 {
   font-size: var(--h1);
 }
-h1::before {
-  content: "H1: ";
-}
 
 h2 {
   font-size: var(--h2);
-}
-h2::before {
-  content: "H2: ";
 }
 
 h3 {
   font-size: var(--h3);
 }
-h3::before {
-  content: "H3: ";
-}
 
 h4 {
   font-size: var(--h4);
-}
-h4::before {
-  content: "H4: ";
 }
 
 h5 {
   font-size: var(--h5);
 }
-h5::before {
-  content: "H5: ";
-}
 
 h6 {
   font-size: var(--h6);
-}
-h6::before {
-  content: "H6: ";
 }
 
 img {
@@ -366,6 +349,7 @@ textarea:focus {
   border-radius: 7px;
   letter-spacing: 0.05ex;
   text-transform: uppercase;
+  z-index: 999;
   box-shadow: none;
   transition: all ease-in-out 125ms;
   text-decoration: none;
@@ -639,6 +623,7 @@ textarea:focus {
   align-items: flex-end;
   justify-content: space-between;
   position: relative;
+  z-index: 10;
 }
 
 .logo {
@@ -729,7 +714,6 @@ textarea:focus {
   top: 100%;
   left: -50%;
   right: -50%;
-  z-index: 10;
   transform: scaleY(0);
   opacity: 0;
   transition: transform 0.2s ease, opacity 250ms ease-out;
@@ -786,7 +770,6 @@ label[for^=sub-nav-toggle] {
   top: 100%;
   left: 0;
   right: 0;
-  z-index: 10;
   display: grid;
   text-align: center;
   justify-content: stretch;
@@ -1015,9 +998,8 @@ label[for^=sub-nav-toggle] {
 }
 
 /* pages */
-.single-recipe__meta {
-  display: grid;
-  gap: 1em;
+.single-recipe__meta > * {
+  padding-inline-end: 1em;
 }
 .single-recipe .category-name {
   color: hsl(24, 100%, 50%);
@@ -1100,7 +1082,6 @@ label[for^=sub-nav-toggle] {
   margin-block-start: 3em;
   border-bottom: 1px solid hsl(0, 0%, 95%);
   position: relative;
-  z-index: -1;
 }
 .sidebar__heading::before {
   content: "";
@@ -1180,8 +1161,14 @@ label[for^=sub-nav-toggle] {
   color: hsl(0, 0%, 10%);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   border: none;
-  padding-block: 1em 0.5em;
+  padding-block-start: 0.5em;
   text-transform: capitalize;
+}
+.ingredients h3:not(:first-child),
+.ingredients h4:not(:first-child),
+.method h3:not(:first-child),
+.method h4:not(:first-child) {
+  padding-block: 0.5em 0.25em;
 }
 .ingredients p,
 .method p {
