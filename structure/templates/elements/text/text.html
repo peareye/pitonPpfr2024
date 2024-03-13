@@ -1,6 +1,6 @@
-  <div class="text element flow">
-    <h2 class="element__title">{{ element.title }}</h2>
-
-    {{ element.content }}
-  </div>
-
+<div class="text element flow">
+ {% if element.title %}
+ <h2>{{ element.title }}</h2>
+ {% endif %}
+ {{ element.content }}
+</div>

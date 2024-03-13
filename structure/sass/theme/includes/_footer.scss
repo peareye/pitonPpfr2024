@@ -3,12 +3,12 @@
  margin-block-start : auto;
  padding-block-start: 1em;
  @include dc(color(primary));
- font-size: .9rem;
+ font-size: var(--base-font);
 
  &__title {
-  padding-block-end: .5em;
+  padding-block-end: .25em;
   margin-block-end: .5em;
-  border-bottom: solid 1px $clr-accent;
+  border-bottom: solid 1px rgba($clr-accent, .5);
   font-size       : var(--h5);
  }
 
@@ -32,6 +32,9 @@
   grid-template-columns: 1fr;
   gap                  : 2em;
 
+  @include mq(xs) {
+   grid-template-columns: auto 1fr;
+  }
   @include mq(small) {
    grid-template-columns: auto 1fr auto auto;
   }
@@ -64,7 +67,7 @@
 
   p {
    margin     : 0;
-   font-size  : .8em;
+   font-size  : var(--smallText);
    font-weight: $fw-l;
   }
  }

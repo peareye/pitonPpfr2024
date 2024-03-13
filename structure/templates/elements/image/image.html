@@ -6,7 +6,9 @@
       </div>
   
       <div class="imageElement__content flow">
-        <h2 class="element__title">{{ element.title }}</h2>
+         {% if element.title %}
+ <h2>{{ element.title }}</h2>
+ {% endif %}
         {{ element.content }}
       </div>
 </div>

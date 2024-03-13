@@ -1,45 +1,47 @@
 {# Search Results Element #}
 
 {# Executes the site search and assigns results to a Twig variable.
-   The argument is the number of items to return per page. Leave variable blank to use config default.
+The argument is the number of items to return per page. Leave variable blank to use config default.
 #}
 {% set results = getSearchResultsWithPagination() %}
 
 <section class="element flow">
-    <h2 class="element__title">{{ element.title }}</h2>
-    {{ element.content }}
+ {% if element.title %}
+ <h2>{{ element.title }}</h2>
+ {% endif %}
+ {{ element.content }}
 
-    <div class="collectionSummary">
-    {% for p in results %}
-    
-        <a class="collectionSummary__card" href="{{ getPathForPage(p.page_slug, p.collection_slug) }}">
+ <div class="collectionSummary">
+  {% for p in results %}
 
-          {% if p.media.filename %}
-          <div class="collectionSummary__image">
-            <img src="{{ getMediaPath(p.media.filename, 'thumb') }}">
-          </div>
-          {% endif %}
+  <a class="collectionSummary__card" href="{{ getPathForPage(p.page_slug, p.collection_slug) }}">
 
-       <div class="collectionSummary__content">
-        
-             <h3  class="collectionSummary__title">{{ p.title }}</h3>
-        
-             {% if p.first_element_content %}
-             <div class="collectionSummary__text cutoff-text">
-              {{ p.first_element_content }}
-             </div>
-             {% endif %}
+   {% if p.media.filename %}
+   <div class="collectionSummary__image">
+    <img src="{{ getMediaPath(p.media.filename, 'thumb') }}">
+   </div>
+   {% endif %}
 
-       </div>
+   <div class="collectionSummary__content flow">
 
-      </a>
-      {% else %}
-      {# For when no search results are found #}
-      <h3 class="collectionSummary__title">No search results found.</h3>
+    <div class="collectionSummary__title">{{ p.title }}</div>
 
-    {% endfor %}
-     </div>
+    {% if p.first_element_content %}
+    <div class="collectionSummary__text cutoff-text">
+     {{ p.first_element_content }}
+    </div>
+    {% endif %}
 
-    {# Print pagination navigation #}
-    {{ pagination() }}
-  </section>
+   </div>
+
+  </a>
+  {% else %}
+  {# For when no search results are found #}
+  <h3 class="collectionSummary__title">No search results found.</h3>
+
+  {% endfor %}
+ </div>
+
+ {# Print pagination navigation #}
+ {{ pagination() }}
+</section>

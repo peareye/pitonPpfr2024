@@ -1,4 +1,4 @@
-<!-- // recent random popular -->
+{# recent random popular  #}
 
 <div class="sidebarLatest">
 
@@ -6,25 +6,32 @@
 
  {% for recipe in sidebar %}
 
- <div class="sidebarLatest__card">
-
+ <a href="{{ getPathForPage(recipe.page_slug, recipe.collection_slug)}}" class="sidebarLatest__card" alt="{{ recipe.media.caption }}">
   {% if recipe.media.filename %}
   <div class="sidebarLatest__img">
-   <a href="{{ getPathForPage(recipe.page_slug, recipe.collection_slug)}}"><img src="{{ getMediaPath(recipe.media.filename, 'thumb') }}" alt="{{ recipe.media.caption }}"></a>
+  <img src="{{ getMediaPath(recipe.media.filename, 'thumb') }}" >
   </div>
   {% endif %}
-
   <div class="sidebarLatest__content">
 
    <div class="sidebarLatest__category">{{recipe.collection_title}}</div>
 
-   <h4 class="sidebarLatest__title"><a href="{{ getPathForPage(recipe.page_slug, recipe.collection_slug)}}">{{recipe.title }}</a></h4>
+   <div class="sidebarLatest__title">{{recipe.title }}</div>
 
-   <div class="sidebarLatest__author"><a href="{{ getPathForPage(recipe.page_slug, recipe.collection_slug)}}"><i class="fas fa-user"></i> <span>by</span> {{ recipe.author }}</a></div>
+   <div class="sidebarLatest__author"><i class="fas fa-user"></i> <span>by</span> {{ recipe.author }}</div>
   
   </div>
+ </a>
 
- </div>
 
  {% endfor %}
 </div>
+
+{# 
+
+  
+
+ </div>
+
+
+</div> #}

@@ -9,6 +9,7 @@
    "name": "The Story",
    "key": "storyBlock",
    "description": "The Story Content Block",
+   "elementCountLimit": 1,
    "elementTypeOptions": [
     "text/text", "image/image"
    ]
@@ -80,59 +81,59 @@
    "options": [
     {
      "name": "Baking",
-     "value": "Baking"
+     "value": "baking"
     },
     {
      "name": "Brunch",
-     "value": "Brunch"
+     "value": "brunch"
     },
     {
      "name": "Desserts",
-     "value": "Desserts"
+     "value": "desserts"
     },
     {
      "name": "Drinks",
-     "value": "Drinks"
+     "value": "drinks"
     },
     {
      "name": "Entrees",
-     "value": "Entrees"
+     "value": "entrees"
     },
     {
      "name": "Holidays",
-     "value": "Holidays"
+     "value": "holidays"
     },
     {
      "name": "Keto",
-     "value": "Keto"
+     "value": "keto"
     },
     {
      "name": "Meat",
-     "value": "Meat"
+     "value": "meat"
     },
     {
      "name": "Miscellaneous",
-     "value": "Miscellaneous"
+     "value": "miscellaneous"
     },
     {
      "name": "Salads",
-     "value": "Salads"
+     "value": "salads"
     },
     {
      "name": "Sides",
-     "value": "Sides"
+     "value": "sides"
     },
     {
      "name": "Soups",
-     "value": "Soups"
+     "value": "soups"
     },
     {
      "name": "Starters",
-     "value": "Starters"
+     "value": "starters"
     },
     {
      "name": "Vegetarian",
-     "value": "Vegetarian"
+     "value": "vegetarian"
     }
    ]
   }

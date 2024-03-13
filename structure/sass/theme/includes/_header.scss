@@ -3,6 +3,7 @@
 .header {
  @include dc(color(primary));
  box-shadow: $bs;
+ // padding-block-end: $spacer;
  
 &__inner {
  display        : flex;
@@ -10,6 +11,7 @@
  justify-content: space-between;
 
  position: relative;
+ z-index: 10;
 }
 }
 

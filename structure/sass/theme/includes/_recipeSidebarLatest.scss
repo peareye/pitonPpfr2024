@@ -1,100 +1,82 @@
 .sidebarLatest {
  display       : grid;
- gap           : 1.5rem;
+ gap           : $spacer;
  grid-auto-rows: 90px;
 
  &__card {
-  box-shadow: $bs;
-
+  box-shadow           : $bs;
   display              : grid;
   grid-template-columns: 90px 1fr;
   grid-auto-rows       : 90px;
   gap                  : .5em;
+  text-decoration      : none;
+  @include dc(color(secondary));
+  font-size            : var(--base-font);
 
-  &:hover .sidebarLatest__img a img {
+  &:hover .sidebarLatest__img img {
    transform: scale(1.1);
+  }
+
+  &:hover .sidebarLatest__content {
+   color: $clr-accent;
   }
  }
 
  &__img {
-  min-width   : 90px;
-  width       : 90px;
-  position    : relative;
-  overflow    : hidden;
+  min-width: 90px;
+  width    : 90px;
+  position : relative;
+  overflow : hidden;
 
-  a {
-   display        : block;
-   text-decoration: none;
-
-   & img {
-    aspect-ratio: 1;
-    object-fit  : cover;
-    transform   : scale(1);
-    transition  : all 0.3s ease-in-out;
-   }
+  & img {
+   aspect-ratio: 1;
+   object-fit  : cover;
+   transform   : scale(1);
+   transition  : all .3s ease-in-out;
   }
  }
 
  &__content {
-  grid-column: 2 / 3;
-  display           : grid;
-  // padding-inline-end: .5em;
-  // padding-block-end : .5em;
-  flex              : 1;
+  grid-column          : 2 / 3;
+  display              : grid;
+  align-items          : center;
+  align-items          : start;
+  padding-inline-end   : .5em;
+  transition           : color .3s ease-in-out;
  }
 
  &__category {
-  color      : $clr-accent;
-  font-weight: 600;
-  font-size  : .8rem;
+  color         : $clr-accent;
+  font-size     : var(--smallText);
+  text-transform: uppercase;
+  letter-spacing: $ls;
  }
 
  &__title {
-  margin            : 0;
-  font-weight       : $fw-b;
-  font-size         : 1rem;
-  // color             : #111111;
+  margin     : 0;
+  font-weight: $fw-m;
+  font-size  : var(--h6);
+
   overflow          : hidden;
   text-overflow     : ellipsis;
   display           : -webkit-inline-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   line-height       : 1.2;
-  text-decoration   : none;
-
-  a {
-   // color          : #111111;
-   transition     : all 0.3s ease-in-out;
-   text-decoration: none;
-
-   &:hover {
-    color: $clr-accent;
-   }
-  }
  }
 
  &__author {
   line-height: 1;
-  font-size  : .8rem;
+  font-size: var(--smallText);
 
-  a {
-   // color          : #111111;
-   transition     : all 0.3s ease-in-out;
-   text-decoration: none;
+  & span {
+   color     : $neutral-3;
+   transition: all 0.3s ease-in-out;
+  }
 
-   span {
-    color     : #909090;
-    transition: all 0.3s ease-in-out;
-   }
-
-   i {
-    color    : $clr-accent;
-    font-size: .8rem;
-   }
-
-   &:hover {
-    color: $clr-accent;
-   }
+  & i {
+   color: $clr-accent;
+   font-size: var(--smallText);
   }
  }
 }
