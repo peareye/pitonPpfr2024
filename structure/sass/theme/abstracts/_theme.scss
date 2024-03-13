@@ -89,11 +89,14 @@ $breakpoints: (
 
  --base-font: clamp(0.88rem, 0.85vw + 0.65rem, 1.13rem);
  --base-font-multiplier: 1.2;
---h5: var(--base-font);
+ 
+ --h6: var(--base-font);
  --h5: calc(var(--base-font) * var(--base-font-multiplier));
  --h4: calc(var(--h5) * var(--base-font-multiplier));
  --h3: calc(var(--h4) * var(--base-font-multiplier));
  --h2: calc(var(--h3) * var(--base-font-multiplier));
  --h1: calc(var(--h2) * var(--base-font-multiplier));
- --largeText: calc(var(--h2) * var(--base-font-multiplier));
+ 
+ --largeText: calc(var(--h1) * var(--base-font-multiplier));
+ --smallText: calc(var(--base-font) * .8);
 }

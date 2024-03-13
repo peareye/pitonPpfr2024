@@ -4,13 +4,14 @@
 :root {
   --base-font: clamp(0.88rem, 0.85vw + 0.65rem, 1.13rem);
   --base-font-multiplier: 1.2;
-  --h5: var(--base-font);
+  --h6: var(--base-font);
   --h5: calc(var(--base-font) * var(--base-font-multiplier));
   --h4: calc(var(--h5) * var(--base-font-multiplier));
   --h3: calc(var(--h4) * var(--base-font-multiplier));
   --h2: calc(var(--h3) * var(--base-font-multiplier));
   --h1: calc(var(--h2) * var(--base-font-multiplier));
-  --largeText: calc(var(--h2) * var(--base-font-multiplier));
+  --largeText: calc(var(--h1) * var(--base-font-multiplier));
+  --smallText: calc(var(--base-font) * .8);
 }
 
 /* global */
@@ -137,6 +138,47 @@ p {
   grid-column: 1/-1;
 }
 
+.cutoff-text {
+  --max-lines: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--max-lines);
+  position: relative;
+  -webkit-box-pack: end;
+}
+@media only screen and (min-width: 52rem) {
+  .cutoff-text {
+    --max-lines: 2;
+  }
+}
+
+.expand-btn {
+  appearance: none;
+  color: hsl(0, 0%, 10%);
+  border: 1px solid hsl(0, 0%, 85%);
+  padding: 0.25em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  margin-top: 1em;
+  width: fit-content;
+  margin-inline: auto;
+}
+.expand-btn:hover {
+  background-color: hsl(24, 100%, 50%);
+  color: white;
+}
+.expand-btn::before {
+  content: "Read More";
+}
+.expand-btn:checked::before {
+  content: "Read Less";
+}
+
+.cutoff-text:has(+ .expand-btn:checked) {
+  max-height: none;
+}
+
 /* Default.scss  */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -168,38 +210,56 @@ h4,
 h5,
 h6 {
   font-family: "Playfair Display", serif;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.125;
   letter-spacing: 0.05ex;
   text-transform: capitalize;
-}
-
-.xlText {
-  font-size: var(--);
+  border-bottom: solid 1px hsl(24, 100%, 50%);
+  padding-block-end: 0.25em;
+  margin-block-end: 0.25em;
+  display: inline-block;
 }
 
 h1 {
   font-size: var(--h1);
 }
+h1::before {
+  content: "H1: ";
+}
 
 h2 {
   font-size: var(--h2);
+}
+h2::before {
+  content: "H2: ";
 }
 
 h3 {
   font-size: var(--h3);
 }
+h3::before {
+  content: "H3: ";
+}
 
 h4 {
   font-size: var(--h4);
+}
+h4::before {
+  content: "H4: ";
 }
 
 h5 {
   font-size: var(--h5);
 }
+h5::before {
+  content: "H5: ";
+}
 
 h6 {
   font-size: var(--h6);
+}
+h6::before {
+  content: "H6: ";
 }
 
 img {
@@ -219,7 +279,7 @@ figure img {
 }
 figure figcaption {
   color: hsl(0, 0%, 40%);
-  font-size: 0.8rem;
+  font-size: var(--smallText);
   font-style: italic;
   font-weight: 300;
   text-align: center;
@@ -251,7 +311,7 @@ textarea:focus {
 /* Layout.scss */
 .wrapper {
   display: grid;
-  grid-template-columns: minmax(2em, 1fr) minmax(auto, 1200px) minmax(2em, 1fr);
+  grid-template-columns: minmax(1em, 1fr) minmax(auto, 1200px) minmax(1em, 1fr);
 }
 .wrapper > * {
   grid-column: 2/3;
@@ -290,20 +350,7 @@ textarea:focus {
 }
 
 .element {
-  margin-block: 3em;
-}
-.element__title {
-  line-height: 1.1;
-  font-weight: 600;
-}
-.element__title + p {
-  margin-block-start: 0.5em;
-}
-
-.twoCol {
-  columns: 2;
-  column-gap: 3rem;
-  column-width: 40ch;
+  margin-block-end: 1em;
 }
 
 /* Buttons.scss */
@@ -404,9 +451,6 @@ textarea:focus {
   max-width: 50%;
   z-index: 102;
 }
-.hero__content-title {
-  color: hsl(0, 0%, 100%);
-}
 .hero__image {
   width: 100vw;
   height: min(var(--hero-height), 1080px);
@@ -446,10 +490,6 @@ textarea:focus {
   flex-direction: column;
   gap: 1em;
 }
-.collectionSummary__title {
-  text-wrap: wrap;
-  font-weight: 400;
-}
 
 .contact-form {
   padding-block: 1em;
@@ -464,8 +504,7 @@ textarea:focus {
 }
 
 ::placeholder {
-  color: rgba(102, 102, 102, 0.85);
-  font-size: 1.2rem;
+  color: rgba(168, 168, 168, 0.85);
 }
 
 .input-group {
@@ -487,7 +526,7 @@ textarea:focus {
   border-width: 3px;
 }
 .input-group label {
-  font-size: var(--fs-400);
+  font-size: var(--base-font);
   font-weight: 300;
   letter-spacing: 0.05ex;
 }
@@ -549,7 +588,7 @@ textarea:focus {
   border-radius: none;
 }
 .search input[type=text] {
-  font-size: 1.2rem;
+  font-size: var(--base-font);
   padding-inline: 1em;
   border-bottom: solid 1px hsl(24, 100%, 50%);
   border-left: solid 1px hsl(24, 100%, 50%);
@@ -571,7 +610,8 @@ textarea:focus {
   color: #ff944d;
   opacity: 1;
   transition: opacity 0.25s linear;
-  font-size: 1.5rem;
+  font-size: var(--h4);
+  font-weight: 300;
 }
 .search input[type=text]:focus::placeholder, .search input[type=text]:focus-within::placeholder {
   opacity: 0;
@@ -707,7 +747,7 @@ textarea:focus {
   }
 }
 .nav-link {
-  font-size: var(--fs-300);
+  font-size: var(--base-font);
   text-decoration: none;
   outline: none;
   color: inherit;
@@ -715,6 +755,7 @@ textarea:focus {
   padding-inline: 1em;
   padding-block: 1em;
   cursor: pointer;
+  letter-spacing: 0.05ex;
   position: relative;
   transition: background-color 250ms ease;
 }
@@ -728,7 +769,7 @@ textarea:focus {
 }
 .toggle-label::after {
   content: "▼";
-  font-size: 0.8rem;
+  font-size: var(--smallText);
   position: relative;
   top: -1px;
   right: -5px;
@@ -838,12 +879,12 @@ label[for^=sub-nav-toggle] {
   padding-block-start: 1em;
   background-color: hsl(0, 0%, 10%);
   color: white;
-  font-size: 0.9rem;
+  font-size: var(--base-font);
 }
 .footer__title {
-  padding-block-end: 0.5em;
+  padding-block-end: 0.25em;
   margin-block-end: 0.5em;
-  border-bottom: solid 1px hsl(24, 100%, 50%);
+  border-bottom: solid 1px rgba(255, 102, 0, 0.5);
   font-size: var(--h5);
 }
 .footer a {
@@ -861,6 +902,11 @@ label[for^=sub-nav-toggle] {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2em;
+}
+@media only screen and (min-width: 36rem) {
+  .footer .footer1 {
+    grid-template-columns: auto 1fr;
+  }
 }
 @media only screen and (min-width: 52rem) {
   .footer .footer1 {
@@ -886,13 +932,13 @@ label[for^=sub-nav-toggle] {
 }
 .footer .footer2 p {
   margin: 0;
-  font-size: 0.8em;
+  font-size: var(--smallText);
   font-weight: 300;
 }
 
 .sidebarLatest {
   display: grid;
-  gap: 1.5rem;
+  gap: 1em;
   grid-auto-rows: 90px;
 }
 .sidebarLatest__card {
@@ -901,9 +947,16 @@ label[for^=sub-nav-toggle] {
   grid-template-columns: 90px 1fr;
   grid-auto-rows: 90px;
   gap: 0.5em;
+  text-decoration: none;
+  background-color: hsl(0, 0%, 100%);
+  color: #1a1a1a;
+  font-size: var(--base-font);
 }
-.sidebarLatest__card:hover .sidebarLatest__img a img {
+.sidebarLatest__card:hover .sidebarLatest__img img {
   transform: scale(1.1);
+}
+.sidebarLatest__card:hover .sidebarLatest__content {
+  color: hsl(24, 100%, 50%);
 }
 .sidebarLatest__img {
   min-width: 90px;
@@ -911,11 +964,7 @@ label[for^=sub-nav-toggle] {
   position: relative;
   overflow: hidden;
 }
-.sidebarLatest__img a {
-  display: block;
-  text-decoration: none;
-}
-.sidebarLatest__img a img {
+.sidebarLatest__img img {
   aspect-ratio: 1;
   object-fit: cover;
   transform: scale(1);
@@ -924,50 +973,39 @@ label[for^=sub-nav-toggle] {
 .sidebarLatest__content {
   grid-column: 2/3;
   display: grid;
-  flex: 1;
+  align-items: center;
+  align-items: start;
+  padding-inline-end: 0.5em;
+  transition: color 0.3s ease-in-out;
 }
 .sidebarLatest__category {
   color: hsl(24, 100%, 50%);
-  font-weight: 600;
-  font-size: 0.8rem;
+  font-size: var(--smallText);
+  text-transform: uppercase;
+  letter-spacing: 0.05ex;
 }
 .sidebarLatest__title {
   margin: 0;
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: var(--h6);
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-inline-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   line-height: 1.2;
-  text-decoration: none;
-}
-.sidebarLatest__title a {
-  transition: all 0.3s ease-in-out;
-  text-decoration: none;
-}
-.sidebarLatest__title a:hover {
-  color: hsl(24, 100%, 50%);
 }
 .sidebarLatest__author {
   line-height: 1;
-  font-size: 0.8rem;
+  font-size: var(--smallText);
 }
-.sidebarLatest__author a {
-  transition: all 0.3s ease-in-out;
-  text-decoration: none;
-}
-.sidebarLatest__author a span {
-  color: #909090;
+.sidebarLatest__author span {
+  color: hsl(0, 0%, 66%);
   transition: all 0.3s ease-in-out;
 }
-.sidebarLatest__author a i {
+.sidebarLatest__author i {
   color: hsl(24, 100%, 50%);
-  font-size: 0.8rem;
-}
-.sidebarLatest__author a:hover {
-  color: hsl(24, 100%, 50%);
+  font-size: var(--smallText);
 }
 
 .sidebarFindMore {
@@ -983,20 +1021,13 @@ label[for^=sub-nav-toggle] {
 }
 .single-recipe .category-name {
   color: hsl(24, 100%, 50%);
-  font-size: 0.8rem;
+  font-size: var(--smallText);
   text-transform: uppercase;
   letter-spacing: 0.05ex;
 }
-.single-recipe .recipe-title {
-  color: hsl(0, 0%, 10%);
-  font-size: 26px;
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
-  line-height: 1.1;
-}
 .single-recipe .entry-meta {
   color: hsl(0, 0%, 95%);
-  font-size: 0.9rem;
+  font-size: var(--smallText);
   margin-bottom: 1em;
   margin-block-end: 0;
   line-height: 1;
@@ -1006,7 +1037,7 @@ label[for^=sub-nav-toggle] {
 }
 .single-recipe .single-meta {
   color: hsl(0, 0%, 66%);
-  font-size: 0.9rem;
+  font-size: var(--smallText);
   display: inline-block;
   margin-right: 0.9rem;
   margin-bottom: 0.5rem;
@@ -1033,7 +1064,7 @@ label[for^=sub-nav-toggle] {
   text-transform: uppercase;
   font-weight: 600;
   white-space: nowrap;
-  font-size: 1.125rem;
+  font-size: var(--base-font);
 }
 .feature-details__subtitle {
   color: hsl(0, 0%, 66%);
@@ -1053,7 +1084,7 @@ label[for^=sub-nav-toggle] {
   border-right: none;
 }
 .feature-details__item .fas {
-  font-size: 1.5rem;
+  font-size: var(--h5);
   color: hsl(0, 0%, 66%);
 }
 
@@ -1081,16 +1112,16 @@ label[for^=sub-nav-toggle] {
 }
 .sidebar__title {
   color: hsl(0, 0%, 40%);
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 1.25rem;
+  font-size: var(--h5);
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.05ex;
 }
 
 .recipeDirections__layout {
-  padding-block-end: 4em;
+  padding-block-end: 1em;
 }
 .recipeDirections__layout > * ul li,
 .recipeDirections__layout > * ol li {
@@ -1098,7 +1129,7 @@ label[for^=sub-nav-toggle] {
   padding-block: 0.5em;
   padding-inline: 0.5em;
   line-height: 1.3;
-  font-size: 1.1rem;
+  font-size: var(--base-font);
   display: grid;
   gap: 0.5em;
   grid-template-columns: auto 1fr;
@@ -1120,9 +1151,9 @@ label[for^=sub-nav-toggle] {
 }
 .recipeDirections__layout > * ol li::before {
   content: counter(steps);
-  font-size: 0.8rem;
+  font-size: var(--smallText);
   background-color: hsl(24, 100%, 50%);
-  color: hsl(0, 0%, 100%);
+  color: white;
   min-width: 2.25em;
   line-height: 2.25em;
   border-radius: 1rem;
@@ -1130,30 +1161,27 @@ label[for^=sub-nav-toggle] {
 }
 .recipeDirections__layout > * ul,
 .recipeDirections__layout > * ol {
-  margin-block-start: 0.25em;
   list-style: none;
-}
-.recipeDirections__title {
-  color: hsl(0, 0%, 10%);
-  line-height: 1.2;
-  margin-block: 1rem 0;
-  font-family: "Hind", sans-serif;
-  font-size: 1.5em;
-  font-weight: 500;
-  text-transform: uppercase;
 }
 
 .ingredients,
 .method {
   background-color: hsl(0, 0%, 100%);
 }
+.ingredients a,
+.method a {
+  background: purple;
+  color: white;
+}
 .ingredients h3,
-.method h3 {
-  border-bottom: solid hsl(0, 0%, 95%) 1px;
-  margin-block: 1.1em 0.5em;
-  padding-block-end: 0.5em;
-  font-size: 1.4rem;
-  font-weight: 400;
+.ingredients h4,
+.method h3,
+.method h4 {
+  color: hsl(0, 0%, 10%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border: none;
+  padding-block: 1em 0.5em;
+  text-transform: capitalize;
 }
 .ingredients p,
 .method p {
@@ -1164,11 +1192,12 @@ label[for^=sub-nav-toggle] {
 }
 
 .recipeStory {
+  margin-block-start: 1em;
   display: block;
 }
-.recipeStory__title {
-  margin: 0;
-  padding: 0;
+
+.recipe-notes {
+  max-width: 70ch;
 }
 
 #recipeCategoryPageElement {
@@ -1176,7 +1205,7 @@ label[for^=sub-nav-toggle] {
 }
 #recipeCategoryPageElement .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   gap: 2em;
 }
 #recipeCategoryPageElement .card {
@@ -1190,31 +1219,27 @@ label[for^=sub-nav-toggle] {
   flex-direction: column;
   gap: 1em;
 }
+#recipeCategoryPageElement .card__image {
+  aspect-ratio: 3/2;
+}
 #recipeCategoryPageElement .card__image img {
   aspect-ratio: 3/2;
   object-fit: cover;
 }
 #recipeCategoryPageElement .card__content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-#recipeCategoryPageElement .card__title {
-  text-wrap: wrap;
-  font-weight: 400;
+  margin-block-start: auto;
 }
 #recipeCategoryPageElement .card__author {
   margin-block-start: auto;
   color: hsl(0, 0%, 66%);
+  font-size: var(--smallText);
 }
 #recipeCategoryPageElement .card__author span {
   color: hsl(0, 0%, 40%);
-  font-weight: 600;
 }
 #recipeCategoryPageElement .card__author .icon {
   color: hsl(24, 100%, 50%);
-  font-size: 0.8rem;
+  font-size: var(--smallText);
 }
 
 /*# sourceMappingURL=main.css.map */

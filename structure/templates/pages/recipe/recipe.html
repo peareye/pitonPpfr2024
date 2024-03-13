@@ -119,25 +119,27 @@
   <div class="recipeDirections__layout">
    {% if page.blocks.ingredientsBlock %}
    <div class="ingredients">
-    <h2 class="recipeDirections__title">Ingredients</h2>
+    <h2>Ingredients</h2>
     {{ getBlockElementsHtml(page.blocks.ingredientsBlock) }}
    </div>
    {% endif %}
 
    {% if page.blocks.methodBlock %}
    <div class="method">
-    <h2 class="recipeDirections__title">Method</h2>
+    <h2>Method</h2>
     {{ getBlockElementsHtml(page.blocks.methodBlock) }}
    </div>
   </div>
   {% endif %}
 
-  {% if page.blocks.notesBlock %}
+  {% if page.blocks.notesBlock[0].content %}
+  {# Recipe Story Starts Here #}
   <div class="recipe-notes">
-   {# <h2 class="recipeDirections__title">Notes</h2> #}
    {{ getBlockElementsHtml(page.blocks.notesBlock) }}
   </div>
   {% endif %}
+
+
  </div>
 </main>
 {% endblock recipeDirections %}

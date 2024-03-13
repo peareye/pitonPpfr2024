@@ -1,3 +1,6 @@
-    {{ element.content }}
-
-
+<div class="element">
+ {% if element.title %}
+ <h2>{{ element.title }}</h2>
+ {% endif %}
+ {{ element.content }}
+</div>

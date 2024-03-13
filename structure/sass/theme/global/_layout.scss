@@ -2,7 +2,7 @@
 
 .wrapper {
  display              : grid;
- grid-template-columns: minmax($spacer * 2, 1fr) minmax(auto, $max-wrapper-width) minmax($spacer * 2, 1fr);
+ grid-template-columns: minmax($spacer, 1fr) minmax(auto, $max-wrapper-width) minmax($spacer, 1fr);
 
  >* {
   grid-column: 2 / 3;
@@ -43,21 +43,6 @@
 }
 
 .element {
- margin-block: calc($spacer * 3);
-
- &__title {
-  line-height: 1.1;
-  font-weight: $fw-m;
-
-  +p {
-   margin-block-start: calc($spacer / 2);
-  }
- }
+ margin-block-end: calc($spacer * 1);
 }
 
-// Two Column newspaper layout
-.twoCol {
- columns     : 2;
- column-gap  : 3rem;
- column-width: 40ch;
-}

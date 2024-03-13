@@ -3,7 +3,9 @@
 
 <div class="element flow">
 
-  <h2 class="element__title">{{ element.title }}</h2>
+   {% if element.title %}
+ <h2>{{ element.title }}</h2>
+ {% endif %}
   {{ element.content }}
 
   <form class="contact-form" id="contact-form" method="post" accept-charset="utf-8" data-contact-form="true">

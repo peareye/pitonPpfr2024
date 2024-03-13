@@ -3,7 +3,7 @@
 
  .cards {
   display              : grid;
-  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   gap                  : calc($spacer * 2);
  }
 
@@ -18,22 +18,22 @@
   gap           : $spacer;
 
   &__image {
+   aspect-ratio: 3 / 2;
+  
    img {
     aspect-ratio: 3 / 2;
     object-fit  : cover;
+    // box-shadow: $bs;
    }
   }
 
   &__content {
+ 
    flex          : 1;
    display       : flex;
    flex-direction: column;
    gap           : $spacer;
-  }
 
-  &__title {
-   text-wrap  : wrap;
-   font-weight: $fw-n;
   }
 
   &__author {

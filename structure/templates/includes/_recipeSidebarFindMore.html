@@ -5,11 +5,13 @@
  <a class="btn btn-findMore" href="{{ baseUrl() }}/{{page.collection_slug}}"
   title="View recipes for {{page.collection_slug}}">{{page.collection_slug}}</a>
 
+{% if page.settings.subCategory %}
  {% for cat in page.settings.subCategory|split(',') %}
-  {% if page.collection_slug != cat %}
-  <a class="btn btn-findMore" href="{{ baseUrl() }}/search?terms={{ cat }}"
+  {% if cat != page.collection_slug %}
+   <a class="btn btn-findMore" href="{{ baseUrl() }}/search?terms={{ cat }}"
    title="View recipes for {{ cat }}">{{ cat }}</a>
   {% endif %}
  {% endfor %}
+{% endif %}
 
 </div>
