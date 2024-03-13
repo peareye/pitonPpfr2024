@@ -1,15 +1,20 @@
-{# Media Element #}
-<div class="element flow">
-  
-      <div class="imageElement__image">
-        {{ getMediaSrcSet(element.media.filename, element.media.caption, {'sizes': '(min-width: 1020px) 926px, 93.43vw'}) }}
-      </div>
-  
-      <div class="imageElement__content flow">
-         {% if element.title %}
- <h2>{{ element.title }}</h2>
- {% endif %}
-        {{ element.content }}
-      </div>
-</div>
+{# Image Element #}
 
+<div id="{{element.settings.imageID}}" class="imageElement flex-two-columns">
+
+ <figure class="imageElement__image">
+   {{ 
+    getMediaSrcSet(element.media.filename, element.media.caption, 
+    {'sizes': '(min-width: 1020px) 926px, 93.43vw'}) 
+   }}
+ </figure>
+
+ <div class="imageElement__content">
+   <h2 class="element__title">{{ element.title }}</h2>
+   <div class="element__content">
+    {{ element.content }}
+   
+   </div>
+
+ </div>
+</div>

@@ -46,3 +46,23 @@
  margin-block-end: calc($spacer * 1);
 }
 
+// Flex Layouts 
+[class*="flex-"] {
+ display: flex;
+ gap    : calc($spacer * 2);
+}
+
+.flex- {
+ &two-columns {
+  flex-wrap        : wrap;
+
+  &:nth-child(odd) {
+   flex-direction: row-reverse;
+  }
+
+  >* {
+   flex: 1 1 22rem;
+  }
+ }
+}
+
