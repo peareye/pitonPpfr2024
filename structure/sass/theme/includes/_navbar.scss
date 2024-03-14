@@ -12,7 +12,6 @@
  top     : 100%;
  left    : -50%;
  right   : -50%;
- z-index : 10;
 
  transform       : scaleY($scale); //Set to zero for animation
  opacity         : $scale; //Set to zero for animation
@@ -30,7 +29,7 @@
  }
 
  &-link {
-  font-size            : var(--fs-300);
+  font-size            : var(--base-font);
   text-decoration      : none;
   outline              : none;
   color                : inherit;
@@ -38,10 +37,9 @@
   padding-inline       : $spacer;
   padding-block        : $spacer;
   cursor               : pointer;
-  // letter-spacing    : $ls;
+  letter-spacing    : $ls;
 
   position     : relative;
-  // display   : block;
   transition   : background-color 250ms ease;
 
   &:hover,
@@ -57,7 +55,7 @@
 
  &::after {
   content  : '\25bc';
-  font-size: .8rem;
+  font-size: var(--smallText);
   position : relative;
   top      : -1px;
   right    : -5px;
@@ -74,7 +72,6 @@ label[for^="sub-nav-toggle"]{
  top     : 100%;
  left    : 0;
  right   : 0;
- z-index : 10;
 
  display        : grid;
  text-align     : center;

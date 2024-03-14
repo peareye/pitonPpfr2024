@@ -5,9 +5,9 @@ body {
  font-size  : var(--base-font);
  line-height: 1.5;
 
- display    : flex;
- flex-flow  : column nowrap;
- overflow-x : hidden;
+ display   : flex;
+ flex-flow : column nowrap;
+ overflow-x: hidden;
 }
 
 ::selection {
@@ -15,9 +15,9 @@ body {
 }
 
 a:not([class]) {
- text-decoration : none;
- outline         : none;
- transition      : outline 250ms ease-in;
+ text-decoration: none;
+ outline        : none;
+ transition     : outline 250ms ease-in;
 
 
  &:hover,
@@ -32,62 +32,41 @@ h3,
 h4,
 h5,
 h6 {
- font-family       : $ff-serif;
- font-weight       : 600;
- line-height       : 1.125;
- letter-spacing    : $ls;
- text-transform    : capitalize;
+ font-family   : $ff-serif;
+ font-weight   : 500;
+ line-height   : 1.125;
+ letter-spacing: $ls;
+ text-transform: capitalize;
 
+ border-bottom: solid 1px $clr-accent;
+ padding-block-end: .25em;
+ margin-block-end: .25em;
+ display: inline-block;
+ padding-inline-end: calc($spacer * 1);
 }
-.xlText {
- font-size: var(--);
-}
+
 h1 {
  font-size: var(--h1);
-
- // &::before {
- //  content: 'H1: ';
- // }
 }
 
 h2 {
  font-size: var(--h2);
-
- // &::before {
- //  content: 'H2: ';
- // }
 }
 
 h3 {
  font-size: var(--h3);
-
- // &::before {
- //  content: 'H3: ';
- // }
 }
 
 h4 {
  font-size: var(--h4);
-
- // &::before {
- //  content: 'H4: ';
- // }
 }
 
 h5 {
  font-size: var(--h5);
-
- // &::before {
- //  content: 'H5: ';
- // }
 }
 
 h6 {
  font-size: var(--h6);
-
- // &::before {
- //  content: 'H6: ';
- // }
 }
 
 img {
@@ -108,7 +87,7 @@ figure {
 
  figcaption {
   color      : neutral(4);
-  font-size  : .8rem;
+  font-size  : var(--smallText);
   font-style : italic;
   font-weight: 300;
   text-align : center;
@@ -122,26 +101,30 @@ figure {
 // }
 
 
- /* Add styles to 'label' selector */
+/* Add styles to 'label' selector */
 
- /* Add styles to 'input' and 'textarea' selectors */
- input[type=text],
- input[type=email],
- textarea {
-  width         : 100%;
-  padding-block : calc($spacer / 2);
-  padding-inline: $spacer;
-  border: $neutral-3 1px solid;
-  border-radius : $br;
-  font-size     : inherit;
-  transition    : border 125ms ease, background-color 125ms ease;
- }
+/* Add styles to 'input' and 'textarea' selectors */
+input[type=text],
+input[type=email],
+textarea {
+ width         : 100%;
+ padding-block : calc($spacer / 2);
+ padding-inline: $spacer;
+ border        : $neutral-3 1px solid;
+ border-radius : $br;
+ font-size     : inherit;
+ transition    : border 125ms ease, background-color 125ms ease;
+}
 
- /* Add styles to show 'focus' of selector */
- input[type=text]:focus,
- input[type=email]:focus,
- textarea:focus {
-  border : 2px dashed color(accent);
-  outline: none;
-  background-color: color(secondary-lighter);
- }
+/* Add styles to show 'focus' of selector */
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+ border          : 2px dashed color(accent);
+ outline         : none;
+ background-color: color(secondary-lighter);
+}
+
+// *[class*="title"] {
+//  outline: dashed 1px red;
+// }

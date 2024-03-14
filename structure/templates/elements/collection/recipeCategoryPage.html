@@ -8,7 +8,9 @@
 
 <section id="recipeCategoryPageElement" class="element flow">
 
- <h2 class="element__title">{{ element.title }}</h2>
+ {% if element.title %}
+ <h2>{{ element.title }}</h2>
+ {% endif %}
 
  {{ element.content }}
 
@@ -18,14 +20,16 @@
 
   <a class="card" href="{{ getPathForPage(detail.page_slug, detail.collection_slug) }}">
 
-   {% if detail.media.filename %}
+  
    <div class="card__image">
+    {% if detail.media.filename %}
     <img src="{{ getMediaPath(detail.media.filename, 'thumb') }}">
+    {% endif %}
    </div>
-   {% endif %}
+  
 
    <div class="card__content">
-    <h3 class="card__title">{{ detail.title }}</h3>
+    <h3>{{ detail.title }}</h3>
     <div class="card__author">
      <i class="icon fas fa-user"></i>
      by

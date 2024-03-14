@@ -11,8 +11,7 @@
  }
 
  ::placeholder {
-  color    : rgba(neutral(4), .85);
-  font-size: 1.2rem;
+  color    : rgba(neutral(3), .85);
  }
 
  .input-group {
@@ -35,7 +34,7 @@
   }
 
   label {
-   font-size     : var(--fs-400);
+   font-size     : var(--base-font);
    font-weight   : $fw-l;
    letter-spacing: $ls;
 

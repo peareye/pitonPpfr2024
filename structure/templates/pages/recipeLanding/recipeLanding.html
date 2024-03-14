@@ -7,7 +7,9 @@
 
 <section id="recipeCategoryPageElement" class="element flow">
 
- <h2 class="element__title">{{ element.title }}</h2>
+  {% if element.title %}
+ <h2>{{ element.title }}</h2>
+ {% endif %}
 
  {# {{ element.content }} #}
 
@@ -24,18 +26,18 @@
    {% endif %}
 
    <div class="card__content">
-    <h3 class="card__title">{{ detail.title }}</h3>
+    <h3 class="card__title cutoff-text">{{ detail.title }}</h3>
     <div class="card__author">
      <i class="icon fas fa-user"></i>
      by
      <span>{{ detail.first_name }}</span>
     </div>
    </div>
-
   </a>
   {% else %}
-  {# For when no search results are found #}
-  <h3 class="collectionSummary__title">There are currently no recipes in this collection.</h3>
+
+  {# For when no recipes in this collection are found #}
+  <h2>There are currently no recipes in this collection.</h2>
   {% endfor %}
  </div>
 
