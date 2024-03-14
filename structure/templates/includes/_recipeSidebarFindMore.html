@@ -2,13 +2,13 @@
 
 <div class="sidebarFindMore">
  {# Prints out the collection that the recipe is part of. #}
- <a class="btn btn-findMore" href="{{ baseUrl() }}/{{page.collection_slug}}"
+ <a class="btn btn-findMore" href="{{ baseUrl() }}/recipes/{{page.collection_slug}}"
   title="View recipes for {{page.collection_slug}}">{{page.collection_slug}}</a>
 
 {% if page.settings.subCategory %}
  {% for cat in page.settings.subCategory|split(',') %}
   {% if cat != page.collection_slug %}
-   <a class="btn btn-findMore" href="{{ baseUrl() }}/search?terms={{ cat }}"
+   <a class="btn btn-findMore" href="{{ baseUrl() }}/recipes/{{ cat }}"
    title="View recipes for {{ cat }}">{{ cat }}</a>
   {% endif %}
  {% endfor %}
