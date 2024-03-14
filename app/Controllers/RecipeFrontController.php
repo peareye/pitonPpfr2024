@@ -72,8 +72,8 @@ class RecipeFrontController extends FrontController
 
             // Add to extension data to be picked up in showPage()
             if ($collectionPages) {
-                $this->pageDataExtension['key'] = 'results';
-                $this->pageDataExtension['value'] = $collectionPages;
+                $this->setExtensionPageData('resultsCollectionOrCategoryName', $args['type']);
+                $this->setExtensionPageData('results', $collectionPages);
             }
 
             // Return rendered page. Hard coding the PPFR 'recipes' landing page slug. End
@@ -88,8 +88,8 @@ class RecipeFrontController extends FrontController
 
             // Set to extension data to be picked up in showPage()
             if ($categoryPages) {
-                $this->pageDataExtension['key'] = 'results';
-                $this->pageDataExtension['value'] = $categoryPages;
+                $this->setExtensionPageData('resultsCollectionOrCategoryName', $args['type']);
+                $this->setExtensionPageData('results', $categoryPages);
             }
 
             // Return rendered page. Hard coding the PPFR 'recipes' landing page slug. End
