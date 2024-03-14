@@ -87,6 +87,14 @@
             "key": "instagramLink",
             "value": "https://www.instagram.com",
             "inputType": "url"
+        },
+        {
+            "category": "site",
+            "label": "Approved recipe categories",
+            "key": "ppfrCategories",
+            "value": "baking,brunch,desserts,drinks,entrees,holidays,keto,meat,miscellaneous,salads,soups,starters,vegetarian",
+            "inputType": "text",
+            "help": "When adding or removing a new category option to the recipe page settings, mirror changes here."
         }
      ]
 }

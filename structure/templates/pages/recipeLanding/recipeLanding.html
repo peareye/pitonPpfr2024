@@ -7,15 +7,11 @@
 
 <section id="recipeCategoryPageElement" class="element flow">
 
-  {% if element.title %}
- <h2>{{ element.title }}</h2>
- {% endif %}
-
- {# {{ element.content }} #}
+<h2>{{ page.resultsCollectionOrCategoryName }}</h2>
 
  <div class="cards">
 
-  {% for detail in collection %}
+  {% for detail in page.results %}
 
   <a class="card" href="{{ getPathForPage(detail.page_slug, detail.collection_slug) }}">
 
@@ -44,7 +40,7 @@
  {# Print pagination navigation #}
  {{ pagination() }}
 </section>
-</main> 
+</main>
 
 
 
