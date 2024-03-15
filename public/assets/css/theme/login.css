@@ -663,6 +663,10 @@ textarea:focus {
   position: relative;
   z-index: 10;
 }
+.header__search {
+  background-color: #999999;
+  margin-block-start: 0;
+}
 
 .logo {
   padding-block: 1em;

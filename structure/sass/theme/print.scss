@@ -1,0 +1,105 @@
+/* abstracts */
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/theme';
+
+@media print {
+
+ h2 {
+  font-size  : var(--h5);
+  border     : none;
+  font-weight: $fw-b;
+  margin     : 0;
+  padding    : 0;
+ }
+
+ /* All your print styles go here */
+ .header,
+ .footer,
+ .nav,
+ .header__search,
+ .category-name,
+ .sidebar,
+ img {
+  display: none !important;
+ }
+
+ .flow {
+  margin-block-start: 0;
+ }
+
+ h1 {
+  display: inline-block;
+ }
+
+ .single-recipe {
+  display              : block;
+  grid-template-columns: 1fr;
+  gap                  : 2rem;
+
+  &__meta {
+   grid-column: 1 / -1;
+  }
+ }
+
+ .feature-details {
+  background-color: white;
+  border-bottom   : solid 1px black;
+
+  &__item {
+   justify-content: start;
+   align-items    : start;
+   display        : inline-block;
+
+   & i {
+    display: none;
+   }
+  }
+
+  &__subtitle {
+   @include dc(neutral(1));
+  }
+ }
+
+ .recipeDirections {
+  &__layout {
+   padding-block-end: 0;
+
+   >* ul li,
+   >* ol li {
+
+    padding-block : 0;
+    padding-inline: 0;
+    line-height   : 1.2;
+
+    &:nth-child(odd) {
+     background-color: neutral(1);
+    }
+    &::before {
+     content: "\f35a";
+     // @include dc(neutral(5));
+     font-family: "Font Awesome 5 Free";
+     font-weight: 900;
+    }
+   }
+   >* ol li {
+    counter-increment: steps;
+ 
+    &::before {
+ 
+     content  : counter(steps);
+     font-size: var(--smallText);
+     @include dc(neutral(1));
+ 
+     min-width    : 1.6em;
+     line-height  : 1.6;
+     border-radius: 0;
+     text-align   : start;
+    }
+   }
+  }
+
+
+ }
+
+}

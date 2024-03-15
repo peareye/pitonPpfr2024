@@ -13,10 +13,15 @@
  position: relative;
  z-index: 10;
 }
+
+&__search {
+ background-color: color(primary-lighter);
+ margin-block-start: 0;
+}
 }
 
 .logo {
- padding-block: 1em;
+ padding-block: $spacer;
  height       : 100%;
  width        : min(100%, 250px);
 }
