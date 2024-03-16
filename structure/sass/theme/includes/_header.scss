@@ -1,22 +1,27 @@
 // Header
 
 .header {
- @include dc(color(primary));
  box-shadow: $bs;
- // padding-block-end: $spacer;
- 
-&__inner {
- display        : flex;
- align-items    : flex-end;
- justify-content: space-between;
+ @include dc(color(primary));
 
- position: relative;
- z-index: 10;
-}
+ &__inner {
+  display : grid;
+  position: relative;
+  z-index : 10;
+ }
+
+ &__content {
+  display              : grid;
+  grid-template-columns: 1fr auto;
+  gap                  : $spacer;
+  align-items          : center;
+ }
 }
 
 .logo {
- padding-block: 1em;
+ padding-block-start: $spacer;
  height       : 100%;
  width        : min(100%, 250px);
+ align-self   : center;
+ justify-self : center;
 }

@@ -29,19 +29,22 @@
  }
 
  &-link {
-  font-size            : var(--base-font);
-  text-decoration      : none;
-  outline              : none;
-  color                : inherit;
-  text-transform       : uppercase;
-  padding-inline       : $spacer;
-  padding-block        : $spacer;
-  cursor               : pointer;
-  letter-spacing    : $ls;
+  font-size      : var(--base-font);
+  text-decoration: none;
+  outline        : none;
+  color          : inherit;
+  text-transform : uppercase;
+  padding-inline : $spacer;
+  padding-block  : $spacer;
+  cursor         : pointer;
+  letter-spacing : $ls;
 
-  position     : relative;
-  transition   : background-color 250ms ease;
-
+  position  : relative;
+  transition: background-color 250ms ease;
+  @include mq(small) {
+   padding-block: 0;
+   align-self: end;
+  }
   &:hover,
   &:focus {
    @include dc(color(accent));
@@ -61,9 +64,11 @@
   right    : -5px;
  }
 }
-label[for^="sub-nav-toggle"]{
+
+label[for^="sub-nav-toggle"] {
  cursor: pointer;
 }
+
 // subnav
 .subnav {
  @include dc(color(secondary-lighter));
@@ -72,6 +77,7 @@ label[for^="sub-nav-toggle"]{
  top     : 100%;
  left    : 0;
  right   : 0;
+ z-index : 11;
 
  display        : grid;
  text-align     : center;

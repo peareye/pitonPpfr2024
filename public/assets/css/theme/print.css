@@ -1,0 +1,98 @@
+/* abstracts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+:root {
+  --base-font: clamp(0.88rem, 0.85vw + 0.65rem, 1.13rem);
+  --base-font-multiplier: 1.2;
+  --h6: var(--base-font);
+  --h5: calc(var(--base-font) * var(--base-font-multiplier));
+  --h4: calc(var(--h5) * var(--base-font-multiplier));
+  --h3: calc(var(--h4) * var(--base-font-multiplier));
+  --h2: calc(var(--h3) * var(--base-font-multiplier));
+  --h1: calc(var(--h2) * var(--base-font-multiplier));
+  --largeText: calc(var(--h1) * var(--base-font-multiplier));
+  --smallText: calc(var(--base-font) * .8);
+}
+
+@media print {
+  h2 {
+    font-size: var(--h5);
+    border: none;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+  /* All your print styles go here */
+  .header,
+  .footer,
+  .nav,
+  .header__search,
+  .category-name,
+  .sidebar,
+  img {
+    display: none !important;
+  }
+  .flow {
+    margin-block-start: 0;
+  }
+  h1 {
+    display: inline-block;
+  }
+  .single-recipe {
+    display: block;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .single-recipe__meta {
+    grid-column: 1/-1;
+  }
+  .feature-details {
+    background-color: white;
+    border-bottom: solid 1px black;
+  }
+  .feature-details__item {
+    justify-content: start;
+    align-items: start;
+    display: inline-block;
+  }
+  .feature-details__item i {
+    display: none;
+  }
+  .feature-details__subtitle {
+    background-color: hsl(0, 0%, 100%);
+    color: #1a1a1a;
+  }
+  .recipeDirections__layout {
+    padding-block-end: 0;
+  }
+  .recipeDirections__layout > * ul li,
+  .recipeDirections__layout > * ol li {
+    padding-block: 0;
+    padding-inline: 0;
+    line-height: 1.2;
+  }
+  .recipeDirections__layout > * ul li:nth-child(odd),
+  .recipeDirections__layout > * ol li:nth-child(odd) {
+    background-color: hsl(0, 0%, 100%);
+  }
+  .recipeDirections__layout > * ul li::before,
+  .recipeDirections__layout > * ol li::before {
+    content: "\f35a";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+  .recipeDirections__layout > * ol li {
+    counter-increment: steps;
+  }
+  .recipeDirections__layout > * ol li::before {
+    content: counter(steps);
+    font-size: var(--smallText);
+    background-color: hsl(0, 0%, 100%);
+    color: #1a1a1a;
+    min-width: 1.6em;
+    line-height: 1.6;
+    border-radius: 0;
+    text-align: start;
+  }
+}
+
+/*# sourceMappingURL=print.css.map */

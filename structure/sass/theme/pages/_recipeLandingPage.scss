@@ -17,6 +17,11 @@
   flex-direction: column;
   gap           : $spacer;
 
+  &__title {
+   font-size: var(--h5);
+   line-height: 1.2;
+  }
+
   &__image {
    aspect-ratio: 3 / 2;
 
@@ -31,7 +36,7 @@
   }
 
   &__author {
-   margin-block-start: auto; // keeps the author name at the bottom of the card
+   margin-block-start: calc($spacer * .5); // keeps the author name at the bottom of the card
    color             : neutral(3);
    font-size: var(--smallText);
 
