@@ -1,6 +1,6 @@
 .single-recipe {
  &__meta {
- >* {
+  >* {
    padding-inline-end: calc($spacer * 1);
   }
 
@@ -140,44 +140,47 @@
    line-height   : 1.3;
    font-size     : var(--base-font);
 
-   display              : grid;
-   gap                  : .5em;
-   grid-template-columns: auto 1fr;
-   align-items          : start;
-
    &:nth-child(odd) {
     background-color: neutral(2);
    }
 
    &::before {
-    color      : color(accent);
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content    : "\f35a";
+    color            : color(accent);
+    font-family      : "Font Awesome 5 Free";
+    font-weight      : 900;
+    content          : "\f35a";
+    margin-inline-end: .75em;
    }
   }
 
   >* ol li {
    counter-increment: steps;
+   margin-left: 2rem;
 
    &::before {
-
     content  : counter(steps);
     font-size: var(--smallText);
     @include dc(color(accent));
+    padding-inline   : .5rem;
+    padding-block: .25rem;
+    margin-left: -2.3rem;
+    // line-height: 2;
+    border-radius: 50%;
 
-    min-width    : 2.25em;
-    line-height  : 2.25em;
-    border-radius: 1rem;
-    text-align   : center;
    }
+
   }
 
   >* ul,
   >* ol {
-   // margin-block-start: .25em;
-   list-style        : none;
+   list-style: none;
   }
+ }
+
+ ol li {
+  text-align    : left;
+  background    : green;
+  padding-inline: 10rem;
  }
 }
 
@@ -186,20 +189,18 @@
  background-color: neutral(1);
 
  a {
-  background: purple;
-  color     : white;
+  color: color(accent);
  }
 
  h3,
  h4 {
-  color        : neutral(5);
-  font-family  : $ff-sans;
-  border       : none;
+  color              : neutral(5);
+  font-family        : $ff-sans;
+  border             : none;
   padding-block-start: .5em;
- 
+  text-transform     : capitalize;
 
-  text-transform: capitalize;
-  &:not(:first-child){
+  &:not(:first-child) {
    padding-block: .5em .25em;
   }
  }
@@ -214,7 +215,7 @@
 
 .recipeStory {
  margin-block-start: $spacer;
- display: block;
+ display           : block;
 }
 
 .recipe-notes {

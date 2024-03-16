@@ -2,7 +2,6 @@
 
  &__form {
   display: flex;
-  @include dc(color(primary));
   margin-block: $spacer;
  }
 
@@ -15,17 +14,10 @@
 
  input[type=text] {
   font-size: var(--base-font);
-  padding-inline: $spacer;
-
-  border-bottom             : solid 1px color(accent);
-  border-left               : solid 1px color(accent);
-  border-top                : solid 1px color(accent);
-  border-top-left-radius    : $br;
+  border-top-left-radius    : 0;
   border-top-right-radius   : 0;
   border-bottom-right-radius: 0;
-  border-bottom-left-radius : $br;
-  box-shadow                : $bs;
-
+  border-bottom-left-radius : 0;
   flex: 1;
 
   &:focus,
@@ -40,7 +32,7 @@
    color     : color(accent-lighter);
    opacity   : 1;
    transition: opacity 0.25s linear;
-   font-size : var(--h4);
+   font-size : var(--h5);
    font-weight: $fw-l;
   }
 
@@ -53,14 +45,6 @@
  &__button {
   background-color          : color(accent-lighter);
   color                     : neutral(1);
-  padding-block             : $spacer;
-  padding-inline            : calc($spacer / 1);
-  box-shadow                : $bs;
-  border-bottom-right-radius: $br;
-  border-top-right-radius   : $br;
-
-  border-bottom: solid 1px color(accent-lighter);
-  border-right : solid 1px color(accent-lighter);
-  border-top   : solid 1px color(accent-lighter);
+  padding-inline            : $spacer;
  }
 }
