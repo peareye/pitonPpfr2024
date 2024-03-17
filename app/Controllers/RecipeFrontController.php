@@ -69,6 +69,7 @@ class RecipeFrontController extends FrontController
         // If the requested type is a collection, return the collection landing page
         if (array_key_exists($args['type'], $collections)) {
             $collectionPages = $recipePageMapper->findPublishedCollectionPagesById($collections[$args['type']], $pagination->getLimit(), $pagination->getOffset());
+            $pagination->setTotalResultsFound($recipePageMapper->foundRows() ?? 0);
 
             // Add to extension data to be picked up in showPage()
             if ($collectionPages) {
@@ -85,6 +86,7 @@ class RecipeFrontController extends FrontController
         // Get and match against approved categories from site settings
         if (isset($this->settings['site']['ppfrCategories']) && in_array($args['type'], explode(',', $this->settings['site']['ppfrCategories']))) {
             $categoryPages = $recipePageMapper->findRecipesByCategory($args['type'], $pagination->getLimit(), $pagination->getOffset());
+            $pagination->setTotalResultsFound($recipePageMapper->foundRows() ?? 0);
 
             // Set to extension data to be picked up in showPage()
             if ($categoryPages) {
