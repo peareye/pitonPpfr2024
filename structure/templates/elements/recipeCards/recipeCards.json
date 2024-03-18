@@ -1,0 +1,51 @@
+{
+ "elementName": "Recipe Card Results",
+ "elementDescription": "Display recipe card results.",
+ "settings": [
+  {
+   "category": "element",
+   "label": "Recipe Order",
+   "key": "recipeOrder",
+   "inputType": "select",
+   "help": "Select the order you want to list the recipes random/recent/popular.",
+   "options": [
+    {
+     "name": "Recent",
+     "value": "recent"
+    },
+    {
+     "name": "Random",
+     "value": "random"
+    },
+    {
+     "name": "Popular",
+     "value": "popular"
+    }
+   ]
+  },
+  {
+   "category": "element",
+    "label": "Number of Results",
+    "key": "recipeNumberOf",
+    "inputType": "number",
+    "help": "Enter the number of recipes you want to show in your element. Leave it blank if you want to use the default number of recipes."
+  },
+  {
+   "category": "element",
+   "label": "Recipe Show Pagination",
+   "key": "recipePagination",
+   "inputType": "select",
+   "help": "Do you want pagination on your page. Probably more appropriate for a landing page and not home page.",
+   "options": [
+    {
+     "name": "Yes",
+     "value": "yes"
+    },
+    {
+     "name": "No",
+     "value": "no"
+    }
+   ]
+  }
+ ]
+}
