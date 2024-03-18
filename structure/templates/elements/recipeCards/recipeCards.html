@@ -1,0 +1,35 @@
+ <div class="element flow">
+  {% if element.title %}
+  <h2>{{ element.title }}</h2>
+  {% endif %}
+  {{ element.content }}
+ </div>
+<div class="cards">
+ 
+  {% set recipes = getPublishedRankedCollectionPages(element.settings.recipeOrder, element.settings.recipeNumberOf) %}
+ 
+  {% for recipe in recipes %}
+  <a href="{{ getPathForPage(recipe.page_slug, recipe.collection_slug)}}" class="card" alt="{{ recipe.media.caption }}">
+   {% if recipe.media.filename %}
+   <div class="card__img">
+   <img src="{{ getMediaPath(recipe.media.filename, 'thumb') }}" >
+   </div>
+   {% endif %}
+   <div class="card__content">
+ 
+    <div class="card__category">{{recipe.collection_title}}</div>
+ 
+    <div class="card__title">{{recipe.title }}</div>
+ 
+    <div class="card__author"><i class="fas fa-user"></i> <span>by</span> {{ recipe.author }}</div>
+   
+   </div>
+  </a>
+ 
+ 
+  {% endfor %}
+</div>
+  {# Print pagination navigation #}
+  {% if element.settings.recipePagination == 'yes'  %}
+  {{ pagination() }}
+  {% endif %}

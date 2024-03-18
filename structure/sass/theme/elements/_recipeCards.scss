@@ -1,0 +1,50 @@
+.cards {
+ display              : grid;
+ grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+ gap                  : calc($spacer * 2);
+}
+
+.card {
+ text-decoration: none;
+ border-radius  : $br;
+ box-shadow     : $bs;
+ padding        : calc($spacer /2);
+ @include dc(neutral(1));
+ display       : flex;
+ flex-direction: column;
+ gap           : $spacer;
+
+ &__title {
+  font-size: var(--h5);
+  line-height: 1.2;
+ }
+
+ &__image {
+  aspect-ratio: 3 / 2;
+
+  img {
+   aspect-ratio: 3 / 2;
+   object-fit  : cover;
+  }
+ }
+
+ &__content {
+  margin-block-start: auto;
+ }
+
+ &__author {
+  margin-block-start: calc($spacer * .5); // keeps the author name at the bottom of the card
+  color             : neutral(3);
+  font-size: var(--smallText);
+
+  span {
+   color      : neutral(4);
+  }
+
+  .icon {
+   color    : color(accent);
+   font-size: var(--smallText);
+  }
+
+ }
+}
