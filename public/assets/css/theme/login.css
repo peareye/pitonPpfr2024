@@ -165,7 +165,7 @@ p {
   margin-inline: auto;
 }
 .expand-btn:hover {
-  background-color: hsl(24, 100%, 50%);
+  background-color: #6699cc;
   color: white;
 }
 .expand-btn::before {
@@ -190,8 +190,8 @@ body {
 }
 
 ::selection {
-  background-color: hsl(24, 100%, 50%);
-  color: white;
+  background-color: #6699cc;
+  color: #1a1a1a;
 }
 
 a:not([class]) {
@@ -200,7 +200,7 @@ a:not([class]) {
   transition: outline 250ms ease-in;
 }
 a:not([class]):hover, a:not([class]):focus-within {
-  outline: dashed 2px hsl(24, 100%, 50%);
+  outline: dashed 2px #6699cc;
 }
 
 h1,
@@ -214,7 +214,7 @@ h6 {
   line-height: 1.125;
   letter-spacing: 0.05ex;
   text-transform: capitalize;
-  border-bottom: solid 1px hsl(24, 100%, 50%);
+  border-bottom: solid 1px #6699cc;
   padding-block-end: 0.25em;
   margin-block-end: 0.25em;
   display: inline-block;
@@ -285,7 +285,7 @@ textarea {
 input[type=text]:focus,
 input[type=email]:focus,
 textarea:focus {
-  border: 2px dashed hsl(24, 100%, 50%);
+  border: 2px dashed #6699cc;
   outline: none;
   background-color: white;
 }
@@ -355,7 +355,7 @@ textarea:focus {
   font-size: inherit;
   text-align: center;
   display: inline-block;
-  background-color: hsl(0, 0%, 10%);
+  background-color: hsl(210, 50%, 40%);
   color: white;
   padding-block: 0.5em;
   padding-inline: 1em;
@@ -369,7 +369,7 @@ textarea:focus {
   text-decoration: none;
 }
 .btn:hover {
-  background-color: black;
+  background-color: #1a334d;
   color: white;
   cursor: pointer;
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
@@ -377,7 +377,7 @@ textarea:focus {
 
 .btn-findMore {
   padding-inline: 0.25em;
-  background-color: hsl(0, 0%, 10%);
+  background-color: hsl(210, 50%, 40%);
   color: white;
 }
 .btn-findMore:hover, .btn-findMore:focus-within {
@@ -403,12 +403,12 @@ textarea:focus {
   transition: 125ms all ease-in-out;
 }
 .btn-cta:hover, .btn-cta:active {
-  background-color: #474747;
+  background-color: #4785c2;
 }
 .btn-cta:focus {
   outline-style: dashed;
   outline-color: transparent;
-  box-shadow: 0 0 0 4px #8c8c8c;
+  box-shadow: 0 0 0 4px #8cb3d9;
 }
 
 .btn-link {
@@ -478,7 +478,7 @@ textarea:focus {
   transition: all 0.3s ease-in-out;
 }
 .collectionSummary__card:hover {
-  color: hsl(24, 100%, 50%);
+  color: #6699cc;
 }
 .collectionSummary__card:hover .collectionSummary__img img {
   transform: scale(1.1);
@@ -529,7 +529,7 @@ textarea:focus {
 }
 .input-group input,
 .input-group textarea {
-  border: solid 1px #ff944d;
+  border: solid 1px #9fbfdf;
   transition: border 125ms ease-in;
 }
 .input-group input:focus, .input-group input:focus-within,
@@ -565,7 +565,7 @@ textarea:focus {
   content: "";
   width: 100%;
   height: 1px;
-  background-image: linear-gradient(to right, transparent, hsl(24, 100%, 50%), transparent);
+  background-image: linear-gradient(to right, transparent, #6699cc, transparent);
   position: absolute;
   bottom: 1em;
 }
@@ -622,7 +622,7 @@ textarea:focus {
   border-right: transparent 1px solid;
 }
 .search input[type=text]::placeholder {
-  color: #ff944d;
+  color: #9fbfdf;
   opacity: 1;
   transition: opacity 0.25s linear;
   font-size: var(--h5);
@@ -632,14 +632,14 @@ textarea:focus {
   opacity: 0;
 }
 .search__button {
-  background-color: #ff944d;
+  background-color: #9fbfdf;
   color: hsl(0, 0%, 100%);
   padding-inline: 1em;
 }
 
 .header {
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
-  background-color: hsl(0, 0%, 10%);
+  background-color: hsl(210, 50%, 40%);
   color: white;
 }
 .header__inner {
@@ -736,7 +736,7 @@ textarea:focus {
 
 .nav {
   white-space: nowrap;
-  background-color: #333333;
+  background-color: #4080bf;
   color: white;
   text-align: center;
   display: flex;
@@ -753,7 +753,7 @@ textarea:focus {
 @media only screen and (min-width: 52rem) {
   .nav {
     flex-flow: row nowrap;
-    background-color: hsl(0, 0%, 10%);
+    background-color: hsl(210, 50%, 40%);
     color: white;
     transform: scaleY(1);
     opacity: 1;
@@ -780,12 +780,12 @@ textarea:focus {
   }
 }
 .nav-link:hover, .nav-link:focus {
-  background-color: hsl(24, 100%, 50%);
-  color: white;
+  background-color: #6699cc;
+  color: #1a1a1a;
 }
 .nav-link.active {
-  background-color: hsl(24, 100%, 50%);
-  color: white;
+  background-color: #6699cc;
+  color: #1a1a1a;
 }
 
 .toggle-label {
@@ -830,7 +830,7 @@ label[for^=sub-nav-toggle] {
   width: 100%;
   padding-block: 0.5rem;
   padding-inline: 1em;
-  background-color: hsl(0, 0%, 100%);
+  background-color: #b3cce6;
   color: #1a1a1a;
   font-weight: 300;
   letter-spacing: 0.05ex;
@@ -847,28 +847,28 @@ label[for^=sub-nav-toggle] {
   }
 }
 .subnav-link:hover, .subnav-link:focus {
-  background-color: hsl(24, 100%, 50%);
-  color: white;
+  background-color: #6699cc;
+  color: #1a1a1a;
 }
 
 .pagination {
   margin-block: 2em;
   padding-block: 1em;
-  line-height: 1;
+  line-height: 2;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .pagination .page-link {
-  background-color: hsl(24, 100%, 50%);
-  color: white;
+  background-color: #6699cc;
+  color: #1a1a1a;
   border-top: solid 2px hsl(0, 0%, 100%);
   border-bottom: solid 2px hsl(0, 0%, 100%);
   border-right: solid 2px hsl(0, 0%, 100%);
   transition: background-color 125ms;
 }
 .pagination .page-link:hover, .pagination .page-link:focus-within {
-  background-color: #0099ff;
+  background-color: #996633;
   color: white;
 }
 .pagination .page-link:first-child {
@@ -887,28 +887,30 @@ label[for^=sub-nav-toggle] {
   pointer-events: none;
 }
 .pagination .page-link.disabled:hover, .pagination .page-link.disabled:focus-within {
-  background-color: hsl(24, 100%, 50%);
-  color: white;
+  background-color: #6699cc;
+  color: #1a1a1a;
   color: hsl(0, 0%, 66%);
 }
 .pagination a {
   padding: 0.5em;
   color: inherit;
   display: block;
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
 }
 
 /* footer.scss */
 .footer {
   margin-block-start: auto;
   padding-block-start: 1em;
-  background-color: hsl(0, 0%, 10%);
+  background-color: hsl(210, 50%, 40%);
   color: white;
   font-size: var(--base-font);
 }
 .footer__title {
   padding-block-end: 0.25em;
   margin-block-end: 0.5em;
-  border-bottom: solid 1px rgba(255, 102, 0, 0.5);
+  border-bottom: solid 1px rgba(102, 153, 204, 0.5);
   font-size: var(--h5);
 }
 .footer a {
@@ -916,7 +918,7 @@ label[for^=sub-nav-toggle] {
   text-decoration: none;
 }
 .footer a:hover, .footer a:focus {
-  color: hsl(24, 100%, 50%);
+  color: #6699cc;
 }
 .footer ul {
   list-style: none;
@@ -947,7 +949,7 @@ label[for^=sub-nav-toggle] {
 .footer .footer2 {
   padding-block: 1em;
   margin-block-start: 1em;
-  background-color: black;
+  background-color: #1a334d;
   color: white;
   display: flex;
   flex-flow: column nowrap;
@@ -972,15 +974,14 @@ label[for^=sub-nav-toggle] {
   grid-auto-rows: 90px;
   gap: 0.5em;
   text-decoration: none;
-  background-color: hsl(0, 0%, 100%);
-  color: #1a1a1a;
+  color: hsl(0, 0%, 10%);
   font-size: var(--base-font);
 }
 .sidebarLatest__card:hover .sidebarLatest__img img {
   transform: scale(1.1);
 }
 .sidebarLatest__card:hover .sidebarLatest__content {
-  color: hsl(24, 100%, 50%);
+  color: #6699cc;
 }
 .sidebarLatest__img {
   min-width: 90px;
@@ -1003,7 +1004,7 @@ label[for^=sub-nav-toggle] {
   transition: color 0.3s ease-in-out;
 }
 .sidebarLatest__category {
-  color: hsl(24, 100%, 50%);
+  color: #6699cc;
   font-size: var(--smallText);
   text-transform: uppercase;
   letter-spacing: 0.05ex;
@@ -1028,7 +1029,7 @@ label[for^=sub-nav-toggle] {
   transition: all 0.3s ease-in-out;
 }
 .sidebarLatest__author i {
-  color: hsl(24, 100%, 50%);
+  color: #6699cc;
   font-size: var(--smallText);
 }
 
@@ -1043,7 +1044,7 @@ label[for^=sub-nav-toggle] {
   padding-inline-end: 1em;
 }
 .single-recipe .category-name {
-  color: hsl(24, 100%, 50%);
+  color: #6699cc;
   font-size: var(--smallText);
   text-transform: uppercase;
   letter-spacing: 0.05ex;
@@ -1056,7 +1057,7 @@ label[for^=sub-nav-toggle] {
   line-height: 1;
 }
 .single-recipe .entry-meta__icon {
-  color: hsl(24, 100%, 50%);
+  color: #6699cc;
 }
 .single-recipe .single-meta {
   color: hsl(0, 0%, 66%);
@@ -1130,7 +1131,7 @@ label[for^=sub-nav-toggle] {
   bottom: 0;
   width: 15%;
   height: 2px;
-  background-color: hsl(24, 100%, 50%);
+  background-color: #6699cc;
 }
 .sidebar__title {
   color: hsl(0, 0%, 40%);
@@ -1159,7 +1160,7 @@ label[for^=sub-nav-toggle] {
 }
 .recipeDirections__layout > * ul li::before,
 .recipeDirections__layout > * ol li::before {
-  color: hsl(24, 100%, 50%);
+  color: #6699cc;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f35a";
@@ -1172,8 +1173,8 @@ label[for^=sub-nav-toggle] {
 .recipeDirections__layout > * ol li::before {
   content: counter(steps);
   font-size: var(--smallText);
-  background-color: hsl(24, 100%, 50%);
-  color: white;
+  background-color: #6699cc;
+  color: #1a1a1a;
   padding-inline: 0.5rem;
   padding-block: 0.25rem;
   margin-left: -2.3rem;
@@ -1195,7 +1196,7 @@ label[for^=sub-nav-toggle] {
 }
 .ingredients a,
 .method a {
-  color: hsl(24, 100%, 50%);
+  color: #6699cc;
 }
 .ingredients h3,
 .ingredients h4,
@@ -1250,36 +1251,45 @@ label[for^=sub-nav-toggle] {
   color: #1a1a1a;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 0.5em;
 }
 #recipeCategoryPageElement .card__title,
 #recipeCards .card__title {
   font-size: var(--h5);
   line-height: 1.2;
+  margin-block-end: auto;
+  display: block;
 }
 #recipeCategoryPageElement .card__image,
 #recipeCards .card__image {
   aspect-ratio: 3/2;
+  min-height: 20px;
+  background-color: #d9e6f2;
 }
 #recipeCategoryPageElement .card__image img,
 #recipeCards .card__image img {
-  aspect-ratio: 3/2;
+  aspect-ratio: inherit;
   object-fit: cover;
+  height: 100%;
 }
 #recipeCategoryPageElement .card__content,
 #recipeCards .card__content {
-  margin-block-start: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 #recipeCategoryPageElement .card__category,
 #recipeCards .card__category {
   font-weight: 300;
-  color: hsl(24, 100%, 50%);
+  color: #6699cc;
+  font-size: var(--smallText);
 }
 #recipeCategoryPageElement .card__author,
 #recipeCards .card__author {
   margin-block-start: 0.5em;
   color: hsl(0, 0%, 66%);
   font-size: var(--smallText);
+  display: block;
 }
 #recipeCategoryPageElement .card__author span,
 #recipeCards .card__author span {
@@ -1287,7 +1297,7 @@ label[for^=sub-nav-toggle] {
 }
 #recipeCategoryPageElement .card__author .icon,
 #recipeCards .card__author .icon {
-  color: hsl(24, 100%, 50%);
+  color: #6699cc;
   font-size: var(--smallText);
 }
 

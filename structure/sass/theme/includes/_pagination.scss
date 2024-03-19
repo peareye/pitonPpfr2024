@@ -1,7 +1,7 @@
 .pagination {
  margin-block : 2em;
  padding-block: $spacer;
- line-height  : 1;
+ line-height  : 2;
 
  display        : flex;
  align-items    : center;
@@ -49,5 +49,7 @@
   padding: .5em;
   color  : inherit;
   display: block;
+  text-decoration: none;
+  color: neutral(1);
  }
 }

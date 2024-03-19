@@ -14,37 +14,50 @@
   box-shadow     : $bs;
   padding        : calc($spacer /2);
   @include dc(neutral(1));
+
   display       : flex;
   flex-direction: column;
-  gap           : $spacer;
+  gap                  : calc($spacer / 2);
 
   &__title {
    font-size  : var(--h5);
    line-height: 1.2;
+   margin-block-end: auto;
+   display: block;
   }
 
   &__image {
    aspect-ratio: 3 / 2;
+   min-height: 20px;
+   background-color: color(secondary-light);
+  
 
    img {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: inherit;
     object-fit  : cover;
+    height: 100%;
    }
   }
 
   &__content {
-   margin-block-start: auto;
+   height: 100%;
+
+   display: flex;
+   flex-direction: column;
   }
 
   &__category {
    font-weight: $fw-l;
    color      : color(accent);
+   font-size: var(--smallText);
+ 
   }
 
   &__author {
    margin-block-start: calc($spacer * .5); // keeps the author name at the bottom of the card
    color             : neutral(3);
    font-size         : var(--smallText);
+   display: block;
 
    span {
     color: neutral(4);

@@ -10,7 +10,8 @@
   grid-auto-rows       : 90px;
   gap                  : .5em;
   text-decoration      : none;
-  @include dc(color(secondary));
+  // @include dc(color(secondary));
+  color: neutral(5);
   font-size            : var(--base-font);
 
   &:hover .sidebarLatest__img img {

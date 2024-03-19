@@ -15,11 +15,13 @@
 
   <a class="card" href="{{ getPathForPage(detail.page_slug, detail.collection_slug) }}">
 
-   {% if detail.media.filename %}
+ 
    <div class="card__image">
+    {% if detail.media.filename %}
     <img src="{{ getMediaPath(detail.media.filename, 'thumb') }}">
+    {% endif %}
    </div>
-   {% endif %}
+
 
    <div class="card__content">
     <div class="card__title cutoff-text">{{ detail.title }}</div>
