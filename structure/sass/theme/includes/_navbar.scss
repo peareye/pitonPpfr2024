@@ -42,11 +42,13 @@
   position  : relative;
   transition: background-color 250ms ease;
   @include mq(small) {
-   padding-block: 0;
    align-self: end;
   }
   &:hover,
   &:focus {
+   @include dc(color(accent));
+  }
+  &.active {
    @include dc(color(accent));
   }
  }
