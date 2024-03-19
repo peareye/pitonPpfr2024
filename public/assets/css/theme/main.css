@@ -1263,7 +1263,7 @@ label[for^=sub-nav-toggle] {
 #recipeCategoryPageElement .card__image,
 #recipeCards .card__image {
   aspect-ratio: 3/2;
-  min-height: 20px;
+  min-height: 175px;
   background-color: #d9e6f2;
 }
 #recipeCategoryPageElement .card__image img,
