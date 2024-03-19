@@ -18,9 +18,8 @@
 
   {% for detail in collection %}
 
-  <a class="card" href="{{ getPathForPage(detail.page_slug, detail.collection_slug) }}">
+  <a class="card" href="{{ getPathForPage(detail.page_slug, detail.collection_slug) }}" alt="{{ recipe.media.caption }}">
 
-  
    <div class="card__image">
     {% if detail.media.filename %}
     <img src="{{ getMediaPath(detail.media.filename, 'thumb') }}">

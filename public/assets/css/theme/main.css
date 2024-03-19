@@ -1270,15 +1270,15 @@ label[for^=sub-nav-toggle] {
   max-width: 70ch;
 }
 
-#recipeCategoryPageElement {
+#recipeCategoryPageElement, #recipeCards {
   padding-block-end: 3em;
 }
-#recipeCategoryPageElement .cards {
+#recipeCategoryPageElement .cards, #recipeCards .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   gap: 2em;
 }
-#recipeCategoryPageElement .card {
+#recipeCategoryPageElement .card, #recipeCards .card {
   text-decoration: none;
   border-radius: 7px;
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
@@ -1289,29 +1289,29 @@ label[for^=sub-nav-toggle] {
   flex-direction: column;
   gap: 1em;
 }
-#recipeCategoryPageElement .card__title {
+#recipeCategoryPageElement .card__title, #recipeCards .card__title {
   font-size: var(--h5);
   line-height: 1.2;
 }
-#recipeCategoryPageElement .card__image {
+#recipeCategoryPageElement .card__image, #recipeCards .card__image {
   aspect-ratio: 3/2;
 }
-#recipeCategoryPageElement .card__image img {
+#recipeCategoryPageElement .card__image img, #recipeCards .card__image img {
   aspect-ratio: 3/2;
   object-fit: cover;
 }
-#recipeCategoryPageElement .card__content {
+#recipeCategoryPageElement .card__content, #recipeCards .card__content {
   margin-block-start: auto;
 }
-#recipeCategoryPageElement .card__author {
+#recipeCategoryPageElement .card__author, #recipeCards .card__author {
   margin-block-start: 0.5em;
   color: hsl(0, 0%, 66%);
   font-size: var(--smallText);
 }
-#recipeCategoryPageElement .card__author span {
+#recipeCategoryPageElement .card__author span, #recipeCards .card__author span {
   color: hsl(0, 0%, 40%);
 }
-#recipeCategoryPageElement .card__author .icon {
+#recipeCategoryPageElement .card__author .icon, #recipeCards .card__author .icon {
   color: hsl(24, 100%, 50%);
   font-size: var(--smallText);
 }
