@@ -9,12 +9,12 @@
 
  <div class="cards">
 
-  {% set recipes = getPublishedRankedCollectionPages(element.settings.recipeOrder, element.settings.recipeNumberOf) %}
+  {% set recipes = getPublishedRankedCollectionPagesWithPagination(element.settings.recipeOrder, element.settings.recipeNumberOf) %}
 
   {% for recipe in recipes %}
 
   <a href="{{ getPathForPage(recipe.page_slug, recipe.collection_slug)}}" class="card" alt="{{ recipe.media.caption }}">
-   
+
    {% if recipe.media.filename %}
    <div class="card__image">
     <img src="{{ getMediaPath(recipe.media.filename, 'thumb') }}">
