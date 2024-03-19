@@ -1,4 +1,5 @@
-#recipeCategoryPageElement, #recipeCards {
+#recipeCategoryPageElement,
+#recipeCards {
  padding-block-end: 3em;
 
  .cards {
@@ -18,7 +19,7 @@
   gap           : $spacer;
 
   &__title {
-   font-size: var(--h5);
+   font-size  : var(--h5);
    line-height: 1.2;
   }
 
@@ -35,13 +36,18 @@
    margin-block-start: auto;
   }
 
+  &__category {
+   font-weight: $fw-l;
+   color      : color(accent);
+  }
+
   &__author {
    margin-block-start: calc($spacer * .5); // keeps the author name at the bottom of the card
    color             : neutral(3);
-   font-size: var(--smallText);
+   font-size         : var(--smallText);
 
    span {
-    color      : neutral(4);
+    color: neutral(4);
    }
 
    .icon {
