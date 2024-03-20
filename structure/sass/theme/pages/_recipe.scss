@@ -132,64 +132,70 @@
  &__layout {
   padding-block-end: $spacer;
 
-  >* ul li,
-  >* ol li {
-   list-style    : none;
-   padding-block : .5em;
-   padding-inline: .5em;
-   line-height   : 1.3;
-   font-size     : var(--base-font);
+  ul,
+  ol {
+   list-style          : none;
+   position            : relative;
+   padding-inline-start: 2em;
+   padding-block-end   : 1em;
+
+   & li+li {
+    margin-block-start: .25em;
+   }
+  }
+
+  li {
+   line-height         : 1.3;
+   letter-spacing      : .02ex;
+   padding-inline-start: .25em;
 
    &:nth-child(odd) {
     background-color: neutral(2);
    }
 
-   &::before {
-    color            : color(accent);
-    font-family      : "Font Awesome 5 Free";
-    font-weight      : 900;
-    content          : "\f35a";
-    margin-inline-end: .75em;
-   }
   }
 
-  >* ol li {
+  ul li::before {
+   content            : "\f35a"; // right arrow on <ul>
+   font-family        : "Font Awesome 5 Free";
+   font-weight        : 900;
+   font-size          : var(--base-font);
+   padding-block-start: 1px;
+   color              : color(accent-light);
+
+   position: absolute;
+   left    : 5px;
+  }
+
+  ol li {
    counter-increment: steps;
-   margin-left: 2rem;
-
-   &::before {
-    content  : counter(steps);
-    font-size: var(--smallText);
-    @include dc(color(accent));
-    padding-inline   : .5rem;
-    padding-block: .25rem;
-    margin-left: -2.3rem;
-    // line-height: 2;
-    border-radius: 50%;
-
-   }
-
+   position         : relative;
+   line-height      : 1.5;
+   font-size        : var(--base-font);
   }
 
-  >* ul,
-  >* ol {
-   list-style: none;
-  }
- }
+  ol li::before {
+   content         : counter(steps);
+   color           : neutral(1);
+   background-color: color(accent-light);
+   font-size       : var(--smallText);
+   border-radius   : 50%;
+   height          : 1.5em;
+   width           : 1.5em;
+   line-height     : 1.5em;
+   text-align      : center;
 
- ol li {
-  text-align    : left;
-  background    : green;
-  padding-inline: 10rem;
+   position : absolute;
+   left     : -1.25em;
+   top      : .1875rem;
+   transform: translateX(-50%);
+  }
  }
 }
-
 .ingredients,
 .method {
- background-color: neutral(1);
-
  a {
-  color: color(accent);
+  color: color(accent-dark);
  }
 
  h3,

@@ -597,6 +597,15 @@ textarea:focus {
   height: 100%;
 }
 
+.recipeCards__more {
+  font-weight: 300;
+  letter-spacing: 0.05ex;
+  color: #6699cc;
+  font-style: italic;
+  font-size: var(--smallText);
+  text-align: right;
+}
+
 /* includes */
 .search__form {
   display: flex;
@@ -1146,57 +1155,60 @@ label[for^=sub-nav-toggle] {
 .recipeDirections__layout {
   padding-block-end: 1em;
 }
-.recipeDirections__layout > * ul li,
-.recipeDirections__layout > * ol li {
+.recipeDirections__layout ul,
+.recipeDirections__layout ol {
   list-style: none;
-  padding-block: 0.5em;
-  padding-inline: 0.5em;
-  line-height: 1.3;
-  font-size: var(--base-font);
+  position: relative;
+  padding-inline-start: 2em;
+  padding-block-end: 1em;
 }
-.recipeDirections__layout > * ul li:nth-child(odd),
-.recipeDirections__layout > * ol li:nth-child(odd) {
+.recipeDirections__layout ul li + li,
+.recipeDirections__layout ol li + li {
+  margin-block-start: 0.25em;
+}
+.recipeDirections__layout li {
+  line-height: 1.3;
+  letter-spacing: 0.02ex;
+  padding-inline-start: 0.25em;
+}
+.recipeDirections__layout li:nth-child(odd) {
   background-color: hsl(0, 0%, 95%);
 }
-.recipeDirections__layout > * ul li::before,
-.recipeDirections__layout > * ol li::before {
-  color: #6699cc;
+.recipeDirections__layout ul li::before {
+  content: "\f35a";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  content: "\f35a";
-  margin-inline-end: 0.75em;
+  font-size: var(--base-font);
+  padding-block-start: 1px;
+  color: #8cb3d9;
+  position: absolute;
+  left: 5px;
 }
-.recipeDirections__layout > * ol li {
+.recipeDirections__layout ol li {
   counter-increment: steps;
-  margin-left: 2rem;
+  position: relative;
+  line-height: 1.5;
+  font-size: var(--base-font);
 }
-.recipeDirections__layout > * ol li::before {
+.recipeDirections__layout ol li::before {
   content: counter(steps);
+  color: hsl(0, 0%, 100%);
+  background-color: #8cb3d9;
   font-size: var(--smallText);
-  background-color: #6699cc;
-  color: #1a1a1a;
-  padding-inline: 0.5rem;
-  padding-block: 0.25rem;
-  margin-left: -2.3rem;
   border-radius: 50%;
-}
-.recipeDirections__layout > * ul,
-.recipeDirections__layout > * ol {
-  list-style: none;
-}
-.recipeDirections ol li {
-  text-align: left;
-  background: green;
-  padding-inline: 10rem;
+  height: 1.5em;
+  width: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  position: absolute;
+  left: -1.25em;
+  top: 0.1875rem;
+  transform: translateX(-50%);
 }
 
-.ingredients,
-.method {
-  background-color: hsl(0, 0%, 100%);
-}
 .ingredients a,
 .method a {
-  color: #6699cc;
+  color: #336699;
 }
 .ingredients h3,
 .ingredients h4,

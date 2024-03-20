@@ -8,7 +8,7 @@
  {{ element.content }}
  <div class="recipeCards__more">
   {% if element.settings.recipePagination == "no" %}
-  <a href="#">See More</a>
+  <a href="{{ baseUrl() }}/{{ element.settings.recipeOrder }}">See More</a>
   {% endif %}
  </div>
  <div class="cards">
