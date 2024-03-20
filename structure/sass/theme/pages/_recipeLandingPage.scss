@@ -1,7 +1,7 @@
 #recipeCategoryPageElement,
-#recipeCards {
- padding-block-end: 3em;
+.recipeCards {
 
+padding-block-end: 1.25rem;
  .cards {
   display              : grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));

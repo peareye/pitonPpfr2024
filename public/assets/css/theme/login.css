@@ -597,6 +597,14 @@ textarea:focus {
   height: 100%;
 }
 
+.recipeCards__header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+.recipeCards__header h2 {
+  margin: 0;
+}
 .recipeCards__more {
   font-weight: 300;
   letter-spacing: 0.05ex;
@@ -604,6 +612,9 @@ textarea:focus {
   font-style: italic;
   font-size: var(--smallText);
   text-align: right;
+}
+.recipeCards:last-child {
+  padding-block-end: 3rem;
 }
 
 /* includes */
@@ -1244,17 +1255,17 @@ label[for^=sub-nav-toggle] {
 }
 
 #recipeCategoryPageElement,
-#recipeCards {
-  padding-block-end: 3em;
+.recipeCards {
+  padding-block-end: 1.25rem;
 }
 #recipeCategoryPageElement .cards,
-#recipeCards .cards {
+.recipeCards .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   gap: 2em;
 }
 #recipeCategoryPageElement .card,
-#recipeCards .card {
+.recipeCards .card {
   text-decoration: none;
   border-radius: 7px;
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
@@ -1266,49 +1277,49 @@ label[for^=sub-nav-toggle] {
   gap: 0.5em;
 }
 #recipeCategoryPageElement .card__title,
-#recipeCards .card__title {
+.recipeCards .card__title {
   font-size: var(--h5);
   line-height: 1.2;
   margin-block-end: auto;
   display: block;
 }
 #recipeCategoryPageElement .card__image,
-#recipeCards .card__image {
+.recipeCards .card__image {
   aspect-ratio: 3/2;
   min-height: 175px;
   background-color: #d9e6f2;
 }
 #recipeCategoryPageElement .card__image img,
-#recipeCards .card__image img {
+.recipeCards .card__image img {
   aspect-ratio: inherit;
   object-fit: cover;
   height: 100%;
 }
 #recipeCategoryPageElement .card__content,
-#recipeCards .card__content {
+.recipeCards .card__content {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 #recipeCategoryPageElement .card__category,
-#recipeCards .card__category {
+.recipeCards .card__category {
   font-weight: 300;
   color: #6699cc;
   font-size: var(--smallText);
 }
 #recipeCategoryPageElement .card__author,
-#recipeCards .card__author {
+.recipeCards .card__author {
   margin-block-start: 0.5em;
   color: hsl(0, 0%, 66%);
   font-size: var(--smallText);
   display: block;
 }
 #recipeCategoryPageElement .card__author span,
-#recipeCards .card__author span {
+.recipeCards .card__author span {
   color: hsl(0, 0%, 40%);
 }
 #recipeCategoryPageElement .card__author .icon,
-#recipeCards .card__author .icon {
+.recipeCards .card__author .icon {
   color: #6699cc;
   font-size: var(--smallText);
 }

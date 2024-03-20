@@ -1,16 +1,21 @@
 {# Element that creates a block of cards based on the default number of cards indicated in the element.setting. #}
-<section id="recipeCards" class="element flow">
+<section class="recipeCards element flow">
 
- {% if element.title %}
- <h2>{{ element.title }}</h2>
- {% endif %}
+<div class="recipeCards__header">
+ 
+  {% if element.title %}
+  <h2>{{ element.title }}</h2>
+  {% endif %}
+
+  <div class="recipeCards__more">
+   {% if element.settings.recipePagination == "no" %}
+   <a href="{{ baseUrl() }}/{{ element.settings.recipeOrder }}">See More</a>
+   {% endif %}
+  </div>
+</div>
 
  {{ element.content }}
- <div class="recipeCards__more">
-  {% if element.settings.recipePagination == "no" %}
-  <a href="{{ baseUrl() }}/{{ element.settings.recipeOrder }}">See More</a>
-  {% endif %}
- </div>
+
  <div class="cards">
 
   {% set recipes = getPublishedRankedCollectionPagesWithPagination(element.settings.recipeOrder, element.settings.recipeNumberOf) %}
