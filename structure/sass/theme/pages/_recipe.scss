@@ -1,19 +1,13 @@
 .single-recipe {
  &__meta {
-  >* {
-   padding-inline-end: calc($spacer * 1);
-  }
-
+  padding-inline-end: calc($spacer * 1);
  }
-
  .category-name {
   color         : color(accent);
   font-size     : var(--smallText);
   text-transform: uppercase;
   letter-spacing: $ls;
  }
-
-
  .entry-meta {
   color           : neutral(2);
   font-size       : var(--smallText);
@@ -25,7 +19,6 @@
    color: color(accent);
   }
  }
-
  .single-meta {
   color        : neutral(3);
   font-size    : var(--smallText);
@@ -39,10 +32,9 @@
    font-weight: $fw-n;
   }
  }
-
  .recipe-figure {
   aspect-ratio: 16/9;
-  min-height: 300px;
+  min-height: 10px;
   background-color: color(secondary-light);
 
   img {
@@ -51,19 +43,24 @@
    height: 100%;
   }
  }
-
-
 }
 
 // Feature Details 
-
 .feature-details {
- border-top   : solid 1px $neutral-1;
- border-bottom: solid 1px $neutral-1;
- @include dc(neutral(2));
+ margin-block-start: .3125em;
+ display              : grid;
+ grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+ gap                  : .625em;
 
- display  : flex;
- flex-wrap: wrap;
+ >* {
+  color           : neutral(4);
+  background-color: neutral(2);
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  gap             : 1em;
+  padding-block   : 1em;
+ }
 
  &__title {
   text-transform: uppercase;
@@ -76,26 +73,9 @@
   color      : neutral(3);
   line-height: 1.1;
  }
-
- &__item {
-  padding-block : $spacer;
-  padding-inline: calc($spacer * 1.125);
-  border-right  : solid 1px $neutral-1;
-
-  &:last-child {
-   border-right: none
-  }
-
-  display        : flex;
-  flex           : 1;
-  gap            : 1em;
-  align-items    : center;
-  justify-content: center;
-
-  & .fas {
-   font-size: var(--h5);
-   color    : neutral(3);
-  }
+ & .fas {
+  font-size: var(--h5);
+  color    : neutral(3);
  }
 }
 

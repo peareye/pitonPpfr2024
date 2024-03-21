@@ -8,14 +8,17 @@
 
 {% block mainContent %}
 <div class="wrapper">
+
  <div class="recipeHeaderLayout">
+
   <div class="single-recipe">
-   
-<div class="single-recipe__meta">
+
+   <div class="single-recipe__meta">
+
     <div class="category-name">{{page.collection_title}}</div>
- 
+
     <h1>{{ page.title }} <span class="visually-hidden">| {{ site.settings.siteName|default('PitonCMS')}}</span></h1>
- 
+
     <!-- FEATURE META BLOCK -->
     <div class="feature-recipe">
      <ul class="entry-meta">
@@ -25,10 +28,10 @@
       {# <li class="single-meta"><i class="entry-meta__icon fas fa-heart"></i><span> XX</span> Likes</li> #}
      </ul>
     </div>
-</div>
+   </div>
 
    <!-- FEATURE RECIPE IMAGE -->
- 
+
    <div class="recipe-figure">
     {% if page.media.filename %}
     <img src="{{ getMediaPath(page.media.filename, 'large') }}" alt="{{ page.media.caption }}">
@@ -100,14 +103,14 @@
 
    {{ include("includes/_recipeSidebarLatest.html") }}
 
- 
-    <div class="sidebar__heading">
-     <div class="sidebar__title">Find More</div>
-    </div>
 
-    {{ include("includes/_recipeSidebarFindMore.html") }}
-
+   <div class="sidebar__heading">
+    <div class="sidebar__title">Find More</div>
    </div>
+
+   {{ include("includes/_recipeSidebarFindMore.html") }}
+
+  </div>
 
   {% endblock sideBar %}
  </div>
