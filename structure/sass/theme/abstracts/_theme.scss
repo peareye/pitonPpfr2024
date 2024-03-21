@@ -7,19 +7,18 @@ $neutral-4 : hsl(0, 0%, 40%);
 $neutral-5 : hsl(0, 0%, 10%);
 
 // Color Pallette
-$clr-pink   : hsl(324, 51%, 50%);
+$clr-pink   : hsl(350, 100%, 84%);
 $clr-blue   : hsl(210, 50%, 40%);
 $clr-orange : hsl(24, 100%, 50%);
-$clr-red    : hsl(355, 25%, 81%);
+$clr-red    : hsl(354, 71%, 49%);
 $clr-green  : hsl(154, 91%, 31%);
 
-$clr-primary  : $clr-blue;
+$clr-primary : $clr-blue;
 
-$clr-secondary: lighten($clr-primary, 40%);
-$clr-accent   : lighten($clr-primary, 20%);
+$clr-secondary: $clr-pink;
+$clr-accent   : $clr-red;
 
-$clrs: (
- primary: $clr-primary,
+$clrs: (primary: $clr-primary,
  primary-dark: darken($clr-primary, 20%),
  primary-light: lighten($clr-primary, 10%),
  primary-lighter: lighten($clr-primary, 50%),
@@ -55,7 +54,8 @@ $spacer            : 1em;
 // Fonts & Typography
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-$ff-serif:   "Playfair Display", serif;
+$ff-serif: "Playfair Display",
+serif;
 $ff-sans : system-ui,
 -apple-system,
 BlinkMacSystemFont,
@@ -76,27 +76,26 @@ $fw-b : 700;
 
 
 // Media Query Breakpoints
-$breakpoints: (
- xs         : 36rem, // 576px
+$breakpoints: (xs : 36rem, // 576px
  small      : 52rem, // 831px
  medium     : 62rem, // 991px
- big        : 75rem  // 1200px
- );
+ big        : 75rem // 1200px
+);
 
 
 :root {
-// https://www.fluid-type-scale.com/calculate?minFontSize=14&minWidth=430&minRatio=1.2&maxFontSize=18&maxWidth=900&maxRatio=1.2&steps=sm%2Cbase%2Cmd%2Clg%2Cxl%2Cxxl%2Cxxxl&baseStep=base&prefix=fs&decimals=2&useRems=on&remValue=16&previewFont=Inter&previewText=Almost+before+we+knew+it%2C+we+had+left+the+ground&previewWidth=1280
+ // https://www.fluid-type-scale.com/calculate?minFontSize=14&minWidth=430&minRatio=1.2&maxFontSize=18&maxWidth=900&maxRatio=1.2&steps=sm%2Cbase%2Cmd%2Clg%2Cxl%2Cxxl%2Cxxxl&baseStep=base&prefix=fs&decimals=2&useRems=on&remValue=16&previewFont=Inter&previewText=Almost+before+we+knew+it%2C+we+had+left+the+ground&previewWidth=1280
 
- --base-font: clamp(0.88rem, 0.85vw + 0.65rem, 1.13rem);
+ --base-font           : clamp(0.88rem, 0.85vw + 0.65rem, 1.13rem);
  --base-font-multiplier: 1.2;
- 
+
  --h6: var(--base-font);
  --h5: calc(var(--base-font) * var(--base-font-multiplier));
  --h4: calc(var(--h5) * var(--base-font-multiplier));
  --h3: calc(var(--h4) * var(--base-font-multiplier));
  --h2: calc(var(--h3) * var(--base-font-multiplier));
  --h1: calc(var(--h2) * var(--base-font-multiplier));
- 
+
  --largeText: calc(var(--h1) * var(--base-font-multiplier));
  --smallText: calc(var(--base-font) * .8);
 }
