@@ -3,6 +3,7 @@
 .header {
  box-shadow: $bs;
  @include dc(color(primary));
+ border-bottom: solid 5px color(primary-dark);
 
  &__inner {
   display : grid;
@@ -15,7 +16,10 @@
   grid-template-columns: 1fr auto;
   gap                  : $spacer;
   align-items          : center;
-  align-items          : end;
+
+  @include mq(small){
+   align-items          : end;
+  }
  }
 }
 

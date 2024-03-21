@@ -637,7 +637,7 @@ textarea:focus {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   flex: 1;
-  transition: outline 125ms ease-in-out, background-color 125ms ease-in-out;
+  transition: outline 250ms ease-in-out, background-color 250ms ease-in-out;
 }
 .search input[type=text]:focus, .search input[type=text]:focus-within {
   outline: dashed 3px #9fbfdf;
@@ -664,6 +664,7 @@ textarea:focus {
   box-shadow: 0 2px 15px rgba(26, 26, 26, 0.15);
   background-color: hsl(210, 50%, 40%);
   color: white;
+  border-bottom: solid 5px #1a334d;
 }
 .header__inner {
   display: grid;
@@ -675,7 +676,11 @@ textarea:focus {
   grid-template-columns: 1fr auto;
   gap: 1em;
   align-items: center;
-  align-items: end;
+}
+@media only screen and (min-width: 52rem) {
+  .header__content {
+    align-items: end;
+  }
 }
 
 .logo {
