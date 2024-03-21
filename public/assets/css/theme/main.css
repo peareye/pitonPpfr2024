@@ -628,20 +628,23 @@ textarea:focus {
   border-radius: none;
 }
 .search input[type=text] {
+  color: #336699;
+  text-transform: uppercase;
+  letter-spacing: 0.05ex;
   font-size: var(--base-font);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   flex: 1;
+  transition: outline 125ms ease-in-out, background-color 125ms ease-in-out;
 }
 .search input[type=text]:focus, .search input[type=text]:focus-within {
+  outline: dashed 3px #9fbfdf;
   background-color: hsl(0, 0%, 95%);
-  border-style: dashed;
-  border-width: 3px;
-  border-right: transparent 1px solid;
 }
 .search input[type=text]::placeholder {
+  text-transform: capitalize;
   color: #9fbfdf;
   opacity: 1;
   transition: opacity 0.25s linear;

@@ -13,22 +13,25 @@
  }
 
  input[type=text] {
+  color: color(accent-dark);
+  text-transform: uppercase;
+  letter-spacing: $ls;
   font-size: var(--base-font);
   border-top-left-radius    : 0;
   border-top-right-radius   : 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius : 0;
   flex: 1;
+  transition: outline 125ms ease-in-out, background-color 125ms ease-in-out;
 
   &:focus,
   &:focus-within {
+   outline: dashed 3px color(accent-lighter);
    background-color: $neutral-2;
-   border-style    : dashed;
-   border-width    : 3px;
-   border-right    : transparent 1px solid;
   }
 
   &::placeholder {
+   text-transform: capitalize;
    color     : color(accent-lighter);
    opacity   : 1;
    transition: opacity 0.25s linear;
