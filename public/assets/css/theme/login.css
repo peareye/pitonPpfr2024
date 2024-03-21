@@ -1099,9 +1099,15 @@ label[for^=sub-nav-toggle] {
   color: hsl(0, 0%, 40%);
   font-weight: 400;
 }
-.single-recipe .recipe-figure img {
+.single-recipe .recipe-figure {
   aspect-ratio: 16/9;
+  min-height: 300px;
+  background-color: #ffe0e6;
+}
+.single-recipe .recipe-figure img {
+  aspect-ratio: inherit;
   object-fit: cover;
+  height: 100%;
 }
 
 .feature-details {

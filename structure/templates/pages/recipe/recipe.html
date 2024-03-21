@@ -28,11 +28,13 @@
 </div>
 
    <!-- FEATURE RECIPE IMAGE -->
-   {% if page.media.filename %}
+ 
    <div class="recipe-figure">
+    {% if page.media.filename %}
     <img src="{{ getMediaPath(page.media.filename, 'large') }}" alt="{{ page.media.caption }}">
+    {% endif %}
    </div>
-   {% endif %}
+
 
    {# RECIPE FEATURE DETAILS START HERE #}
    <div class="feature-details">
