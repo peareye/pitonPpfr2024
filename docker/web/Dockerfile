@@ -22,10 +22,11 @@ RUN apt-get update && \
       php7.4-zip \
       nano \
       sendmail \
-      php-curl \
+      php7.4-curl \
       curl \
       git
 
+RUN update-alternatives --install /usr/bin/php php /usr/bin/php7.4 100
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 COPY apache-host.conf /etc/apache2/sites-available/000-default.conf
 COPY run.sh /usr/local/bin/run
