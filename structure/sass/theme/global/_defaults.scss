@@ -22,7 +22,7 @@ a:not([class]) {
 
  &:hover,
  &:focus-within {
-  outline: dashed 2px color(accent);
+  outline: dashed 1px color(accent);
  }
 }
 

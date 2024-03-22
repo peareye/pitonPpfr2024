@@ -34,7 +34,7 @@
 
    <div class="recipe-figure">
     {% if page.media.filename %}
-    <img src="{{ getMediaPath(page.media.filename, 'large') }}" alt="{{ page.media.caption }}">
+    {{ getMediaSrcSet(page.media.filename, page.media.caption, {'style': positionStyle, 'sizes': '100%'}) }}
     {% endif %}
    </div>
 

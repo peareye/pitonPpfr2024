@@ -200,7 +200,7 @@ a:not([class]) {
   transition: outline 250ms ease-in;
 }
 a:not([class]):hover, a:not([class]):focus-within {
-  outline: dashed 2px hsl(354, 71%, 49%);
+  outline: dashed 1px hsl(354, 71%, 49%);
 }
 
 h1,
@@ -1114,7 +1114,7 @@ label[for^=sub-nav-toggle] {
   margin-block-start: 0.3125em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-  gap: 0.625em;
+  gap: 0.3125em;
 }
 .feature-details > * {
   color: hsl(0, 0%, 40%);
