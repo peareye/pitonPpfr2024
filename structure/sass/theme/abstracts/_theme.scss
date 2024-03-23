@@ -11,12 +11,12 @@ $clr-pink   : hsl(350, 100%, 84%);
 $clr-blue   : hsl(210, 50%, 40%);
 $clr-orange : hsl(24, 100%, 50%);
 $clr-red    : hsl(354, 71%, 49%);
-$clr-green  : hsl(154, 91%, 31%);
+$clr-green  :hsl(136.4, 4.4%, 49.2%);
+$clr-graygreen: hsl(116, 6%, 45%);
 
-$clr-primary : $clr-blue;
-
-$clr-secondary: $clr-pink;
-$clr-accent   : $clr-red;
+$clr-primary : $clr-green;
+$clr-secondary: $clr-graygreen;
+$clr-accent   : $clr-graygreen;
 
 $clrs: (primary: $clr-primary,
  primary-dark: darken($clr-primary, 20%),

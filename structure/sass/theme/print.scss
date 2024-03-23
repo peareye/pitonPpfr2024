@@ -24,6 +24,11 @@
   display: none !important;
  }
 
+ .recipe-figure {
+  display: none;
+
+ }
+
  .flow {
   margin-block-start: 0;
  }
@@ -43,8 +48,9 @@
  }
 
  .feature-details {
-  background-color: white;
-  border-bottom   : solid 1px black;
+  text-align: center;
+  // background-color: white;
+  // border-bottom   : solid 1px black;
 
   &__item {
    justify-content: start;
@@ -57,7 +63,7 @@
   }
 
   &__subtitle {
-   @include dc(neutral(1));
+   // @include dc(neutral(1));
   }
  }
 
@@ -75,22 +81,24 @@
     &:nth-child(odd) {
      background-color: neutral(1);
     }
+
     &::before {
-     content: "\f35a";
+     content    : "\f35a";
      // @include dc(neutral(5));
      font-family: "Font Awesome 5 Free";
      font-weight: 900;
     }
    }
+
    >* ol li {
     counter-increment: steps;
- 
+
     &::before {
- 
+
      content  : counter(steps);
      font-size: var(--smallText);
      @include dc(neutral(1));
- 
+
      min-width    : 1.6em;
      line-height  : 1.6;
      border-radius: 0;

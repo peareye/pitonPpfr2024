@@ -4,7 +4,7 @@
 padding-block-end: 1.25rem;
  .cards {
   display              : grid;
-  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
   gap                  : calc($spacer * 2);
  }
 
@@ -29,7 +29,7 @@ padding-block-end: 1.25rem;
   &__image {
    aspect-ratio: 3 / 2;
    min-height: 175px;
-   background-color: color(secondary-light);
+   background-color: color(primary-light);
   
 
    img {

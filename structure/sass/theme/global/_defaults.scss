@@ -32,12 +32,12 @@ h3,
 h4,
 h5,
 h6 {
- font-family   : $ff-serif;
+ color: color(primary-dark);
+ font-family   : $ff-sans;
  font-weight   : 500;
  line-height   : 1.125;
  letter-spacing: $ls;
  text-transform: capitalize;
-
  border-bottom: solid 1px $clr-accent;
  padding-block-end: .25em;
  margin-block-end: .25em;
@@ -95,10 +95,9 @@ figure {
 }
 
 
-// .hero+.wrapper main {
-//  margin : 0;
-//  padding: 0;
-// }
+.hero+.wrapper {
+margin-block-start: 3em;
+}
 
 
 /* Add styles to 'label' selector */

@@ -23,9 +23,9 @@
  z-index        : 100;
  width          : 3rem;
 
- @include mq(small){
-  display: none;
- }
+ // @include mq(small){
+ //  display: none;
+ // }
 
  span,
  span::before,

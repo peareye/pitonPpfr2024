@@ -1,6 +1,9 @@
 // navigation
 
 .nav {
+ --link-height: 2.5;
+ --scale: 0;
+
  white-space: nowrap;
  @include dc(color(primary-light));
  text-align: center;
@@ -13,50 +16,58 @@
  left    : -50%;
  right   : -50%;
 
- transform       : scaleY($scale); //Set to zero for animation
- opacity         : $scale; //Set to zero for animation
+ transform       : scaleY(var(--scale)); //Set to zero for animation
+ opacity         : var(--scale); //Set to zero for animation
  transition      : transform .2s ease, opacity 250ms ease-out;
  transform-origin: top;
 
- @include mq(small) {
-  flex-flow: row nowrap;
-  @include dc(color(primary));
+ // @include mq(small) {
+ //  flex-flow: row nowrap;
+ //  @include dc(color(primary));
 
-  transform: scaleY(1); // Scale set to 1 for desktop navigation
-  opacity  : 1; // Opacity set to 1 for desktop navigation
-  position : static; //Position static for desktop navigation
-  width    : auto; //Width Auto to break subnav outside of parent
- }
+ //  transform: scaleY(1); // Scale set to 1 for desktop navigation
+ //  opacity  : 1; // Opacity set to 1 for desktop navigation
+ //  position : static; //Position static for desktop navigation
+ //  width    : auto; //Width Auto to break subnav outside of parent
+ // }
 
  &-link {
-  font-size      : var(--base-font);
-  text-decoration: none;
-  outline        : none;
-  color          : inherit;
-  text-transform : uppercase;
-  padding-inline : $spacer;
-  padding-block  : $spacer;
-  cursor         : pointer;
-  letter-spacing : $ls;
+  font-size         : var(--base-font);
+  text-decoration   : none;
+  outline           : none;
+  color             : inherit;
+  text-transform    : uppercase;
+  // padding-inline : $spacer;
+  // padding-block  : $spacer;
+  cursor            : pointer;
+  letter-spacing    : $ls;
+  line-height: var(--link-height);
 
   position  : relative;
   transition: background-color 250ms ease;
-  @include mq(small) {
-   align-self: end;
-  }
+
+  // @include mq(small) {
+  //  align-self: end;
+  // }
   &:hover,
   &:focus {
    @include dc(color(accent));
   }
+
   &.active {
-   @include dc(color(accent));
+   @include dc(color(primary-dark));
   }
  }
 }
 
 // Static placeholder for navigation with sub menu. Uses the checkbox/label trick to toggle
+
 .toggle-label {
- padding-block: $spacer;
+ // padding-block   : $spacer;
+ line-height: var(--link-height);
+ margin          : 0;
+ display         : block;
+
 
  &::after {
   content  : '\25bc';
@@ -79,7 +90,7 @@ label[for^="sub-nav-toggle"] {
  top     : 100%;
  left    : 0;
  right   : 0;
- z-index : 11;
+ z-index : 110;
 
  display        : grid;
  text-align     : center;
@@ -90,15 +101,14 @@ label[for^="sub-nav-toggle"] {
  transition      : transform 125ms ease, opacity 125ms ease-out;
  transform-origin: top;
 
- @include mq(small) {
-  right     : auto;
-  box-shadow: 0 0px 25px rgba(black, .15);
- }
+ // @include mq(small) {
+ //  right     : auto;
+ //  box-shadow: 0 0px 25px rgba(black, .15);
+ // }
 
  &-link {
   text-decoration: none;
   width          : 100%;
-  padding-block  : .5rem;
   padding-inline : $spacer;
 
   @include dc(color(secondary));
@@ -107,19 +117,19 @@ label[for^="sub-nav-toggle"] {
 
   transition: background-color 125ms;
 
-  @include mq(small) {
-   padding-inline: $spacer;
+  // @include mq(small) {
+  //  padding-inline: $spacer;
 
-   display              : grid;
-   grid-template-columns: auto 1fr;
-   gap                  : 2em;
-   align-items          : center;
-   justify-content      : center;
-  }
+  //  display              : grid;
+  //  grid-template-columns: auto 1fr;
+  //  gap                  : 2em;
+  //  align-items          : center;
+  //  justify-content      : center;
+  // }
 
   &:hover,
   &:focus {
-   @include dc(color(accent));
+ @include dc(color(accent-lighter));
   }
  }
 }

@@ -1,48 +1,66 @@
 // Hero style
+
 .hero {
-  --hero-height: 65vh;
-  height       : min(var(--hero-height), 1080px);
-  position     : relative;
-  z-index      : -1;
+ --hero-height     : 65dvh;
+ --min-hero-height: 50dvh;
+ height            : min(var(--hero-height), var(--min-hero-height));
+ position          : relative;
+ z-index           : -1;
+ margin-block-start: 0;
 
-  &__overlay {
-    position: absolute;
-    top     : 0;
-    left    : 0;
-    right   : 0;
-    bottom  : 0;
-    z-index : 101;
+ display        : flex;
+ align-items    : center;
+ justify-content: center;
+ height         : 100%;
+
+ &__overlay {
+  position: absolute;
+  top     : 0;
+  left    : 0;
+  right   : 0;
+  bottom  : 0;
+  z-index : 101;
+ }
+
+ &__content {
+  // --content-opacity: 20%;
+  // background-color : rgba($neutral-5, var(--content-opacity));
+  padding-block    : 1rem;
+  padding-inline   : 2rem;
+  text-align       : center;
+  position         : absolute;
+  // top           : 50%;
+  // left          : 50%;
+  // transform     : translate(-50%, -50%);
+
+  border-radius: $br;
+  // width        : 55ch;
+  // max-width    : 50%;
+  padding-inline: 3em;
+  z-index      : 102;
+
+  &-title {
+   font-weight: $fw-b;
+   font-size:var(--largeText);
+   color: $neutral-1;
+   font-family: $ff-sans;
+   text-transform: uppercase;
+   border     : none;
+   line-height: 1;
+   margin     : 0;
+   padding    : 0;
   }
-  &__content {
-  
-   padding-block: 1rem;
-   padding-inline: 2rem;
-    text-align: center;
-    position  : absolute;
-    top       : 50%;
-    left      : 50%;
-    transform : translate(-50%, -50%);
-    color     : neutral(1);
-  
-    border-radius: $br;
-    width     : 60ch;
-    max-width : 50%;
-    z-index   : 102;
-    // &-title {
-    //   color: neutral(1);
-    // }
+ }
+
+ &__image {
+  width : 100vw;
+  height: min(var(--hero-height), 1080px);
+
+  img {
+   width     : 100vw;
+   height    : min(var(--hero-height), 1080px);
+   object-fit: cover;
+   z-index   : 100;
   }
-
-  &__image {
-    width : 100vw;
-    height: min(var(--hero-height), 1080px);
-
-    img {
-      width : 100vw;
-      height : min(var(--hero-height), 1080px);
-      object-fit: cover;
-      z-index : 100;
-    }
-  }
-
+ }
 }
