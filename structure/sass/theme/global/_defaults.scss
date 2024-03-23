@@ -15,6 +15,7 @@ body {
 }
 
 a:not([class]) {
+ background-color: purple !important;
  text-decoration: none;
  outline        : none;
  transition     : outline 250ms ease-in;
@@ -22,7 +23,7 @@ a:not([class]) {
 
  &:hover,
  &:focus-within {
-  outline: dashed 1px color(accent);
+  outline: dashed 1px color(primary-lighter);
  }
 }
 

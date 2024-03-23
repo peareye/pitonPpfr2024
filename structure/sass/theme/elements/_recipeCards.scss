@@ -2,25 +2,37 @@
  &__header {
   display: flex;
 
-  align-items: end;
+  align-items    : end;
   justify-content: space-between;
 
   h2 {
    margin: 0;
   }
 
+  a {
+   background-color: inherit !important;
+   transition: font-weight 125ms;
+
+   &:hover,
+   &:focus-within {
+    font-weight: $fw-m;
+    outline    : none;
+   }
+  }
+
  }
 
  &__more {
- 
+
   font-weight   : $fw-l;
   letter-spacing: $ls;
   color         : color(accent);
   font-style    : italic;
   font-size     : var(--smallText);
   text-align    : right;
- 
+
  }
+
  &:last-child {
   padding-block-end: 3rem;
  }

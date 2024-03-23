@@ -13,12 +13,14 @@
  }
 
  a {
-  transition     : all 125ms ease;
+  transition     : all 250ms;
   text-decoration: none;
+  background-color: inherit !important;
 
   &:hover,
   &:focus {
-   color: color(accent);
+   color: neutral(5);
+   outline: none
   }
  }
 
