@@ -17,12 +17,14 @@ body {
 a:not([class]) {
  text-decoration: none;
  outline        : none;
- transition     : outline 250ms ease-in;
+ border-bottom  : dashed 1px color(primary-dark);
 
+ transition: all 250ms ease-in;
 
  &:hover,
  &:focus-within {
-  outline: dashed 1px color(primary-lighter);
+  background-color: $clr-red;
+  color           : $neutral-1;
  }
 }
 
@@ -32,16 +34,16 @@ h3,
 h4,
 h5,
 h6 {
- color: color(primary-dark);
- font-family   : $ff-sans;
- font-weight   : 500;
- line-height   : 1.125;
- letter-spacing: $ls;
- text-transform: capitalize;
- border-bottom: solid 1px $clr-accent;
- padding-block-end: .25em;
- margin-block-end: .25em;
- display: inline-block;
+ color             : color(primary-dark);
+ font-family       : $ff-sans;
+ font-weight       : 500;
+ line-height       : 1.125;
+ letter-spacing    : $ls;
+ text-transform    : capitalize;
+ border-bottom     : solid 1px $clr-accent;
+ padding-block-end : .25em;
+ margin-block-end  : .25em;
+ display           : inline-block;
  padding-inline-end: calc($spacer * 1);
 }
 
@@ -76,7 +78,7 @@ img {
 }
 
 figure {
- border-radius: $br;
+ border-radius   : $br;
  // padding-block: 2em 1em;
 
  img {
@@ -86,17 +88,18 @@ figure {
  }
 
  figcaption {
-  color      : neutral(4);
-  font-size  : var(--smallText);
-  font-style : italic;
-  font-weight: 300;
-  text-align : center;
+  color        : neutral(4);
+  font-size    : var(--smallText);
+  font-style   : italic;
+  font-weight  : 300;
+  text-align   : center;
+  padding-block: .25em .5em;
  }
 }
 
 
 .hero+.wrapper {
-margin-block-start: 3em;
+ margin-block-start: 3em;
 }
 
 
