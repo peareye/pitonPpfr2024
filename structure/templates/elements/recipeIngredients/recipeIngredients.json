@@ -1,5 +1,6 @@
 {
     "elementName": "Recipe Ingredients",
     "elementDescription": "Single Recipe Ingredients Element",
-    "contentTextareaDefaultValue": "<ul><li></li></ul>"
+    "contentTextareaDefaultValue": "<ul><li></li></ul>",
+    "showTitle": false
 }
