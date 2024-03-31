@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /search
+Disallow: /index.php/
 
 Sitemap: https://perisplaceforrecipes.com/sitemap.xml

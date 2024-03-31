@@ -1,5 +1,9 @@
 {% extends 'pages/_base_layout.html' %}
 
+{% block header %}
+<link rel="canonical" href="{{ baseUrl() ~ currentPath() }}" />
+{% endblock header %}
+
 {% block body %}
 
 {% embed 'embeds/_recipeLayout.html' %}
