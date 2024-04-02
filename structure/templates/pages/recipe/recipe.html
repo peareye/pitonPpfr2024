@@ -1,7 +1,7 @@
 {% extends 'pages/_base_layout.html' %}
 
 {% block header %}
-<link rel="canonical" href="{{ baseUrl() ~ currentPath() }}" />
+<link rel="canonical" href="{{ baseUrl() ~ getPathForPage(page.page_slug, page.collection_slug) }}" />
 {% endblock header %}
 
 {% block body %}

@@ -10,6 +10,10 @@ Options -Indexes
 
 RewriteEngine On
 
+# Redirect requests which include '/index.php/' in the URL to the canonical version
+RewriteCond %{THE_REQUEST} ^.*index\.php [NC]
+RewriteRule (.*?)index\.php/*(.*) /$1$2 [R=301,NE,L]
+
 # Redirect from www subdomain to preferred domain (no-www), or otherway around as preferred
 RewriteCond %{HTTP_HOST} !^localhost$ [NC]
 RewriteCond %{HTTP_HOST} ^www [NC]
