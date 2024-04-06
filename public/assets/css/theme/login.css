@@ -1283,18 +1283,6 @@ label[for^=sub-nav-toggle] {
   margin-block-end: auto;
   display: block;
 }
-#recipeCategoryPageElement .card__image,
-.recipeCards .card__image {
-  aspect-ratio: 3/2;
-  min-height: 175px;
-  background-color: #929c95;
-}
-#recipeCategoryPageElement .card__image img,
-.recipeCards .card__image img {
-  aspect-ratio: inherit;
-  object-fit: cover;
-  height: 100%;
-}
 #recipeCategoryPageElement .card__content,
 .recipeCards .card__content {
   height: 100%;

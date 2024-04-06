@@ -26,18 +26,18 @@ padding-block-end: 1.25rem;
    display: block;
   }
 
-  &__image {
-   aspect-ratio: 3 / 2;
-   min-height: 175px;
-   background-color: color(primary-light);
+  // &__image {
+  //  aspect-ratio: 3 / 2;
+  //  min-height: 175px;
+  //  background-color: color(primary-light);
   
 
-   img {
-    aspect-ratio: inherit;
-    object-fit  : cover;
-    height: 100%;
-   }
-  }
+  //  img {
+  //   aspect-ratio: inherit;
+  //   object-fit  : cover;
+  //   height: 100%;
+  //  }
+  // }
 
   &__content {
    height: 100%;
