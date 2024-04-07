@@ -1219,8 +1219,8 @@ label[for^=sub-nav-toggle] {
 }
 @media (prefers-color-scheme: dark) {
   .recipeDirections__layout li:nth-child(odd) {
-    background-color: hsl(0, 0%, 66%);
-    color: #1a1a1a;
+    background-color: inherit;
+    color: inherit;
   }
 }
 .recipeDirections__layout ul li::before {
@@ -1275,7 +1275,6 @@ label[for^=sub-nav-toggle] {
   .method h3,
   .method h4 {
     color: #fdfdfd;
-    background-color: black;
   }
 }
 .ingredients h3:not(:first-child),

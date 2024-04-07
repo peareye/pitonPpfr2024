@@ -151,7 +151,8 @@
    &:nth-child(odd) {
    @include dc(neutral(2)); 
     @media (prefers-color-scheme: dark){
-     @include dc(neutral(3));
+  background-color: inherit;
+  color: inherit;
     }
    }
 
@@ -211,7 +212,6 @@
 
   @media (prefers-color-scheme:dark){
    color: color(primary-lighter);
-   background-color: black;
   }
 
   &:not(:first-child) {
