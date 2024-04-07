@@ -60,6 +60,11 @@
   justify-content : center;
   gap             : 1em;
   padding-block   : 1em;
+  padding-inline: .5em;
+
+  @media (prefers-color-scheme: dark){
+   @include dc(color(primary-dark));
+  }
  }
 
  &__title {
@@ -111,6 +116,10 @@
   font-weight   : $fw-n;
   text-transform: uppercase;
   letter-spacing: $ls;
+
+  @media (prefers-color-scheme: dark){
+   color: color(primary-lighter);
+  }
  }
 }
 
@@ -140,7 +149,10 @@
    padding-block       : .25em;
 
    &:nth-child(odd) {
-    background-color: neutral(2);
+   @include dc(neutral(2)); 
+    @media (prefers-color-scheme: dark){
+     @include dc(neutral(3));
+    }
    }
 
   }
