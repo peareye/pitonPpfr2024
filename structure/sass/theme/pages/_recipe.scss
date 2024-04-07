@@ -211,6 +211,7 @@
 
   @media (prefers-color-scheme:dark){
    color: color(primary-lighter);
+   background-color: black;
   }
 
   &:not(:first-child) {

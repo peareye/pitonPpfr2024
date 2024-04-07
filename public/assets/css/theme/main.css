@@ -1275,6 +1275,7 @@ label[for^=sub-nav-toggle] {
   .method h3,
   .method h4 {
     color: #fdfdfd;
+    background-color: black;
   }
 }
 .ingredients h3:not(:first-child),
