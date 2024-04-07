@@ -1269,6 +1269,14 @@ label[for^=sub-nav-toggle] {
   padding-block-start: 0.5em;
   text-transform: capitalize;
 }
+@media (prefers-color-scheme: dark) {
+  .ingredients h3,
+  .ingredients h4,
+  .method h3,
+  .method h4 {
+    color: #fdfdfd;
+  }
+}
 .ingredients h3:not(:first-child),
 .ingredients h4:not(:first-child),
 .method h3:not(:first-child),
