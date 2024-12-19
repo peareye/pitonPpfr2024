@@ -561,18 +561,6 @@ textarea:focus {
   gap: 0.25em;
   align-items: baseline;
 }
-.input-group input,
-.input-group textarea {
-  border: solid 1px #949f93;
-  transition: border 125ms ease-in;
-}
-.input-group input:focus, .input-group input:focus-within,
-.input-group textarea:focus,
-.input-group textarea:focus-within {
-  background-color: hsl(0, 0%, 95%);
-  border-style: dashed;
-  border-width: 3px;
-}
 .input-group label {
   font-size: var(--base-font);
   font-weight: 300;
@@ -671,7 +659,6 @@ textarea:focus {
 }
 .search input[type=text] {
   color: #3c443c;
-  text-transform: uppercase;
   letter-spacing: 0.05ex;
   font-size: var(--base-font);
   border-top-left-radius: 0;
@@ -1009,11 +996,6 @@ label[for^=sub-nav-toggle] {
   text-decoration: none;
   color: hsl(0, 0%, 10%);
   font-size: var(--base-font);
-}
-@media (prefers-color-scheme: dark) {
-  .sidebarLatest__card {
-    color: #fdfdfd;
-  }
 }
 .sidebarLatest__card:hover .sidebarLatest__img img {
   transform: scale(1.1);
