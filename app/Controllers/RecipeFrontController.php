@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace PitonCMS\Controllers;
 
 use Piton\Controllers\FrontController;
-use Slim\Http\Response;
+use Psr\Http\Message\ResponseInterface as Response;
 
 /**
  * PPFR Custom Front Controller
@@ -31,15 +31,15 @@ class RecipeFrontController extends FrontController
     public function ppfrLegacyUrl(array $args): Response
     {
             // Get dependencies
-            $recipePageMapper = ($this->container->dataMapper)('RecipePageMapper', 'PitonCMS\\Models\\');
+            $recipePageMapper = ($this->container->get('dataMapper'))('RecipePageMapper', 'PitonCMS\\Models\\');
 
             // Sanitize input and request page data
-            $slug = htmlspecialchars(strtolower($args['slug']));
+            $slug = htmlspecialchars(strtolower($args['slug']), ENT_QUOTES);
             $page = $recipePageMapper->findRecipeByPageSlug($slug);
 
-            // If empty, return 404
+            // If empty, throw 404
             if (empty($page)) {
-                return $this->notFound();
+                $this->notFound();
             }
 
             // If not empty, return 301 permanent redirect to new recipe location
@@ -54,12 +54,13 @@ class RecipeFrontController extends FrontController
      * Unknown collections or categories will be rejected and return a 404
      * @param array $args Array of URL parameters, expecting 'type'
      * @return Response
+     * @throws Exception NotFound
      */
     public function collectionOrCategoryLandingPage(array $args): Response
     {
         // Get dependencies, start with current collections. Pagination results per page relies on $config setting
-        $recipeCollectionMapper = ($this->container->dataMapper)('RecipeCollectionMapper', 'PitonCMS\\Models\\');
-        $recipePageMapper = ($this->container->dataMapper)('RecipePageMapper', 'PitonCMS\\Models\\');
+        $recipeCollectionMapper = ($this->container->get('dataMapper'))('RecipeCollectionMapper', 'PitonCMS\\Models\\');
+        $recipePageMapper = ($this->container->get('dataMapper'))('RecipePageMapper', 'PitonCMS\\Models\\');
         $pagination = $this->getPagination();
 
         // Get list of approved categories from Site Settings, and reduce array to just the slugs as keys and ID as values
@@ -98,7 +99,7 @@ class RecipeFrontController extends FrontController
             return $this->showPage(['slug1' => 'recipes']);
         }
 
-        // Nothing matched, return 404
-        return $this->notFound();
+        // Nothing matched, throw 404
+        $this->notFound();
     }
 }

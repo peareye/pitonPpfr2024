@@ -22,7 +22,7 @@ class RecipeCollectionMapper extends CollectionMapper
      * Get Collection Slugs
      *
      * @param void
-     * @return array|null
+     * @return ?array
      */
     public function getCollectionSlugs(): ?array
     {

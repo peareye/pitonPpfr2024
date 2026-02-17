@@ -6,15 +6,15 @@
 
 <section id="recipeCategoryPageElement" class="element flow">
 
-<h2>{{ page.resultsCollectionOrCategoryName }}</h2>
+<h2>{{ page.extension.resultsCollectionOrCategoryName }}</h2>
 
  <div class="cards">
 
-  {% for detail in page.results %}
+  {% for detail in page.extension.results %}
 
   <a class="card" href="{{ getPathForPage(detail.page_slug, detail.collection_slug) }}">
 
- 
+
    <div class="card__image">
     {% if detail.media.filename %}
     <img src="{{ getMediaPath(detail.media.filename, 'thumb') }}">

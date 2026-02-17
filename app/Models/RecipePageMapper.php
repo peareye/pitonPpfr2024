@@ -24,7 +24,7 @@ class RecipePageMapper extends PageMapper
      *
      * Finds page and collection
      * @param string $recipeSlug Page slug
-     * @return PitonEntity|null
+     * @return ?PitonEntity
      */
     public function findRecipeByPageSlug(string $recipeSlug): ?PitonEntity
     {
@@ -47,11 +47,11 @@ SQL;
      *
      * Finds all recipes matching a category stored data_store from page settings
      * @param string $category Category name to search
-     * @param  int   $limit
-     * @param  int   $offset
-     * @return array|null
+     * @param  ?int   $limit
+     * @param  ?int   $offset
+     * @return ?array
      */
-    public function findRecipesByCategory(string $category, int $limit = null, int $offset = null): ?array
+    public function findRecipesByCategory(string $category, ?int $limit = null, ?int $offset = null): ?array
     {
         $this->makeSelect();
 
